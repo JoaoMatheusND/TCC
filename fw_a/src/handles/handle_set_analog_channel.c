@@ -1,0 +1,31 @@
+#include "handles/handles_internal.h"
+
+void handle_set_analog_channel(void)
+{
+	struct sigrok_handler *self = ana_sigrok_get_self();
+
+	int enable = self->cmd_str[1] - '0';
+	if (enable != 0 && enable != 1) {
+		log_warn("sigrok", "Invalid analog enable flag");
+		self->response[0] = '\0';
+		return;
+	}
+	int ch = (int)strtol((char *)&self->cmd_str[2], &self->end_ptr, 10);
+	if (self->end_ptr == (char *)&self->cmd_str[2] || self->end_ptr == NULL ||
+	    *self->end_ptr != '\0') {
+		log_warn("sigrok", "Invalid analog channel");
+		self->response[0] = '\0';
+		return;
+	}
+	if (ch >= 0 && ch <= 2) {
+		if (enable) {
+			self->analog_mask |= (uint8_t)(1u << ch);
+		} else {
+			self->analog_mask &= (uint8_t)(~(1u << ch));
+		}
+		log_inf("sigrok", "Analog ch %d %s", ch, enable ? "enabled" : "disabled");
+	} else {
+		log_warn("sigrok", "Analog channel out of range: %d", ch);
+		self->response[0] = '\0';
+	}
+}

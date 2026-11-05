@@ -1,0 +1,86 @@
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Obstacles}{\mathbb{O}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}		% vectors
+\newcommand{\matr}[1]{\boldsymbol{#1}}		        % 
+\newcommand{\set}[1]{\boldsymbol{#1}}
+
+\newcommand{\origin}{\vect{O}}
+
+\newcommand{\vX}{\vect{x}}					% x-axis
+\newcommand{\vY}{\vect{y}}					% y-axis
+\newcommand{\vZ}{\vect{z}}					% z-axis
+
+\newcommand{\posScalar}{p}
+\newcommand{\angScalar}{\theta}
+\newcommand{\velScalar}{v}
+\newcommand{\angVelScalar}{\omega}
+\newcommand{\linVelScalar}{\nu}
+\newcommand{\accScalar}{a}
+\newcommand{\angAccScalar}{\alpha}
+
+\newcommand{\pos}{\vect{\posScalar}}
+\newcommand{\ang}{\vect{\angScalar}}
+\newcommand{\vel}{\vect{\velScalar}}
+\newcommand{\angVel}{\vect{\angVelScalar}}
+\newcommand{\jointVel}{\dot{\vect{\angScalar}}}
+\newcommand{\linVel}{\vect{\linVelScalar}}
+\newcommand{\acc}{\vect{\accScalar}}
+\newcommand{\angAcc}{\vect{\angAccScalar}}
+
+\newcommand{\q}{\vect{q}}					% q configuration
+\newcommand{\rotMat}{\matr{R}}              %rotation matrix
+\newcommand{\rotMatab}[2]{\rotMat^\text{#1}_\text{#2}}
+
+%%%%%%world frame
+\newcommand{\WLetter}{0}
+\newcommand{\FW}{\F_\text{\WLetter}} %robot frame
+\newcommand{\originW}{\origin_\text{\WLetter}}
+\newcommand{\vXW}{\vX_\text{\WLetter}}					% x-axis
+\newcommand{\vYW}{\vY_\text{\WLetter}}					% y-axis
+\newcommand{\vZW}{\vZ_\text{\WLetter}}					% z-axis
+\newcommand{\velW}{\vel^\text{\WLetter}}
+\newcommand{\accW}{\acc^\text{\WLetter}}
+\newcommand{\angVelW}{\angVel^\text{\WLetter}}
+
+%%%%%%robot frame
+\newcommand{\RLetter}{R}
+\newcommand{\FR}{\F_\text{\RLetter}} %robot frame
+\newcommand{\originR}{\origin_\text{\RLetter}}
+\newcommand{\vXR}{\vX_\text{\RLetter}}					% x-axis
+\newcommand{\vYR}{\vY_\text{\RLetter}}					% y-axis
+\newcommand{\vZR}{\vZ_\text{\RLetter}}					% z-axis
+\newcommand{\velR}{\vel^\text{\RLetter}}
+
+\newcommand{\rotMatWR}{\rotMatab{\WLetter}{\RLetter}}
+\newcommand{\vXRnew}{\vX'_{\text{\WLetter}}}					% x-axis
+\newcommand{\vYRnew}{\vY'_{\text{\WLetter}}}					% y-axis
+\newcommand{\vZRnew}{\vZ'_{\text{\WLetter}}}					% z-axis
+
+%%%%%%State Space
+
+\newcommand{\stateVec}{\vect{x}}
+\newcommand{\inputVec}{\vect{u}}
+\newcommand{\outputVec}{\vect{y}}
+
+\newcommand{\refVec}{\vect{r}}
+\newcommand{\posRef}{\pos_{\text{ref}}}
+\newcommand{\velRef}{\vel_{\text{ref}}}
+
+\newcommand{\stateStart}{\stateVec_{\text{start}}}
+\newcommand{\stateGoal}{\stateVec_{\text{goal}}}
+\newcommand{\posStart}{\pos_{\text{start}}}
+\newcommand{\posGoal}{\pos_{\text{goal}}}
+\newcommand{\CC}{\set{CC}}
+\newcommand{\VO}{\set{V\!O}}
+\newcommand{\RVO}{\set{RV\!O}}
+\newcommand{\ORCA}{\set{O\!RC\!A}}
+
+\newcommand{\teq}{\text{eq}}
+\newcommand{\tineq}{\text{ineq}}
+\newcommand{\tORCA}{\text{ORCA}}
+
+\newcommand{\udq}[1]{\textit{\textbf{\underbar{#1}}}}

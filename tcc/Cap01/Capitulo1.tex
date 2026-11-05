@@ -1,0 +1,100 @@
+\chapter{Introdução}\label{cap:introducao}
+
+O avanço da \ac{IoT}, da Indústria 4.0 e da computação de borda tem elevado
+continuamente a complexidade dos sistemas embarcados. Dispositivos modernos
+combinam múltiplos protocolos de comunicação: \ac{I2C}, \ac{SPI}, \ac{UART},
+\ac{CAN}, RS-485, dentre outros protocolos, para interligar sensores, atuadores
+e outros subsistemas, de modo que diagnosticar, depurar e verificar esses
+sistemas exige a captura simultânea de vários sinais digitais com precisão
+temporal estrita \cite{gis2021}.
+
+O problema central que motiva este trabalho é a escolha, na prática de
+engenharia, entre duas estratégias de aquisição de sinais digitais no
+microcontrolador RP2350: a leitura de pinos de \ac{GPIO} pela própria \ac{CPU},
+e o uso de periféricos dedicados de captura. A leitura de \ac{GPIO} por
+software é a primeira solução que qualquer desenvolvedor considera, por ser
+simples, portável e não exigir o domínio de um periférico específico. Laços de
+amostragem por software, no entanto, têm a frequência limitada pelo clock e
+pelo número de instruções por iteração. Ademais, interrupções e tarefas
+auxiliares introduzem \emph{jitter} de execução que pode vir a corromper a base
+de tempo da aquisição \cite{gis2021,hui2023,regehr2005}.
+
+Diante desse cenário, distintas soluções vêm sendo exploradas, tanto no âmbito
+acadêmico quanto no ecossistema de hardware e software abertos. De um lado,
+sistemas de aquisição de alta taxa baseados em hardware dedicado, como soluções
+por \ac{FPGA}, atingem taxas de amostragem elevadas ao custo de maior
+complexidade de projeto e maior barreira de entrada. \citeonline{hercog2014} e
+\citeonline{romanov2021} demonstram, na direção oposta, que instrumentação de
+aquisição e análise lógica de baixo custo baseada em microcontrolador é viável
+e reprodutível. O projeto Sigrok oferece uma suíte universal e multiplataforma
+para aquisição e análise de sinais, e seu front-end gráfico PulseView
+disponibiliza mais de duzentos decodificadores de protocolo prontos
+\cite{sigrok2026}. No hardware, o microcontrolador RP2350, da Raspberry Pi,
+representa uma mudança de paradigma para a aquisição de dados de baixo custo:
+além de dois núcleos ARM Cortex-M33, o chip integra o subsistema de \ac{PIO},
+composto por máquinas de estados de hardware capazes de amostrar pinos com
+exatidão de ciclo, de forma independente dos núcleos principais
+\cite{rpi2024ds}. \citeonline{gis2021} e \citeonline{ungurean2020} caracterizam
+experimentalmente o \emph{jitter} e o não determinismo temporal da execução em
+microcontroladores, fornecendo o arcabouço conceitual e metodológico para as
+fontes de \emph{jitter} discutidas na Seção~\ref{sec:determinismo};
+\citeonline{regehr2005} e \citeonline{mogul1997} estabelecem o mecanismo pelo qual
+sistemas dirigidos a interrupção saturam e perdem eventos sob alta taxa; e
+\citeonline{weber2025}, \citeonline{starkey2024} e \citeonline{mehr2025} exploram o \ac{PIO} e
+o \ac{DMA} do RP2040/RP2350 como periféricos de temporização determinística em
+instrumentação científica. Nenhum desses trabalhos, entretanto, contrapõe as
+duas arquiteturas de aquisição \emph{na mesma plataforma e sob as mesmas
+      condições}. Quantificar o custo de abandonar o hardware dedicado em favor da
+leitura de \ac{GPIO} por software segue, portanto, sendo uma lacuna prática, e
+essa informação orienta diretamente a escolha de arquitetura de firmware em
+projetos de baixo custo baseados em microcontrolador. É essa dimensão
+comparativa (\ac{PIO} com \ac{DMA} $\times$ \ac{GPIO} lido pela \ac{CPU}),
+ausente tanto nos projetos comunitários quanto na literatura consultada, que
+este trabalho se propõe a preencher.
+
+\section{Objetivos}
+
+\subsection{Objetivo geral}
+
+Avaliar experimentalmente o impacto da arquitetura de aquisição de dados em
+sistemas embarcados, comparando o desempenho entre uma abordagem de hardware
+dedicado, baseada no uso de \ac{PIO} associado ao \ac{DMA}, e uma abordagem
+software, que utiliza \ac{GPIO} controlado pela \ac{CPU}, no contexto de um
+analisador lógico embarcado com transmissão contínua de dados via \ac{USB}.
+
+\subsection{Objetivos específicos}
+
+Para atender ao objetivo geral, definem-se os seguintes objetivos
+específicos:
+
+\begin{enumerate}
+  \item Implementar uma segunda versão do firmware do dispositivo, com
+        aquisição integralmente por software em núcleo único, mantendo
+        idênticos o protocolo de comunicação com o \emph{host}, a pilha
+        \ac{USB} e a codificação \ac{RLE}, de modo que a única variável entre
+        as versões comparadas seja a arquitetura de aquisição.
+  \item Definir e instrumentar quatro métricas de desempenho, a saber, taxa
+        máxima de amostragem sustentada, \emph{jitter} de amostragem, perda de
+        amostras em captura contínua e ocupação de \ac{CPU}, com critérios
+        operacionais estabelecidos antes da coleta.
+  \item Montar uma bancada automatizada de medição, com onda quadrada de
+        referência e analisador lógico comercial como referência externa,
+        capaz de executar as repetições de cada condição sem intervenção
+        manual.
+  \item Comparar as duas arquiteturas sob condições idênticas, reportando,
+        além dos p-valores, o tamanho de efeito e o intervalo de confiança de
+        cada diferença medida.
+\end{enumerate}
+
+\section{Organização do trabalho}
+
+O restante deste trabalho está organizado da seguinte forma. O
+Capítulo~\ref{cap:fundamentacao} apresenta a fundamentação teórica: amostragem
+de sinais digitais, determinismo temporal em sistemas embarcados, técnicas de
+aquisição por software e por hardware no RP2350, e o ecossistema de software
+aberto utilizado, encerrando com os trabalhos relacionados. O
+Capítulo~\ref{cap:metodologia} descreve os materiais e métodos: a plataforma de
+hardware, as duas arquiteturas de firmware comparadas, a bancada experimental e
+a definição das métricas e procedimentos. O Capítulo~\ref{cap:resultados}
+apresenta e discute os resultados experimentais. O Capítulo~\ref{cap:conclusao}
+conclui o trabalho, retomando as limitações e indicando trabalhos futuros.

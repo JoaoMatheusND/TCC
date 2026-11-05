@@ -1,0 +1,151 @@
+\documentclass[12pt,a4paper,oneside]{JITH}
+%\documentclass[12pt,a4paper,twoside]{JITH}
+
+\usepackage{amsmath,amsfonts,mathdots,amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage[caption=false]{subfig}
+\usepackage[hidelinks]{hyperref}
+\usepackage[printonlyused]{acronym}
+\usepackage{bm}
+\usepackage[alf]{abntex2cite} % citações e referências ABNT (NBR 10520 / NBR 6023)
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{pifont}
+\usepackage{indentfirst}
+\usepackage{float}
+\usepackage{listings}
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Pacotes adicionados % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\usepackage{easyReview} %%para revisoes
+\setreviewsoff
+%%how to:
+%%\replace{This part of the text needs to be replaced}{for this newer part of the text}
+%%\comment{This text will receive a comment.}{This is the comment I have!}.
+%%\replace{This part of the text needs to be replaced}{for this newer part of the text}.
+%%\add{This text is been added now}
+%%\remove{This text is to be removed}
+%%\highlight{A text with the highlight command}.
+%%\alert{A text with the alert command}
+\include{macros}
+
+%% Legendas e fontes no padrão ABNT (NBR 14724): título acima, fonte abaixo
+\usepackage{caption}
+\captionsetup{position=top,labelsep=endash,font=small,justification=centering,skip=6pt}
+% Quadros (ABNT: conteúdo textual, bordas fechadas)
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[fileext=loq,listname={Lista de Quadros},name=Quadro,placement=htbp,within=chapter]{quadro}
+\newcommand{\fonte}[1]{\par\vspace{4pt}{\centering\footnotesize Fonte: #1\par}}
+\newcommand{\nota}[1]{{\centering\footnotesize Nota: #1\par}}
+
+%% % % % % % %
+\onehalfspacing
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\begin{document}
+\sloppy
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\include{Identificacao}	% % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\capa
+\folhaDeRosto
+%\includepdf{Cap00/Ficha Catalografica.pdf}
+%\includepdf{Cap00/TCC_FormularioAvaliação.pdf}
+%\folhaDeAprovacao
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Opcionais % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% \dedicatoria %opcional
+% \agradecimentos %opcional
+% \epigrafe %opcional
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Obrigatórios  % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\resumo
+\abstract
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\listoffigures
+
+\cleardoublepage
+% % % % % % % % % % % % % % % % %
+\listoftables
+\cleardoublepage
+\listofquadros
+\cleardoublepage
+\simbolos
+\cleardoublepage
+\abreviaturas
+\cleardoublepage
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+%\renewcommand{\contentsname}{Summary}
+\tableofcontents
+\cleardoublepage
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\pagenumbering{arabic}
+
+\pagestyle{myheadings}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Incluir capítulos aqui  % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{Cap01/Capitulo1}
+\cleardoublepage
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{Cap02/Capitulo2}
+\cleardoublepage
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{Cap03/Capitulo3}
+\cleardoublepage
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{Cap04/Capitulo4}
+\cleardoublepage
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+%\input{Cap05/Capitulo5}
+%\cleardoublepage
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+%\input{Cap06/Capitulo6}
+%\cleardoublepage
+%%% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\input{Conc/Conclusao.tex}
+\cleardoublepage
+%%% % % % % % % % % % % % % % % % % % % % % % % % % % %
+%%% % % % % % % % % % % % % % % % % % % % % % % % % % %
+\markright{Referências}
+%\renewcommand\bibname{Bibliography}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Definir estilo bibliográfico  % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\bibliographystyle{abntex2-alf}
+%%
+{
+	\renewcommand{\bibname}{REFER\^ENCIAS}
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Referências}
+	\bibliography{Ref/referencias}
+}
+\cleardoublepage
+%%% % % % % % % % % % % % % % % % % % % % % % % % % % %
+%%% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% Apendice vazio: reativar quando houver conteudo
+%\input{Apend/apendiceA}
+\cleardoublepage
+
+\end{document}

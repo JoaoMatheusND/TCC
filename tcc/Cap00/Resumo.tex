@@ -1,0 +1,42 @@
+\chapter*{Resumo}
+\noindent
+A depuração de sistemas embarcados exige instrumentos capazes de capturar
+sinais digitais com precisão temporal, mas o custo de analisadores lógicos
+comerciais restringe seu acesso em contextos educacionais e de pesquisa.
+Um dispositivo de aquisição de dados (DAQ) de baixo custo baseado no
+microcontrolador RP2350, compatível com o ecossistema Sigrok/PulseView,
+delega a amostragem ao subsistema de E/S programável (PIO) e a
+movimentação dos dados ao controlador de acesso direto à memória (DMA);
+o ganho dessa arquitetura sobre a alternativa convencional, a leitura dos
+pinos de entrada e saída de propósito geral (GPIO) pela própria CPU, no
+entanto, não havia sido quantificado. Este trabalho implementa uma segunda
+versão do firmware, com aquisição integralmente por software em núcleo
+único, mantendo
+idênticos o protocolo de comunicação com o \emph{host}, a pilha USB e a
+codificação RLE, e compara experimentalmente as duas arquiteturas quanto à
+taxa máxima de amostragem sustentada, ao \emph{jitter} de amostragem, à
+perda de amostras em captura contínua e à ocupação de CPU. As medições
+usaram uma onda quadrada de referência, um analisador lógico comercial
+como referência externa e 30 repetições por condição, com comparação pelo
+teste de Mann-Whitney e correção de Holm-Bonferroni. A arquitetura PIO+DMA
+sustentou 3,66\,MS/s com contagem de bordas exata, \emph{jitter} igual ao
+limite de quantização e nenhuma amostra perdida em captura contínua até
+3,54\,MS/s, abortando a captura de forma sinalizada fora dessa faixa, com
+ocupação de CPU entre 0,08\,\% e 83\,\%, proporcional à taxa. A leitura
+por CPU ocupou 100\,\% do processador e, embora o custo de seu laço
+permitisse cerca de 4,29\,MS/s, falhou em silêncio a partir de
+$\approx 1{,}1$\,MS/s: o laço para enquanto a mesma CPU transmite os
+dados, o que produziu bordas a mais nas capturas com disparo,
+\emph{jitter} de 106 a 400\,ns acima da quantização e perda de 24\,\% a
+43\,\% das amostras em captura contínua. Conclui-se que a leitura por CPU em
+núcleo único, com o mesmo núcleo amostrando e transmitindo, basta para
+capturas curtas em taxas de até centenas de kS/s, enquanto o
+par PIO+DMA é indispensável em taxas maiores, em captura contínua ou
+quando a CPU precisa ficar livre. A arquitetura determina, além da taxa, o
+custo de detectar a falha: no par PIO+DMA o transbordo da fila é um evento de
+hardware que a CPU observa fora do caminho crítico, ao passo que, na leitura
+por software, detectar as pausas consome ciclos do próprio laço de
+amostragem.
+
+\vspace{5mm}
+\noindent\textbf{Palavras-chave:} Aquisição de dados. Microcontroladores. RP2350. PIO. DMA.
