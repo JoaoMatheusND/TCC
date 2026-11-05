@@ -1,0 +1,209 @@
+\chapter{Conclusão}\label{cap:conclusao}
+
+Este trabalho avaliou experimentalmente o impacto da arquitetura de aquisição
+em um analisador lógico embarcado de baixo custo, comparando, na mesma
+plataforma RP2350 e com o mesmo protocolo, pilha \ac{USB} e codificação
+\ac{RLE}, a amostragem por \ac{PIO} com transferência por \ac{DMA} (Firmware A)
+e a leitura de \ac{GPIO} pela própria \ac{CPU} (Firmware B). A motivação era
+transformar em dado experimental um argumento até então apenas teórico: o de
+que a leitura por software é limitada pelo custo do laço e sujeita a
+\emph{jitter} e a disputas com a comunicação, enquanto um periférico dedicado
+amostra de forma determinística.
+
+Os resultados mostram que a diferença entre as arquiteturas é maior no
+\emph{modo de falhar} do que nos números. O Firmware A entregou um fluxo
+exato e repetível em toda a faixa que sustentou: contagem de bordas igual à
+da referência em todas as taxas ensaiadas com disparo (até 3,66\,MSa/s na
+grade da M1 e 4,05\,MSa/s na M2, sem que o teto desse modo fosse alcançado),
+dispersão do período igual ao limite de quantização e nenhuma amostra
+perdida em captura contínua até 3,54\,MSa/s; em 5,24\,MSa/s, no modo
+contínuo, ele interrompe a captura e sinaliza o erro ao \emph{host}. O
+Firmware B, por sua vez, nunca sinalizou falha: manteve a contagem de bordas
+coerente com a referência até 774,6\,kSa/s (limite que a grade situa entre
+774,6 e 1\,141,7\,kSa/s e que sobe a 2,48\,MSa/s com uma tolerância de
+0,1\,\%), embora já pause a amostragem entre \emph{buffers} nessa faixa; a
+partir de $\approx 1{,}1$\,MSa/s, entregou capturas cuja escala de tempo não corresponde à real: bordas e
+períodos a mais nas capturas com disparo e perda de um quarto a quase metade
+do tempo em captura contínua. A causa não é o custo de cada iteração do
+laço, que permitiria cerca de 4,29\,MSa/s, mas as pausas do laço enquanto o
+mesmo núcleo codifica e enfileira para transmissão o \emph{buffer} anterior.
+Em resposta ao objetivo geral (Capítulo~\ref{cap:introducao}), a leitura de
+\ac{GPIO} pela \ac{CPU}, na implementação medida, em que um único núcleo
+amostra e codifica, basta para capturas curtas com disparo em taxas de até
+centenas de kSa/s, quando são aceitáveis centenas de nanossegundos de
+dispersão no período medido e as emendas não sinalizadas entre
+\emph{buffers}; acima disso, e sempre que a captura é contínua ou o núcleo de
+captura precisa ficar livre, o par \ac{PIO} associado a \ac{DMA} se faz
+necessário frente a essa implementação. A variante que dedica um núcleo à
+amostragem, não medida, é a que poderia alterar essa conclusão. Ela vale
+ainda só para o sinal ensaiado: com sinais pouco compressíveis, o próprio
+Firmware A deixa de sustentar a captura em taxas bem menores, embora sinalize
+a falha.
+
+\section{Atendimento aos objetivos}
+
+O objetivo geral foi atendido por meio de quatro frentes de trabalho:
+
+\begin{enumerate}
+  \item A segunda arquitetura de aquisição, por leitura de \ac{GPIO} pela \ac{CPU}, foi
+        implementada mantendo idênticos o protocolo sigrok-pico, a pilha \ac{USB} e a
+        codificação \ac{RLE}, de modo que as diferenças entre os firmwares comparados
+        se limitam à arquitetura de aquisição e ao que dela decorre (disparo e tamanho
+        dos \emph{buffers}) (Seções~\ref{sec:firmware-a} e~\ref{sec:firmware-b}).
+  \item As quatro métricas (taxa máxima sustentada, \emph{jitter} de amostragem, perda
+        de amostras em captura contínua e ocupação de \ac{CPU}) foram definidas e
+        instrumentadas, incluindo a medição de ocupação pelo contador de ciclos
+        \ac{DWT}, exposta ao \emph{host} por um comando dedicado do protocolo
+        (Seção~\ref{sec:metricas}).
+  \item A bancada foi montada com gerador de onda, analisador lógico de referência
+        armado na mesma borda que o \ac{DAQ} e \emph{scripts} publicamente
+        disponíveis \cite{dias2026artefatos}, que
+        executaram de forma automatizada as 30 repetições de cada condição para os dois
+        firmwares (Seção~\ref{sec:bancada}).
+  \item As duas arquiteturas foram comparadas reportando, para cada diferença medida
+        em M1, M2 e M3, o p-valor ajustado, o tamanho de efeito e o intervalo de
+        confiança; a M4 foi reportada de forma descritiva, por não admitir teste
+        entre os firmwares (Seção~\ref{sec:analise-estatistica} e
+        Capítulo~\ref{cap:resultados}).
+\end{enumerate}
+
+\section{Contribuições}
+
+A principal contribuição é a comparação controlada entre as duas arquiteturas
+de aquisição na mesma plataforma, com o mesmo protocolo, a mesma pilha \ac{USB}
+e a mesma codificação \ac{RLE}, lacuna identificada na literatura consultada,
+em que as duas abordagens aparecem descritas, mas não medidas lado a lado sob
+condições idênticas. Dela resulta o dado que o trabalho entrega a quem projeta
+firmware de instrumentação embarcada, em especial analisadores lógicos,
+osciloscópios de baixo custo e demais aquisições baseadas em microcontrolador:
+a faixa de taxas em que a leitura de \ac{GPIO} por software ainda basta no
+RP2350, em uma implementação de núcleo único, vai até uma taxa entre 774,6 e
+1\,141,7\,kSa/s com contagem de bordas coerente em captura com disparo, e
+aquela a partir da qual o periférico dedicado se faz necessário frente a ela é
+de $\approx 1{,}1$\,MSa/s em captura com disparo e já 1,09\,MSa/s, a menor
+taxa medida, em captura contínua. Mesmo abaixo desses valores, o Firmware B
+pausa a amostragem a cada \emph{buffer}, e a contagem de bordas não mede essas
+pausas. A escolha da arquitetura de captura passa, assim, a poder se
+apoiar em medida, e não em intuição ou na disponibilidade do periférico.
+
+Além dos números, o trabalho mostra que o critério de escolha não deve ser
+apenas a taxa máxima, mas também o custo de detectar a falha em cada
+arquitetura. Quando o amostrador é um periférico independente, a condição de
+falha é o transbordo da fila de \emph{buffers}, que o tratador da interrupção
+do \ac{DMA} detecta fora do caminho da amostragem, de modo que recusar
+explicitamente a captura que não se consegue sustentar não custa nada à
+temporização da amostragem. Quando o amostrador é a própria \ac{CPU}, a condição de falha
+é a perda de um prazo dentro do laço, e detectá-la consome ciclos do mesmo
+laço que já é o recurso escasso. Nos firmwares medidos, essa diferença
+aparece na forma extrema: A aborta sinalizando, B degrada em silêncio,
+entregando capturas que parecem válidas e cuja escala de tempo não corresponde
+à real, falha mais grave em um instrumento de medição, porque o usuário não tem
+como distingui-la de um comportamento real do circuito observado.
+
+Convém, no entanto, separar arquitetura de implementação. O que a arquitetura
+impõe é a existência das pausas na leitura por software, quando o mesmo núcleo
+amostra e codifica, e a observabilidade da falha sem custo de temporização no
+caminho por \ac{PIO} e \ac{DMA}. Já a sinalização é decisão de projeto: o laço
+do Firmware B mantém prazos absolutos no contador \ac{DWT} e poderia contar os
+prazos perdidos e marcar as lacunas no fluxo, o que não foi implementado. O
+próprio Firmware A ilustra o ponto: no caminho com canais analógicos, não
+exercitado nos experimentos, ele deixa a cada bloco uma lacuna que o fluxo
+não marca (Seção~\ref{sec:firmware-a}). O critério que se propõe como
+transferível a outras plataformas é, portanto, o custo de detecção da falha, e
+não o comportamento de um firmware específico.
+
+O trabalho também deixa como produtos os dois firmwares, os \emph{scripts} de
+medição e análise e os dados brutos, publicamente disponíveis
+\cite{dias2026artefatos} para que o experimento possa ser auditado e repetido
+por terceiros.
+
+\section{Limitações e ameaças à validade}\label{sec:limitacoes}
+
+Os resultados devem ser lidos dentro das condições em que foram obtidos. O
+Quadro~\ref{qua:limitacoes} reúne as limitações do estudo e o alcance que cada
+uma restringe.
+
+\begin{quadro}[H]
+  \centering
+  \caption{Limitações do estudo.}
+  \label{qua:limitacoes}
+  \small
+  \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+    \hline
+    \textbf{Limitação} & \textbf{O que ficou de fora}                                                                                                                                                                                                           & \textbf{Alcance do resultado} \\ \hline
+    Sinal único em M1--M3
+                       & Onda quadrada de 100\,kHz em um só canal; não se variou frequência nem densidade de transições
+                       & Como o \ac{RLE} torna a demanda de banda dependente do sinal, sinais mais rápidos ou com mais transições reduzem os tetos dos dois firmwares: com a onda de 1\,MHz, A aborta a partir de 1,68\,MSa/s com 8 e 12 canais \\ \hline
+    Grade de taxas da M1
+                       & A grade salta de 3,66 para 5,39\,MSa/s, taxa em que o ensaio muda para o modo contínuo; o teto de A em captura com disparo não foi alcançado
+                       & A taxa sustentada de A com disparo e as razões entre os firmwares são limites inferiores \\ \hline
+    Faixa de taxas da M2
+                       & M2 medida apenas de 2,0 a 4,05\,MSa/s, faixa em que B já apresenta pausas entre \emph{buffers}
+                       & A dispersão medida em B inclui o efeito das pausas; o \emph{jitter} do laço de B, isolado, não foi medido \\ \hline
+    Apenas a variante de núcleo único do Firmware B
+                       & A variante que dedica um núcleo à amostragem e outro à transmissão (Seção~\ref{sec:firmware-b})
+                       & É justamente a que poderia reduzir as pausas observadas; o teto medido de B vale para a variante de núcleo único                                                                                                                                                       \\ \hline
+    \emph{Buffers} de tamanhos diferentes
+                       & 1\,024 amostras em A contra 8\,192 em B, sem equalização
+                       & A diferença favorece B, de modo que não inverte as conclusões, mas o teto de A em M1 e M3 é específico de sua fila de dois \emph{buffers} de 1\,024 amostras                                                                                                           \\ \hline
+    Bancada única
+                       & Uma placa, um \emph{host} e um analisador de referência sem calibração rastreável
+                       & A baixa dispersão entre repetições de A indica que a bancada não introduziu variação relevante, mas não elimina vieses comuns às duas arquiteturas                                                                                                                     \\ \hline
+    Plataforma única
+                       & Somente o RP2350 a 150\,MHz
+                       & Os números são específicos dessa plataforma; a estrutura do resultado: \ac{CPU} dividida entre amostrar e transmitir contra um periférico que amostra sozinho, tende a se repetir em outros microcontroladores, com valores diferentes                                 \\ \hline
+  \end{tabularx}
+  \fonte{Autoria própria.}
+\end{quadro}
+
+Além dessas limitações, o planejamento do experimento identificou ameaças à
+validade nas categorias de conclusão, interna, construto e externa, reunidas
+com as respectivas mitigações no Quadro~\ref{qua:ameacas}
+(Seção~\ref{sec:ameacas}). As mitigações reduzem, mas não eliminam, essas ameaças. As que permaneceram
+relevantes à luz dos dados, em especial o sinal único e a variante de núcleo
+único do Firmware B, são as retomadas no Quadro~\ref{qua:limitacoes} e nos
+trabalhos futuros a seguir.
+
+\section{Trabalhos futuros}\label{sec:trabalhos-futuros}
+
+Os desdobramentos identificados organizam-se em três frentes, resumidas no
+Quadro~\ref{qua:futuros}: \textbf{elevar os tetos} de cada arquitetura,
+atacando as causas isoladas no Capítulo~\ref{cap:resultados}; \textbf{isolar as
+  causas} que o experimento apontou mas não decompôs, em especial as fontes do
+\emph{jitter} do Firmware B; e \textbf{ampliar a validade} dos resultados para
+além das condições do Quadro~\ref{qua:limitacoes}.
+
+\begin{quadro}[H]
+  \centering
+  \caption{Trabalhos futuros.}
+  \label{qua:futuros}
+  \small
+  \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{2.1cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+    \hline
+    \textbf{Frente} & \textbf{Trabalho proposto}                                                                                                                                                       & \textbf{Origem e resultado esperado} \\ \hline
+    Elevar os tetos
+                    & Medir a variante de dois núcleos do Firmware B, com amostragem e transmissão em núcleos distintos (Seção~\ref{sec:firmware-b})
+                    & As pausas do laço, e não o custo da iteração, limitam B (Seção~\ref{sec:res-m1}); separar as tarefas deve aproximar a taxa sustentada dos $\approx 4{,}29$\,MSa/s do teto do laço                                        \\ \cline{2-3}
+                    & Tirar a codificação \ac{RLE} da \ac{CPU} do Firmware A, por um programa \ac{PIO} ou pelo segundo núcleo, e aprofundar a fila de \emph{buffers} da \ac{DMA}, hoje limitada a dois
+                    & Os dados indicam que o limite de A está no consumo das amostras, e não na amostragem (Seções~\ref{sec:res-m1} e~\ref{sec:res-m4}); ambos são melhoráveis sem trocar de arquitetura \\ \hline
+    Isolar as causas
+                    & Repetir a M2 do Firmware B em capturas que caibam em um único \emph{buffer} e em taxas de até 774,6\,kSa/s, variando a verificação periódica do laço
+                    & A M2 foi medida em faixa na qual as pausas entre \emph{buffers} dominam a dispersão (Seção~\ref{sec:res-m2}); o ensaio isolaria o \emph{jitter} do laço e o peso de cada fonte \\ \cline{2-3}
+                    & Refinar a grade de taxas da M1 entre 3,66 e 5\,MSa/s na captura com disparo
+                    & Localiza o teto do Firmware A no modo de quantidade fixa, que a grade atual não alcançou (Seção~\ref{sec:res-m1}) \\ \cline{2-3}
+                    & Medir externamente, por osciloscópio em modo histograma ou persistência, um pino de \emph{debug} comutado pelo laço de amostragem
+                    & Verificação independente do \emph{jitter}, hoje obtido pela análise dos períodos capturados, sem depender do próprio caminho de dados sob teste                                                                         \\ \hline
+    Ampliar a validade
+                    & Repetir as medições com sinais de frequências e densidades de transição variadas, em vários canais simultaneamente
+                    & Levanta a limitação do sinal único (Quadro~\ref{qua:limitacoes}) e separa o efeito do \ac{RLE} do efeito da arquitetura                                                                                                 \\ \cline{2-3}
+                    & Avaliar a latência de disparo e a decodificação de protocolos reais nas duas arquiteturas
+                    & Estende a comparação a propriedades que as quatro métricas não cobrem, mas que definem o uso prático de um analisador lógico                                                                                            \\ \hline
+  \end{tabularx}
+  \fonte{Autoria própria.}
+\end{quadro}
+
+Entre elas, a variante de dois núcleos do Firmware B é a mais imediata: é a
+única que pode alterar a conclusão prática deste trabalho, já que ataca
+exatamente o mecanismo que limita a arquitetura por software nas quatro
+métricas medidas: as pausas do laço enquanto o mesmo núcleo codifica e
+enfileira os dados.

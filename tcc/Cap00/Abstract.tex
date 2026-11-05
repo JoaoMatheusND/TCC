@@ -1,0 +1,39 @@
+\chapter*{Abstract}
+\noindent
+Debugging embedded systems requires instruments able to capture digital
+signals with tight timing precision, yet the cost of commercial logic
+analyzers restricts access to them in education and research. A low-cost
+data acquisition (DAQ) device based on the RP2350, compatible with
+Sigrok/PulseView, offloads sampling to the Programmable I/O (PIO) subsystem
+and data movement to the Direct Memory Access (DMA) controller, but the
+benefit of this architecture over polling the general-purpose I/O (GPIO)
+pins with the CPU itself had not been quantified. This work implements a
+second firmware version, in which a single core samples in software and
+encodes the data, with the same protocol, USB stack and RLE encoding, and
+compares both architectures in terms of maximum sustained sample rate,
+period dispersion (jitter), sample loss in continuous capture and CPU load,
+using 30 repetitions per condition, a USB logic analyzer as an external
+reference and the Mann--Whitney test with Holm--Bonferroni correction. The
+PIO+DMA architecture kept its edge count equal to the reference, up to the
+window cut, at every rate tested in triggered capture, up to 4.05\,MSa/s,
+with period dispersion close to the quantization limit, and lost no samples
+in continuous capture up to 3.54\,MSa/s, aborting with an explicit error at
+5.24\,MSa/s; its CPU load ranged from 0.08\,\% to 83\,\%. CPU polling
+occupied 100\,\% of the capture core and, although its loop would allow
+about 4.29\,MSa/s, it kept the edge count consistent only up to a rate
+between 774.6 and 1,141.7\,kSa/s and failed silently above it: the loop
+stalls while the same core encodes and queues the data, which happens at
+every buffer, even at lower rates. Triggered captures showed extra edges,
+period dispersion was 106 to 400\,ns above quantization and 24\,\% to 43\,\%
+of the sampling time was lost in continuous capture. For the signal tested
+and this single-core implementation, CPU polling is therefore sufficient for
+short captures at rates up to hundreds of kSa/s, while PIO+DMA is needed at
+higher rates, in continuous capture or when the CPU must remain free; the
+dual-core variant, which was not measured, could change this conclusion. The
+architecture also sets the cost of detecting failure: under PIO+DMA, queue
+overflow is detected outside the sampling path without affecting it, whereas
+in software acquisition, detecting the stalls consumes cycles of the sampling
+loop itself.
+
+\vspace{5mm}
+\noindent\textbf{\textit{Keywords}:} Data acquisition. Logic analyzer. Microcontrollers. RP2350. PIO. DMA.

@@ -1,0 +1,743 @@
+\chapter{Metodologia}\label{cap:metodologia}
+
+Este capítulo descreve como a comparação entre as arquiteturas de aquisição é
+conduzida experimentalmente. Apresenta-se primeiro a visão geral do método,
+junto com a bancada experimental e o hardware utilizado
+(Seção~\ref{sec:bancada}), seguidos da implementação de cada firmware
+(Seções~\ref{sec:firmware-a} e~\ref{sec:firmware-b}), das métricas e
+procedimentos adotados em cada experimento (Seção~\ref{sec:metricas}) e da
+análise estatística (Seção~\ref{sec:analise-estatistica}).
+
+\section{Visão geral do método}
+
+Este trabalho conduz uma comparação experimental controlada entre duas
+arquiteturas de firmware de aquisição executando sobre o mesmo hardware, o
+mesmo protocolo de \emph{host} e as mesmas condições de teste. Muda-se o
+mecanismo de amostragem e de transporte interno dos dados, permanecendo
+idênticos a placa, o clock do sistema, a pilha \ac{USB} (TinyUSB), o protocolo
+sigrok-pico, a codificação \ac{RLE}, a divisão de tarefas entre os dois
+núcleos do RP2350 (Seção~\ref{sec:firmware}), o software do \emph{host} e os
+sinais de estímulo. Três diferenças decorrem da própria arquitetura e são
+mantidas de propósito: o disparo, feito pelo \ac{PIO} em A e por comparação
+em software em B; o tamanho dos \emph{buffers} de amostras, maior em B para
+reduzir suas pausas de amostragem; e o que o núcleo de captura faz durante a
+aquisição (Seção~\ref{sec:firmware-b}). O hardware é tomado como plataforma
+fixa, e as diferenças observadas nas métricas são atribuídas à arquitetura de
+firmware e ao que dela decorre, com as ressalvas da
+Seção~\ref{sec:ameacas}.
+
+São comparadas duas configurações de firmware:
+
+\begin{itemize}
+  \item \textbf{Firmware A}: aquisição por \ac{PIO} com transferência por \ac{DMA} (Seção~\ref{sec:firmware-a});
+  \item \textbf{Firmware B}: aquisição por leitura dos \acp{GPIO} pela própria \ac{CPU}, por meio do bloco \ac{SIO} e das funções do Pico \ac{SDK} \cite{rpi2024sdk} (Seção~\ref{sec:firmware-b}).
+\end{itemize}
+
+\subsection{Delimitação de autoria e disponibilidade dos artefatos}\label{sec:autoria}
+
+Os dois firmwares comparados neste trabalho foram escritos pelo autor, assim
+como a extensão do protocolo para consulta da ocupação de \ac{CPU} (comando
+\texttt{'o'}), a instrumentação pelo contador de ciclos \ac{DWT}, a bancada
+automatizada de medição e os \emph{scripts} de análise estatística. São de
+terceiros, e tomados como plataforma fixa, a placa de aquisição
+\cite{nivuciis_msa}, o protocolo de comunicação com o \emph{host}, herdado do
+projeto sigrok-pico \cite{picocoder2023}, e a pilha \ac{USB} TinyUSB,
+distribuída com o Pico \ac{SDK} \cite{rpi2024sdk}. O Firmware A é tomado como
+linha de base da comparação; o Firmware B foi implementado especificamente para
+esta investigação, em \emph{branch} dedicado a partir do mesmo \emph{commit}
+base.
+
+Os dois firmwares, os programas da bancada, os \emph{scripts} de análise e os
+dados brutos de todas as repetições estão publicamente disponíveis
+\cite{dias2026artefatos}, de modo que as medições relatadas no
+Capítulo~\ref{cap:resultados} possam ser auditadas e repetidas por terceiros
+\cite{collberg2016}.
+
+\subsection{Bancada experimental}\label{sec:bancada}
+
+A bancada experimental segue as recomendações da literatura de avaliação de
+desempenho de sistemas computacionais para controle de variáveis externas e
+rastreabilidade dos resultados \cite{georges2007,hoefler2015}: instrumentos,
+versões de software e procedimentos de coleta são fixados e registrados antes
+da execução das medições, de modo que a variável independente observada seja
+a arquitetura de firmware (Seções~\ref{sec:firmware-a}
+e~\ref{sec:firmware-b}).
+
+A Figura~\ref{fig:conjunto} mostra o diagrama e a montagem física da
+bancada, cujos componentes são descritos a seguir.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Bancada experimental.}
+  \label{fig:conjunto}
+  \subfloat[Diagrama de fluxo da bancada.\label{fig:img1}]{\includegraphics[width=0.45\linewidth]{Cap03/img/bancada_diagrama.png}}
+  \hfill
+  \subfloat[Montagem física: (A) gerador de funções Agilent 33210A; (B) DAQ baseado no RP2350B; (C) instrumento de referência.\label{fig:img2}]{\includegraphics[width=0.45\linewidth]{Cap03/img/bancada_fisica.png}}
+  \fonte{Autoria própria.}
+\end{figure}
+
+\subsubsection{Placa de aquisição e gerador de sinais}\label{sec:hardware-daq}
+
+A plataforma é o \ac{DAQ}, centrado na RP2350B, com doze canais de
+aquisição digital acessíveis por conector de cabo plano de 20 vias (com
+tradução de nível para alvos de 1,8\,V a 5,0\,V) e interfaces passivas de
+barramento industrial RS-485 e RS-232, não exercitadas nos experimentos, comunicando-se com o \emph{host} por \ac{USB} 2.0
+Full Speed.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Placa de aquisição (DAQ) baseada no RP2350B.}
+  \label{fig:placa-daq}
+  \subfloat[Face superior.]{\includegraphics[width=0.45\linewidth]{Cap03/img/placa_daq_top.jpg}}
+  \hfill
+  \subfloat[Face inferior.]{\includegraphics[width=0.45\linewidth]{Cap03/img/placa_daq_bottom.jpg}}
+  \fonte{\citeonline{nivuciis_msa}.}
+\end{figure}
+
+Em altas velocidades, a integridade física do sinal impõe requisitos ao próprio
+hardware de captura: trilhas devem ser tratadas como linhas de transmissão, com
+impedância controlada e caminho de retorno de baixa indutância, sob pena de
+reflexões e interferência eletromagnética corromperem o sinal antes mesmo da
+amostragem \cite{bogatin2011,fan2010,morrison2007}. A placa utilizada
+(Figura~\ref{fig:placa-daq}) é de terceiros e foi tomada como plataforma
+fixa; seu projeto de integridade de sinal não é avaliado neste trabalho.
+
+Um gerador de funções Agilent 33210A (até 10\,MHz) produz o sinal de entrada
+de todos os ensaios.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Gerador de funções Agilent 33210A.}
+  \label{fig:gerador-agilent}
+  \includegraphics[width=0.5\linewidth]{Cap03/img/gerador_agilent_33210a.png}
+  \fonte{adaptado de \citeonline{agilent2008}.}
+\end{figure}
+
+Como a banda do \ac{USB} 2.0 Full Speed (12\,Mbit/s) é ordens de grandeza inferior à
+taxa de produção de amostras no limite da plataforma, o \ac{RLE}
+(Seção~\ref{sec:sigrok-pico}) e o buffer em \ac{SRAM} são componentes essenciais do
+caminho de dados em ambas as arquiteturas comparadas \cite{picocoder2023}.
+
+\subsubsection{Instrumentos, \emph{host} e medição}\label{sec:bancada-instrumentos}
+
+\begin{itemize}
+  \item \textbf{Gerador de padrões:} o gerador de funções Agilent 33210A (Figura~\ref{fig:gerador-agilent}), configurado para produzir a onda quadrada de 100\,kHz usada em M1, M2 e M3 (em M4, 1\,MHz; ver Seção~\ref{sec:metricas}), aplicada em paralelo ao canal D3 do \ac{DAQ} e ao analisador lógico de referência. A frequência de 100\,kHz foi escolhida porque a compactação \ac{RLE} mantém o fluxo abaixo do teto do \ac{USB} Full-Speed em toda a faixa de taxas varrida; com 1\,MHz, o fluxo quase não se compacta e a medida passa a refletir o barramento, e não o amostrador.
+
+  \item \textbf{DAQ de referência:} analisador lógico \ac{USB} genérico, de baixo custo, com 8 canais e 24\,MSa/s, baseado no microcontrolador Cypress CY7C68013A (FX2LP) (Figura~\ref{fig:instrumento-ref}), controlado pelo \emph{script} do \emph{host}, que configura o canal e a taxa, arma o disparo por borda de subida e exporta a captura. O DAQ de referência é usado como contador de bordas externo e para aferição da frequência do gerador. A cada repetição, o \emph{script} do \emph{host} arma o \ac{DAQ} sob teste e o DAQ de referência na mesma borda de subida e compara as duas capturas da mesma janela. Operado a 12\,MSa/s, o DAQ de referência resolve o tempo em passos de 83,3\,ns, isto é, 120 amostras por período da onda de 100\,kHz, margem suficiente para a contagem de bordas e de períodos frente às taxas do \ac{DAQ} (até $\approx 5$\,MSa/s). A base de tempo do DAQ de referência depende de um cristal sem calibração rastreável, o que limita a exatidão absoluta da frequência medida à tolerância desse cristal (tipicamente dezenas de ppm). A integridade da própria referência não é verificada por um terceiro instrumento; o indício disponível é que sua contagem de bordas coincide, a menos do corte da janela, com a do Firmware A em todas as repetições íntegras (Seção~\ref{sec:res-m1}). A medição externa de tempos por um pino de \emph{debug} comutado pelo firmware não foi empregada (Seção~\ref{sec:trabalhos-futuros}); a métrica M4 é medida internamente por \ac{DWT} (item a seguir).
+
+  \begin{figure}[htbp]
+    \centering
+    \caption{Analisador lógico de referência (FX2LP, 8 canais, 24\,MHz).}
+    \label{fig:instrumento-ref}
+    \includegraphics[width=0.5\linewidth]{Cap03/img/intrumento_ref.png}
+    \fonte{Autoria própria.}
+  \end{figure}
+
+  \item \textbf{Host:} o mesmo computador para todas as medições, com os scripts em \texttt{benchmarks/} (Seção~\ref{sec:metricas}) controlando a captura via protocolo sigrok-pico (repetições, varreduras de taxa); versões fixadas e registradas.
+
+  \item \textbf{Medição interna:} contador de ciclos \ac{DWT} (\texttt{DWT->CYCCNT}) do Cortex-M33 para ciclos por amostra e ocupação de \ac{CPU} \cite{arm2021}, exposto ao \emph{host} por um comando de protocolo dedicado (\texttt{'o'}, fora do conjunto sigrok-pico padrão) consultado por \texttt{benchmarks/m4\_cpu\_occupancy.py}. A perda de amostras não é contada no firmware: é medida no \emph{host}, a partir do fluxo entregue, e o transbordamento da fila de \emph{buffers} de A aparece ao \emph{host} como aborto da captura (\texttt{!!!}).
+
+  \item \textbf{Análise:} scripts Python (diretório \texttt{benchmarks/} do repositório público do trabalho \cite{dias2026artefatos}) para contagem de bordas contra a referência, extração de períodos, histogramas de \emph{jitter} e estatística descritiva, de modo a viabilizar a repetibilidade integral do experimento por terceiros \cite{collberg2016}.
+\end{itemize}
+
+Antes das medições finais, a bancada foi validada executando M1 e M3 com
+ambos os firmwares e comparando as capturas com a referência.
+
+\section{Implementação dos firmwares}\label{sec:firmware}
+
+Ambos os firmwares foram construídos sobre o Pico \ac{SDK}, em C
+\emph{bare-metal}, e organizam-se em módulos: \ac{ADC}, captura, abstração de
+\ac{PIO}/DMA ou \ac{GPIO}/CPU, protocolos sigrok, interfaces seriais e utilitários \ac{USB}
+com \emph{TinyUSB}, distribuída com o \ac{SDK} \cite{rpi2024sdk}. A opção por
+firmware \emph{bare-metal}, sem \ac{RTOS}, decorre de a temporização crítica
+ser garantida pelo hardware (\ac{PIO}/DMA) e não por um escalonador de tarefas
+(Seção~\ref{sec:hardware}); as \acp{API} leves do Pico \ac{SDK} (\texttt{pico\_time},
+\texttt{hardware\_*}) oferecem acesso direto aos periféricos com sobrecusto
+próximo de zero \cite{rpi2024sdk}. Os dois firmwares implementam o mesmo
+conjunto de comandos do protocolo, resumido no Quadro~\ref{qua:comandos}.
+
+Os dois firmwares usam os dois núcleos do RP2350 com a mesma divisão de
+tarefas (Figuras~\ref{fig:fw-a-arch} e~\ref{fig:fw-b-arch}). O núcleo 0
+executa a pilha TinyUSB e move os \emph{bytes} entre a interface \ac{USB}
+\ac{CDC} e dois anéis em \ac{SRAM}, um de recepção e um de transmissão, este
+com 32\,KB. O núcleo 1 interpreta os comandos do protocolo, conduz a captura,
+aplica o \ac{RLE} e deposita os dados codificados no anel de transmissão,
+aguardando quando ele está cheio. A diferença entre as arquiteturas está,
+portanto, no que o núcleo 1 faz durante a captura: em A, ele apenas consome os
+\emph{buffers} que o \ac{PIO} e o \ac{DMA} preenchem; em B, ele próprio lê os
+pinos e, por isso, não amostra enquanto codifica e enfileira um
+\emph{buffer}.
+
+\begin{quadro}[H]
+  \centering
+  \caption{Comandos do protocolo sigrok-pico.}
+  \label{qua:comandos}
+  \small
+  \begin{tabularx}{\linewidth}{|l|>{\raggedright\arraybackslash}X|}
+    \hline
+    \textbf{Comando} & \textbf{Descrição}                             \\ \hline
+    \texttt{i}       & Consulta de identificação                      \\ \hline
+    \texttt{R}       & Define a taxa de amostragem (5\,kHz--120\,MHz em A; em B, limitada em tempo de execução pela calibração do laço) \\ \hline
+    \texttt{L}       & Define o número de amostras (1--1.000.000)     \\ \hline
+    \texttt{a}       & Consulta a escala do canal analógico           \\ \hline
+    \texttt{A}       & Habilita/desabilita canal analógico            \\ \hline
+    \texttt{D}       & Habilita/desabilita canal digital              \\ \hline
+    \texttt{F}       & Captura de comprimento fixo                    \\ \hline
+    \texttt{C}       & Captura contínua                               \\ \hline
+    \texttt{t}       & Configura disparo                              \\ \hline
+    \texttt{o}       & Consulta a ocupação de \acs{CPU} (extensão deste trabalho) \\ \hline
+  \end{tabularx}
+  \fonte{Autoria própria.}
+  \nota{os dois firmwares tratam de modo distinto uma taxa fora da faixa suportada: o Firmware A satura o valor no limite da faixa e confirma o comando, ao passo que o Firmware B recusa a taxa. O teto do Firmware B não é uma constante do código: deriva da calibração do custo do laço feita na partida (Seção~\ref{sec:firmware-b}), e as medições deste trabalho obtiveram $\approx 4{,}05$\,MSa/s.}
+\end{quadro}
+
+\subsection{Firmware A (linha de base): aquisição por PIO+DMA}\label{sec:firmware-a}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Arquitetura do Firmware A (PIO+DMA).}
+  \label{fig:fw-a-arch}
+  \vspace{-1cm}
+  \includegraphics[width=1\linewidth]{Cap03/img/fw_A_arch.png}
+  \vspace{-2cm}
+  \fonte{Autoria própria.}
+\end{figure}
+
+O Firmware A (Figura~\ref{fig:fw-a-arch}) implementa a amostragem inteiramente em hardware. Seis variantes
+do programa de captura digital são compiladas no binário (dezoito programas
+\ac{PIO} ao todo, contando as variantes equivalentes dos módulos RS-232 e
+RS-485): a mais simples executa em laço a
+instrução \texttt{in pins, 12}, amostrando os doze canais digitais a cada ciclo
+do clock da máquina de estados, com \emph{autopush} para o \ac{FIFO} a cada amostra
+de 12 bits, que é o caminho de taxa máxima, com \emph{jitter} limitado ao divisor de
+clock da máquina de estados (Equação~\ref{eq:clkdiv}). As demais
+variantes antepõem ao laço de captura um estágio de espera baseado em
+\texttt{jmp pin}, que monitora o \ac{GPIO} de disparo sem custo sobre a temporização
+da captura subsequente, implementando disparo assistido por hardware (borda de
+subida, borda de descida, qualquer borda, nível alto e nível baixo). Em todos
+os casos, a taxa é programada pelo divisor de clock da máquina de estados
+(Equação~\ref{eq:clkdiv}), cobrindo o intervalo de 5\,kHz a 120\,MHz exposto ao
+\emph{host}.
+
+O transporte das amostras também ocorre sem intervenção da \ac{CPU} no caminho
+de cada amostra. Nas capturas apenas digitais, de comprimento fixo
+(\texttt{F}) ou contínuas (\texttt{C}) e com ou sem disparo, dois canais de
+\ac{DMA}, ritmados pelo \ac{DREQ} do \ac{FIFO} de recepção do \ac{PIO}, transferem as amostras
+(unidades de 16 bits) para dois \emph{buffers} de 1\,024 amostras em \ac{SRAM} em
+regime de \emph{ping-pong}: cada canal, ao completar seu \emph{buffer},
+dispara o outro por encadeamento (\emph{chain}), de modo que a amostragem
+nunca para; a interrupção de fim de bloco apenas contabiliza o \emph{buffer}
+produzido e verifica se a \ac{CPU} já liberou o anterior. Se a \ac{CPU} ainda não tiver
+consumido um \emph{buffer} quando o \ac{DMA} precisar reescrevê-lo, a fila de dois
+\emph{buffers} transbordou: o firmware aborta a captura e envia ao \emph{host} o
+marcador de erro \texttt{!!!} do protocolo, em vez de descartar amostras em
+silêncio. Com disparo, o programa \ac{PIO} espera a condição via \texttt{jmp pin} e
+só então entra no mesmo laço de amostragem, de forma que o disparo apenas
+determina o início da captura. Na captura contínua, o \ac{DMA} é armado uma única
+vez e o fluxo é fatiado nos blocos de $L$ amostras definidos pelo comando
+\texttt{L}, cada um encerrado por um marcador com a contagem de \emph{bytes}
+do bloco (\texttt{\$n+}), que permite ao \emph{host} verificar a completude. Apenas
+as capturas com canais analógicos usam um caminho distinto, em que a \ac{CPU}
+para e rearma o \ac{PIO} e o \ac{DMA} a cada bloco, deixando uma lacuna não
+amostrada de $\approx 1{,}5$\,\textmu s por bloco que o fluxo não marca; esse
+caminho não é exercitado nos experimentos, mas convém registrar que, nele, o
+próprio Firmware A degrada em silêncio pelo mesmo mecanismo que este trabalho
+atribui à leitura por software, o que delimita o alcance das afirmações do
+parágrafo seguinte ao caminho puramente digital.
+Em todos os casos, fora do caminho crítico de amostragem, a \ac{CPU} aplica \ac{RLE}
+aos \emph{buffers} capturados e os transmite ao \emph{host} via \ac{USB}
+\ac{CDC} (TinyUSB). Na codificação, cada sequência de amostras idênticas
+consecutivas é emitida como a amostra seguida de \emph{bytes} de contagem: um
+\emph{byte} ``fino'' acrescenta até 32 repetições, e um ``grosso'', até 1\,568,
+emitindo-se tantos \emph{bytes} quantos a sequência exigir, de modo que o
+comprimento da sequência não tem teto. Uma sequência ocupa, assim, dois
+\emph{bytes} com até sete canais habilitados e três com oito a quatorze, pois
+a amostra em si usa um \emph{byte} a cada sete canais.
+
+Durante a captura puramente digital, portanto, a \ac{CPU} permanece
+\textbf{fora do caminho de amostragem}: em nenhum dos dois modos ela lê os
+pinos ou conta ciclos por amostra; seu papel se limita a monitorar \ac{DMA} e
+conexão \ac{USB} e, entre blocos, codificar e transmitir os dados já
+amostrados, abortando a captura se o \emph{host} desconectar. Essa é a
+propriedade arquitetural cujo valor este trabalho quantifica, e é dela, e não
+do firmware como um todo, que tratam as conclusões.
+
+\subsection{Firmware B: aquisição por GPIO+CPU}\label{sec:firmware-b}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Arquitetura do Firmware B (GPIO+CPU).}
+  \label{fig:fw-b-arch}
+  \vspace{-1cm}
+  \includegraphics[width=1\linewidth]{Cap03/img/fw_B_arch.png}
+  \vspace{-2cm}
+  \fonte{Autoria própria.}
+\end{figure}
+
+O Firmware B (Figura~\ref{fig:fw-b-arch}) substitui os estágios de amostragem e transporte do caminho de
+dados por software, mantendo inalterados os estágios de codificação e
+transmissão (\ac{RLE}, TinyUSB, protocolo, formato das amostras). As amostras são
+obtidas pela leitura direta do registrador de entrada do bloco \ac{SIO}
+(\texttt{sio\_hw->gpio\_in}), que retorna o estado de todos os \acp{GPIO} em uma
+única leitura de 32 bits, da qual se extraem os 12 bits dos canais; essa é a
+forma mais rápida de leitura de \ac{GPIO} disponível à \ac{CPU} no RP2350. Cabe
+distinguir a leitura do laço: o custo por iteração medido adiante
+(Seção~\ref{sec:res-m1}) é o deste firmware, que escreve a amostra nos
+\emph{buffers} de todos os módulos ativos e mantém o serviço do canal
+analógico, e não o de um laço mínimo dedicado à captura digital, que seria
+mais barato. O núcleo do
+firmware é um laço apertado que lê o \ac{SIO}, armazena a amostra no buffer e
+controla o período pelo contador de ciclos \texttt{CYCCNT} da unidade \ac{DWT}, que conta os
+ciclos de $f_{clk}$: cada amostra espera o seu próprio prazo absoluto, obtido
+somando o período ao prazo anterior, com a parte fracionária do período
+acumulada em ponto fixo para que capturas longas não derivem. Assim, um atraso
+eventual do laço atinge apenas a amostra em que ocorre, e as seguintes retomam
+a grade de tempo, em vez de alongar todos os períodos. Na inicialização, o
+firmware mede o custo de uma iteração do laço ($C_{iter}$) e recusa taxas que
+exijam menos ciclos por amostra que esse custo acrescido de uma margem de
+5\,\%: com os $C_{iter} = 35$ ciclos medidos (Seção~\ref{sec:res-m1}), o
+período mínimo aceito é de 37 ciclos, isto é, um teto de
+$150\,\text{MHz}/37 \approx 4{,}05$\,MSa/s, contra os
+$f_{clk}/C_{iter} \approx 4{,}29$\,MSa/s do laço sem margem. O laço é escrito em C e alocado em \ac{SRAM}, e não executado a partir
+da flash, por meio do atributo \texttt{\_\_no\_inline\_not\_in\_flash\_func}
+do Pico \ac{SDK}, de modo que sua temporização não dependa do estado do cache
+de \acs{XIP}. O laço não desabilita interrupções; a interrupção do
+\ac{USB} e os temporizadores do firmware, porém, são atendidos pelo núcleo 0,
+de modo que, nas capturas digitais medidas, o núcleo que amostra não tem
+interrupção própria a atender. A cada 64 amostras, o laço consulta o pedido
+de aborto e o estado da conexão e atende o canal analógico, e o atraso dessa
+verificação recai sobre a amostra em que ocorre.
+
+Uma variante adicional, implementada no mesmo \emph{branch} mas desabilitada
+na compilação usada nos experimentos (opção \texttt{ANA\_DUALCORE\_SAMPLING},
+desligada por omissão), retira do núcleo 1 a codificação: ele executa
+exclusivamente o laço de amostragem, escrevendo em um buffer circular em
+\ac{SRAM}, enquanto o núcleo 0, além do TinyUSB, consome esse buffer, aplica o
+\ac{RLE} e envia os dados. A sincronização usa índices de escrita/leitura em
+posições de memória distintas (produtor único/consumidor único), sem travas no
+caminho quente, e as interrupções permanecem desabilitadas no núcleo 1 durante
+a captura. Todos os resultados do Capítulo~\ref{cap:resultados} referem-se à
+variante medida, que o texto chama, por brevidade, de variante de núcleo
+único: aquela em que um único núcleo amostra, codifica e enfileira os dados
+para transmissão, ainda que a pilha \ac{USB} rode no outro núcleo, como no
+Firmware A.
+
+O disparo por borda/nível, por sua vez, é implementado por comparação em
+software no próprio laço (leitura, máscara e comparação com o estado anterior),
+ao contrário do Firmware A, cujo disparo é assistido por hardware via \ac{PIO}
+(Seção~\ref{sec:firmware-a}). Fora esses pontos, o tratamento dado aos dados
+é o mesmo: protocolo sigrok-pico, \ac{RLE}, TinyUSB e seu anel de
+transmissão, divisão de tarefas entre os núcleos, clock do sistema e placa são
+idênticos, e mudam os mecanismos de amostragem e transporte e, em consequência
+deles, o tamanho do par de \emph{buffers} de amostras digitais: 1\,024
+amostras cada no Firmware A e 8\,192 no Firmware B. Os arquivos-fonte, porém,
+não são idênticos: além dos módulos de captura e do tratador do protocolo, que
+contêm as rotinas de cada arquitetura, diferem os módulos do \ac{ADC}, dos
+canais digitais, das interfaces RS-232 e RS-485, do \acs{LED} e dos utilitários
+\ac{USB}, e a configuração de compilação. Entre essas diferenças, a que
+interfere na comparação é o serviço do canal analógico, que o Firmware B
+atende dentro do laço de amostragem, a cada 64 amostras
+(Seção~\ref{sec:firmware-b}); as demais não participam do caminho das amostras
+digitais medidas.
+No Firmware B, o núcleo de captura não amostra enquanto codifica e enfileira
+um \emph{buffer}, de modo que cada fronteira de \emph{buffer} é uma pausa na
+amostragem, tanto na captura de comprimento fixo quanto na contínua: ao
+retomar, o laço reinicia sua grade de prazos, e o fluxo entregue ao
+\emph{host} não registra a duração da pausa. \emph{Buffers} maiores reduzem o
+número dessas pausas e, portanto, favorecem o Firmware B na comparação. No
+Firmware A, em que o \ac{DMA} continua amostrando durante o envio, o tamanho
+original do projeto foi mantido. O Firmware B foi desenvolvido em
+\emph{branch} dedicado do mesmo repositório, a partir do mesmo \emph{commit}
+base do Firmware A; os \emph{commits} exatos de cada firmware medido
+acompanham os artefatos \cite{dias2026artefatos}.
+
+\subsection{Ocupação de memória dos firmwares}\label{sec:fw-memoria}
+
+A Tabela~\ref{tab:fw-memoria} compara o tamanho dos dois binários, obtido das
+seções do arquivo \ac{ELF} gerado na compilação, em relação à flash de 4\,MB
+declarada para a placa e aos 512\,KB de \ac{SRAM} principal do RP2350. A
+diferença entre as duas versões concentra-se na seção de dados não
+inicializados (\ac{BSS}), que abriga os \emph{buffers} de amostras.
+
+\begin{table}[H]
+  \centering
+  \caption{Ocupação de memória dos Firmwares A e B.}
+  \label{tab:fw-memoria}
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    \textbf{Seção}                 & \textbf{Firmware A} & \textbf{Firmware B} & \textbf{B $-$ A} \\
+    \midrule
+    Código e constantes (flash)    & 51,7\,KB            & 46,2\,KB            & $-5{,}5$\,KB     \\
+    Dados não inicializados (\acs{BSS})  & 109,2\,KB           & 225,3\,KB           & $+116{,}1$\,KB   \\
+    \midrule
+    Ocupação da flash (4\,MB)      & 1,3\,\%             & 1,1\,\%             & ---              \\
+    Ocupação da \acs{SRAM} (512\,KB, só \acs{BSS})     & 21,3\,\%            & 44,0\,\%            & ---              \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Autoria própria.}
+\end{table}
+
+Os dois binários ocupam uma fração pequena da flash. O Firmware A é 5,5\,KB
+maior por embutir as seis variantes de programa \ac{PIO} e o código de configuração
+e encadeamento do \ac{DMA}, que o Firmware B substitui por um laço único em C. Na
+\ac{SRAM}, a relação se inverte: o Firmware B ocupa o dobro. Toda a diferença vem
+dos \emph{buffers}: a constante de tamanho de bloco, elevada de 1\,024 para
+8\,192 amostras, é compartilhada pelos pares de \emph{buffers} dos módulos
+digital, RS-232 e RS-485 (seis \emph{buffers} de 2\,KB passam a 16\,KB, ou
+84\,KB a mais), e o disparo por software de B mantém um histórico circular de
+8\,192 palavras de 32 bits para as amostras de pré-disparo (32\,KB), que em A
+é dispensado pelo disparo assistido pelo \ac{PIO}. As estruturas do TinyUSB e o
+anel de transmissão \ac{USB} são idênticos nos dois. Mesmo com 44\,\% da \ac{SRAM}, o
+Firmware B ainda cabe com folga no RP2350; o custo de memória, portanto, não
+restringe a comparação, mas indica que a compensação adotada para B (blocos
+maiores para reduzir as pausas de amostragem) é paga em \ac{SRAM}, recurso que o
+Firmware A preserva.
+
+\section{Métricas e procedimentos experimentais}\label{sec:metricas}
+
+As métricas adotadas são quatro, definidas antes da coleta: taxa de amostragem máxima
+sustentada, \emph{jitter} de amostragem, taxa de perda de amostras e ocupação
+de \ac{CPU}. O único critério alterado depois da coleta foi a tolerância de
+contagem da M1, mudança declarada adiante. Restringir o conjunto a essas quatro grandezas, previamente definidas e
+não selecionadas \emph{a posteriori}, evita diluir o orçamento experimental
+(réplicas, tempo de bancada) em comparações que não sustentam o objetivo
+geral do trabalho e reduz o risco de \emph{garden of forking paths} na análise
+\cite{georges2007,mytkowicz2009}.
+
+Cada métrica é executada com $N = 30$ repetições por ponto de medição, tamanho
+amostral escolhido, conforme detalhado na Seção~\ref{sec:analise-estatistica},
+por equilibrar a precisão dos intervalos de confiança e o tempo de bancada,
+seguindo a prática de repetir as execuções e reportar a variabilidade
+observada em vez de medições isoladas \cite{georges2007,kalibera2013},
+reportando-se as estatísticas descritas
+na Seção~\ref{sec:analise-estatistica}. Salvo indicação, varre-se a taxa de amostragem em passos logarítmicos
+dentro da faixa suportada. Em M1, a varredura de cada firmware e contagem de
+canais é interrompida na primeira taxa em que alguma repetição falha no
+critério vigente na coleta (a tolerância de 0,1\,\% descrita adiante); em M3,
+na primeira taxa em que todas as repetições abortam; em ambas, também quando
+o firmware recusa a taxa na configuração. As medições foram feitas em blocos
+por firmware: grava-se um firmware na placa, executa-se a varredura completa
+de cada métrica, com as 30 repetições de cada condição em sequência, e só
+então grava-se o outro. Não houve intercalação nem aleatorização da ordem
+entre firmwares ou entre condições, o que é tratado como ameaça à validade
+interna (Seção~\ref{sec:ameacas}). Em M1, M2 e M3, o sinal é aplicado ao canal D3, e a
+varredura é repetida com 4 e com 12 canais habilitados, contagens que
+exercitam, respectivamente, um e dois \emph{bytes} por amostra no protocolo; em
+M4, usam-se 1, 8 e 12 canais, com a onda de 1\,MHz aplicada aos canais, sinal
+com muitas transições que exercita o custo da codificação \ac{RLE}, em capturas
+curtas de 65\,536 amostras sem disparo, para que a medida reflita o custo de
+processamento por amostra, e não o regime sustentado do \ac{USB}.
+
+\paragraph{M1: Taxa máxima de amostragem sustentada.} A onda quadrada do gerador é aplicada ao canal D3 e ao
+analisador lógico de referência, que fornece a contagem de bordas de
+referência. Em taxa crescente, cada repetição arma um disparo por borda de
+subida e mantém a janela de 0,2\,s seguinte. Enquanto a janela cabe no limite
+de $10^6$ amostras do protocolo (isto é, até 5\,MSa/s; na grade ensaiada,
+até o ponto de 3,66\,MSa/s), a captura usa o modo de
+quantidade fixa (\texttt{F}); acima disso, como em 5,39\,MSa/s, o \emph{script}
+usa o modo contínuo (\texttt{C}) armado na mesma borda e corta a janela no
+\emph{host}. O último ponto da grade ensaia, portanto, outro modo de captura,
+e uma falha nele não delimita a captura de quantidade fixa. O \emph{script} do \emph{host} conta as bordas de subida no canal do
+sinal. Sendo $n_{DAQ}$ o número de bordas contadas pelo \ac{DAQ} e $n_{ref}$
+o contado pela referência na mesma janela, uma repetição é íntegra quando
+(i) a janela inteira foi entregue sem erros de decodificação e sem aborto do
+firmware e (ii)
+\begin{equation}\label{eq:m1-integra}
+  \left| n_{DAQ} - n_{ref} \right| \le 2 ,
+\end{equation}
+isto é, a contagem coincide com a da referência a menos de duas bordas. A
+tolerância é dimensionada pelo único desalinhamento que o método admite: o
+\ac{DAQ} e a referência são armados por software na mesma borda de subida, sem
+sincronismo em hardware, e o corte da janela pode somar ou suprimir uma borda
+em cada extremidade. Qualquer discrepância maior que isso é falha de
+aquisição, e não resíduo de janela. Registre-se que o planejamento inicial
+adotava uma tolerância relativa de 0,1\,\% da contagem, equivalente a
+$\pm 20$ bordas em 20\,000, e que foi com ela que o \emph{script} decidiu,
+durante a coleta, onde interromper cada varredura. Essa margem absorve, além
+do corte da janela, um erro de contagem uma ordem de grandeza maior que ele,
+o que é largo demais para um instrumento cuja função é contar bordas. O
+critério foi, por isso, estreitado para o valor da
+Equação~\ref{eq:m1-integra}. Trata-se de uma decisão \emph{post hoc}, tomada
+com os dados à vista, e por essa razão o resultado sob a tolerância original
+de 0,1\,\% é reportado ao lado do primário, como análise de sensibilidade,
+para que se veja o quanto a conclusão depende da tolerância escolhida. As
+duas classificações são calculadas a partir das contagens mínima e máxima de
+bordas de cada repetição, registradas nos dados brutos.
+Taxas inferiores a
+quatro amostras por período do sinal são excluídas, pois a subamostragem altera
+a contagem sem representar falha de aquisição. A taxa máxima sustentada é a
+maior taxa em que todas as $N$ repetições são íntegras:
+\begin{equation}\label{eq:m1-fmax}
+  f_{s,\mathrm{sust}} = \max \left\{ f_s \;:\; \text{as } N \text{ repetições em } f_s \text{ satisfazem a Equação~\ref{eq:m1-integra}} \right\}.
+\end{equation}
+Cabe registrar o alcance desse critério. A contagem de bordas em uma janela
+de $n$ amostras verifica a coerência das amostras entregues, e não o tempo
+que elas cobrem: se a amostragem pausa e é retomada, as amostras entregues
+continuam contendo cerca de $n f_{sig}/f_s$ bordas, e cada emenda entre os
+trechos amostrados acrescenta ou suprime, no máximo, uma borda. O critério
+acusa, portanto, a existência de emendas no fluxo, mas não mede a duração das
+pausas, que só a fração entregue da M3 mede. Comparam-se A e B, e o resultado de B é confrontado com o teto teórico
+$f_{clk}/C_{iter}$ (Equação~\ref{eq:fsmax}), com $C_{iter}$ obtido da
+calibração que o próprio firmware executa na partida
+(Seção~\ref{sec:firmware-b}).
+
+\paragraph{M2: \emph{Jitter} de amostragem.} Captura, com disparo e janela de 0,2\,s, da onda quadrada de
+100\,kHz (frequência aferida pelo instrumento de referência), em taxas de 2,0 a
+4,05\,MSa/s, e análise da distribuição dos períodos medidos entre bordas de
+subida consecutivas. Sendo $i_k$ o índice da $k$-ésima borda de subida e
+$T_s = 1/f_s$ o período de amostragem, o $k$-ésimo período medido é
+\begin{equation}\label{eq:m2-periodo}
+  \tau_k = (i_{k+1} - i_k)\, T_s ,
+\end{equation}
+e reportam-se, por taxa e por firmware, o desvio-padrão $\sigma$ e o valor
+pico a pico $\max_k \tau_k - \min_k \tau_k$ dos períodos da janela. Nessa
+faixa de taxas, o Firmware B já não satisfaz o critério da M1; seus resultados
+em M2 reúnem, por isso, a variação do instante de amostragem e o efeito das
+pausas entre \emph{buffers}, e são lidos como dispersão do período medido, e
+não como \emph{jitter} do laço isolado (Seção~\ref{sec:res-m2}).
+
+Como o período do sinal raramente é múltiplo inteiro de $T_s$, o intervalo
+entre bordas alterna entre $\lfloor P \rfloor$ e $\lceil P \rceil$ amostras,
+com $P = f_s/f_{sig}$. Mesmo um amostrador ideal apresenta, portanto, um
+desvio-padrão de quantização
+\begin{equation}\label{eq:jitter-quant}
+  \sigma_q = T_s \sqrt{\varphi\,(1-\varphi)}, \qquad \varphi = P - \lfloor P \rfloor ,
+\end{equation}
+e apenas o excedente
+\begin{equation}\label{eq:jitter-exc}
+  \sigma_{exc} = \sqrt{\sigma^2 - \sigma_q^2}
+\end{equation}
+é atribuível a desvios do instante de amostragem. Cabe registrar o que essa
+construção alcança e o que não alcança: como $\tau_k$ é obtido de
+\emph{índices} de amostra entregues pelo próprio instrumento sob teste,
+multiplicados pelo período solicitado, a medida enxerga apenas desvios
+grandes o bastante para mudar o número de amostras entre duas bordas. O
+\emph{jitter} fracionário do divisor de clock do \ac{PIO}
+(Seção~\ref{sec:pio}) e um eventual erro sistemático da base de tempo do
+\ac{DAQ} não deslocam índice algum e, portanto, são invisíveis a M2; o mesmo
+vale para amostras simplesmente ausentes, que aparecem como período alongado
+e não se distinguem de instante deslocado. M2 mede, com rigor, a
+\emph{dispersão do intervalo entre bordas reconstruído pelo \ac{DAQ}}, e é
+desse ponto de vista que seus resultados devem ser lidos; a verificação
+independente, por pino de \emph{debug} e instrumento externo, ficou como
+trabalho futuro (Seção~\ref{sec:trabalhos-futuros}). Como $\varphi$
+depende da razão exata entre $f_s$ e $f_{sig}$, $\sigma_q$ varia de forma não
+monotônica com a taxa. A mesma captura fornece ainda a diferença
+$\Delta n = n_{DAQ} - n_{ref}$ entre os números de períodos contados pelo
+\ac{DAQ} e pela referência.
+
+\paragraph{M3: Captura contínua e perda de amostras.} Captura contínua (\texttt{C}) da onda quadrada de 100\,kHz com transmissão
+simultânea ao \emph{host} por $T = 60$\,s, em taxas a partir de 1,09\,MSa/s (abaixo
+dela, o período tem menos de oito amostras e a detecção de lacunas perde
+sensibilidade). A medida principal é a fração entregue
+\begin{equation}\label{eq:m3-fracao}
+  \eta = \frac{N_{ent}}{f_s \, T},
+\end{equation}
+em que $N_{ent}$ é o número de amostras recebidas pelo \emph{host}. Registram-se
+também a taxa efetiva, os abortos sinalizados pelo firmware e o número de
+lacunas, detectadas quando o intervalo entre bordas consecutivas se afasta do
+período nominal $P = f_s/f_{sig}$, em amostras, por mais de 1,5 amostra:
+\begin{equation}\label{eq:m3-lacuna}
+  \left| (i_{k+1} - i_k) - P \right| > 1{,}5 .
+\end{equation} Como o sinal é
+periódico, uma lacuna que dure um número inteiro de períodos não é detectada
+pelo intervalo entre bordas; a fração entregue é, por isso, a medida principal
+de perda, e o número de lacunas, um limite inferior. Este é o experimento que
+expõe o conflito amostragem$\times$\ac{USB}.
+
+Como ensaio auxiliar, para situar o limite do barramento em relação ao do
+firmware, mede-se também a vazão \ac{USB} em captura contínua com sinal pouco
+compressível (onda de 1\,MHz), em capturas de 5\,s com três repetições por
+condição: o Firmware A em oito taxas de 0,5 a 4\,MSa/s, com 4 e 12 canais, e o
+Firmware B em 0,5, 2 e 4\,MSa/s com 4 canais e em 4\,MSa/s com 12 canais. O
+\emph{host} registra os \emph{bytes} recebidos por segundo e a fração de
+amostras entregue. Por ter poucas repetições e poucas condições em comum
+entre os firmwares, esse ensaio não entra na análise estatística e é lido
+como indício, e não como separação conclusiva entre o limite do barramento e
+o de cada firmware.
+
+\paragraph{M4: Ocupação de CPU.} Mede-se, via contador de ciclos \ac{DWT} (\texttt{DWT->CYCCNT}), a fração de ciclos
+que a \ac{CPU} permanece ocupada durante a captura, em cada taxa e contagem de
+canais:
+\begin{equation}\label{eq:m4-ocupacao}
+  O = \frac{C_{ocup}}{C_{total}},
+\end{equation}
+em que $C_{total}$ é o número de ciclos decorridos na captura e $C_{ocup}$, o
+número de ciclos contados como ocupados. A medida refere-se ao núcleo 1, que
+conduz a captura nos dois firmwares; o núcleo 0 executa o laço da pilha
+\ac{USB} em ambos e não entra na comparação. O que conta como ocupado, porém, não
+é definido do mesmo modo nos dois firmwares: no Firmware A, contam-se apenas
+os trechos de codificação \ac{RLE} e transmissão de cada \emph{buffer}, e não
+a espera pelo \ac{DMA}, já que nela a \ac{CPU} estaria livre para outra
+tarefa; no Firmware B, conta-se a captura inteira, inclusive a espera ativa
+pelo prazo de cada amostra, que é o análogo direto da espera pelo \ac{DMA}
+excluída em A.
+
+Essa assimetria é deliberada, por refletir o que cada arquitetura permite
+fazer com a \ac{CPU}, mas tem duas consequências que precisam ser declaradas.
+A primeira é que $O_B$ vale 100\,\% \emph{por construção do instrumento}, em
+qualquer taxa, inclusive naquelas em que a \ac{CPU} de B passa a maior parte
+do tempo girando em espera: o valor medido confirma uma decisão de
+instrumentação, não a revela. A segunda é que $O_A$ e $O_B$ não são
+grandezas comensuráveis, de modo que M4 é reportada de forma descritiva, sem
+teste de hipótese entre os dois firmwares (Seção~\ref{sec:res-m4}). O que M4
+mede com proveito é a \emph{dependência de $O_A$ com a taxa}, isto é, o custo
+de processamento por amostra que permanece na \ac{CPU} do Firmware A mesmo
+quando a amostragem foi delegada ao \ac{PIO} e ao \ac{DMA}. Uma comparação
+simétrica entre as duas arquiteturas exigiria instrumentar separadamente, em
+B, o laço de amostragem e a codificação, o que não foi feito
+(Seção~\ref{sec:ameacas}).
+
+\section{Análise estatística}\label{sec:analise-estatistica}
+
+Para cada uma das quatro métricas (M1--M4), em cada condição (taxa de
+amostragem $\times$ contagem de canais), reportam-se a mediana das
+repetições nas tabelas e a média com o mínimo e o máximo nas figuras. Seguindo as recomendações da literatura de
+avaliação estatisticamente rigorosa de desempenho de sistemas computacionais
+\cite{georges2007,hoefler2015,fleming1986}, a comparação entre Firmware A e
+Firmware B na mesma condição segue um procedimento fixo, definido a priori, e
+não uma escolha \emph{ad hoc} por métrica:
+
+\begin{itemize}
+  \item \textbf{Teste de hipótese.} Para cada condição, testa-se
+        $H_0$: as distribuições de A e B não diferem, contra $H_1$: diferem, com o
+        teste não paramétrico de Mann--Whitney U ($\alpha = 0{,}05$), aplicado
+        a todas as condições de M1, M2 e M3, e não apenas ``quando
+        pertinente'', em razão da ausência de
+        suposição de normalidade sobre as distribuições das métricas
+        \cite{georges2007}.
+
+  \item \textbf{Tamanho de efeito.} Significância estatística não implica
+        relevância prática: em medições de bancada com baixa dispersão,
+        diferenças pequenas em termos absolutos podem produzir p-valores
+        muito baixos, de modo que o p-valor isolado pouco informa sobre a
+        magnitude da diferença observada
+        \cite{fleming1986,hoefler2015}. Reporta-se, portanto, junto a cada teste,
+        o tamanho de efeito pela correlação \emph{rank-biserial} $r$
+        (equivalente ao $\delta$ de Cliff), permitindo distinguir diferença estatisticamente detectável de
+        diferença relevante em magnitude.
+
+  \item \textbf{Correção para comparações múltiplas.} A varredura de taxas
+        combinada às contagens de canais gera múltiplos testes pareados por
+        métrica. A família de correção é o conjunto de condições (taxa
+        $\times$ canais) de uma mesma medida: as três medidas de M2
+        (desvio-padrão, pico a pico e contagem de períodos) e as duas de M3
+        (fração entregue e número de lacunas) formam, cada uma, sua própria
+        família, e não uma família por métrica. Sobre cada família aplica-se a
+        correção de Holm--Bonferroni; o texto reporta o p-valor ajustado
+        ($p_{\mathrm{Holm}}$), e os p-valores brutos acompanham os dados no
+        repositório público do trabalho \cite{dias2026artefatos}.
+
+  \item \textbf{Intervalo de confiança.} Além das estatísticas descritivas,
+        reporta-se o \ac{IC} de 95\,\% para a diferença de medianas
+        entre A e B, obtido por \emph{bootstrap} percentil (10.000 reamostragens)
+        \cite{kalibera2013}, mais informativo que mínimo e máximo para caracterizar
+        a incerteza da estimativa.
+
+  \item \textbf{Justificativa do tamanho amostral.} Adota-se $N = 30$
+        repetições por ponto de medição, valor acima do mínimo estritamente exigido
+        pelo Mann--Whitney U para significância exata e alinhado à prática de
+        benchmarking rigoroso de sistemas, em que amostras da ordem de dezenas por
+        condição são recomendadas para estabilizar a estimativa de variância entre
+        execuções e sustentar a aproximação assintótica usada pelo teste e pelo
+        \emph{bootstrap} \cite{kalibera2013,georges2007,mytkowicz2009}. O
+        compromisso remanescente com o tempo de bancada, e a capacidade limitada
+        de detectar efeitos pequenos que ele ainda impõe, é tratado na
+        ameaça à validade de conclusão (Seção~\ref{sec:ameacas}).
+
+  \item \textbf{Condições de separação completa.} Em boa parte das condições
+        medidas, as distribuições de A e B não se sobrepõem, e o teste retorna
+        $r = \pm 1{,}00$ com o menor p-valor que a aproximação normal usada pelo
+        teste produz para esse tamanho amostral, da ordem de $10^{-11}$. Como as
+        repetições de cada firmware são consecutivas, na mesma sessão e na mesma
+        placa (Seção~\ref{sec:metricas}), esses p-valores valem para esta bancada
+        e não pressupõem independência entre sessões.
+        Nesse regime, o p-valor informa apenas que não houve sobreposição
+        entre as 30 repetições de cada firmware, e não a magnitude da
+        diferença; os intervalos de confiança de largura quase nula que o
+        \emph{bootstrap} produz indicam variância amostral próxima de zero, e
+        não precisão arbitrária da estimativa. Essas condições são lidas pelo
+        tamanho de efeito e pela diferença de medianas, e o teste é omitido
+        quando uma das grandezas comparadas é constante por construção do
+        instrumento, como em M4.
+\end{itemize}
+
+Resultados são apresentados em tabelas, com medianas e os testes acima, e em
+gráficos que mostram a média de cada condição com barras do mínimo ao máximo
+das repetições; todos os testes são calculados com
+\texttt{scipy.stats.mannwhitneyu}, e todos os dados brutos e scripts de análise
+(incluindo o cálculo de tamanho de efeito, correção de Holm--Bonferroni e
+\emph{bootstrap}) são versionados no diretório \texttt{benchmarks/}
+(\texttt{stats.py} e \texttt{compare.py}) do repositório público do trabalho
+\cite{dias2026artefatos}, para reprodutibilidade.
+
+\section{Ameaças à validade}\label{sec:ameacas}
+
+O planejamento do experimento organiza as ameaças à validade em quatro
+categorias \cite{wohlin2012}: conclusão, se as diferenças observadas
+são estatisticamente confiáveis; interna, se elas se devem à
+arquitetura de aquisição e não a outro fator; construto, se as
+métricas medem de fato a propriedade pretendida; e externa, até onde
+os resultados se generalizam. O Quadro~\ref{qua:ameacas} reúne cada ameaça
+identificada no planejamento ou durante a análise e a mitigação adotada. As que permanecerem
+relevantes depois de confrontadas com os dados são retomadas como limitações
+do estudo na Seção~\ref{sec:limitacoes}.
+
+{\small
+\def\LTcaptype{quadro}
+\setlength{\LTpost}{0pt}
+\begin{xltabular}{\linewidth}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+  \caption{Ameaças à validade e mitigações.}
+  \label{qua:ameacas} \\
+    \hline
+    \textbf{Categoria} & \textbf{Ameaça}                                                                                    & \textbf{Mitigação} \\ \hline
+  \endfirsthead
+    \multicolumn{3}{r}{\footnotesize (continuação)} \\ \hline
+    \textbf{Categoria} & \textbf{Ameaça}                                                                                    & \textbf{Mitigação} \\ \hline
+  \endhead
+    \hline \multicolumn{3}{r}{\footnotesize (continua)} \\
+  \endfoot
+  \endlastfoot
+    Conclusão          & Capacidade limitada do teste de detectar efeitos pequenos, mesmo com $N = 30$ \cite{cohen1988}
+                       & Tamanho de efeito e \acs{IC} reportados junto a cada teste                                                              \\ \cline{2-3}
+                       & Múltiplos testes por métrica (taxas $\times$ canais)
+                       & Correção de Holm--Bonferroni por família de medida                                                                      \\ \cline{2-3}
+                       & Separação completa entre as distribuições na maioria das condições, que torna o p-valor pouco informativo e produz \acsp{IC} de largura quase nula
+                       & Leitura pela diferença de medianas e pelo tamanho de efeito; teste omitido onde a grandeza comparada é constante por construção do instrumento (M4) \\ \cline{2-3}
+                       & Tolerância de contagem da M1 estreitada depois da coleta, de 0,1\,\% para $\pm 2$ bordas
+                       & Mudança declarada (Seção~\ref{sec:metricas}); resultado reportado sob as duas tolerâncias; a diferença qualitativa entre os firmwares não depende da escolha \\ \hline
+    Interna            & Variações do \emph{host} (escalonamento do sistema operacional, outras cargas \acs{USB})
+                       & Mesmo \emph{host} dedicado, repetições e relato da dispersão                                                                   \\ \cline{2-3}
+                       & Diferenças entre os firmwares além da amostragem: disparo e tamanho dos \emph{buffers}
+                       & Diferenças restritas às que decorrem da arquitetura; \emph{buffers} maiores em B, o que o favorece                      \\ \cline{2-3}
+                       & Repetições executadas em blocos por firmware, na mesma placa e na mesma sessão, sem intercalação nem aleatorização da ordem
+                       & Baixa dispersão entre repetições e entre condições do Firmware A; p-valores lidos como válidos para esta placa e esta sessão, sem separar o efeito do firmware de uma eventual deriva lenta da bancada \\ \cline{2-3}
+                       & Referência com base de tempo sem calibração rastreável e sem verificação independente de sua própria integridade
+                       & Erro do cristal (dezenas de ppm) muito abaixo das diferenças medidas; contagem da referência igual à do Firmware A em todas as repetições íntegras \\ \cline{2-3}
+                       & Esforço de otimização assimétrico: o Firmware A é linha de base madura, e o laço de B não recebeu otimizações específicas (laço mínimo dedicado, desabilitação de interrupções na janela fixa)
+                       & Custo do laço de B reportado explicitamente ($C_{iter}$) e confrontado com o teto teórico, de modo que o leitor possa separar o teto da técnica do teto desta implementação \\ \hline
+    Construto          & Banda \acs{USB} dependente do sinal por causa do \acs{RLE}
+                       & Mesmo sinal nos dois firmwares; 100\,kHz mantém o fluxo abaixo do teto do \acs{USB}                                     \\ \cline{2-3}
+                       & Contagem de bordas da M1 insensível à duração das pausas de amostragem
+                       & M1 lida como detector de emendas no fluxo; tempo não amostrado medido pela fração entregue da M3 \\ \cline{2-3}
+                       & M2 obtida dos índices de amostra entregues pelo próprio instrumento sob teste, sem referência de tempo independente, e em faixa de taxas na qual B já apresenta pausas
+                       & Métrica assumida como dispersão do intervalo entre bordas reconstruído, que em B inclui o efeito das pausas, e não como \emph{jitter} absoluto; limite de quantização subtraído; verificação externa indicada como trabalho futuro \\ \cline{2-3}
+                       & Instrumentação assimétrica de ``ocupado'' em M4, que torna $O_B = 100\,\%$ um resultado por construção
+                       & Definição explicitada (Seção~\ref{sec:metricas}); M4 reportada de forma descritiva, sem teste entre firmwares, e lida pela dependência de $O_A$ com a taxa \\ \cline{2-3}
+                       & Lacunas de duração múltipla do período não detectadas em M3
+                       & Fração entregue como medida principal; lacunas como limite inferior                                                     \\ \hline
+    Externa            & Um único sinal, em um único canal, em M1--M3
+                       & Ensaio auxiliar com sinal pouco compressível (Seção~\ref{sec:metricas})                                                 \\ \cline{2-3}
+                       & Transporte \acs{USB} 2.0 Full Speed com \acs{RLE} como condicionante dos tetos das duas arquiteturas
+                       & Ensaio auxiliar de vazão, de caráter indicativo; taxas-limite reportadas como específicas desse transporte \\ \cline{2-3}
+                       & Uma placa, um \emph{host}, RP2350 a 150\,MHz e apenas a variante de núcleo único de B
+                       & Generalização feita apenas de forma qualitativa                                                                         \\ \hline
+\end{xltabular}
+\fonte{Autoria própria.}
+}
+\medskip
+
+Definidos os firmwares, a bancada, as métricas, o procedimento estatístico e
+as ameaças à validade que o desenho procura conter, o capítulo seguinte
+apresenta os resultados das quatro métricas e os confronta com o
+comportamento esperado de cada arquitetura.

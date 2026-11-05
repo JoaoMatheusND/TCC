@@ -1,0 +1,740 @@
+\documentclass{UFAL-beamer-moderno}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\sisetup{output-decimal-marker={,}, group-separator={\,}, mode=text}
+
+\graphicspath{{img/}}
+
+\definecolor{fwA}{HTML}{2A78D6}
+\definecolor{fwB}{HTML}{EB6834}
+\newcommand{\A}{\textcolor{fwA}{\textbf{A}}}
+\newcommand{\B}{\textcolor{fwB}{\textbf{B}}}
+\newcommand{\fwA}{\textcolor{fwA}{\textbf{Firmware A}}}
+\newcommand{\fwB}{\textcolor{fwB}{\textbf{Firmware B}}}
+\newcommand{\en}[1]{\textit{#1}}  
+
+\newcommand{\punch}[1]{%
+  \begin{center}\color{ufalNavy}\large\bfseries #1\end{center}}
+
+% --------------------------------------------------- %
+%                  Informações                         %
+% --------------------------------------------------- %
+\doctype{Trabalho de Conclusão de Curso}
+\title[Aquisição de sinais digitais com a RP2350]{Uma abordagem hardware/software
+para aquisição de sinais digitais com a RP2350}
+\author[João Matheus N. Dias]{João Matheus Nascimento Dias}
+\supervisor{Prof. Dr. Erick de Andrade Barboza}
+\institute[IC/UFAL]{Instituto de Computação --- Universidade Federal de Alagoas}
+\date[Nov/2026]{Maceió, 26 de Novembro de 2026}
+\ufallogo{IC.jpg}
+
+\begin{document}
+
+\titlepage
+
+\begin{frame}{Sumário}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% ===================================================================== %
+\section{Introdução}
+% ===================================================================== %
+
+\begin{frame}{Objetivos}
+  \begin{block}{Objetivo geral}
+    Avaliar experimentalmente o impacto da arquitetura de aquisição,
+    comparando \textbf{PIO com DMA} e \textbf{GPIO com CPU} em um analisador lógico
+    embarcado com transmissão contínua via USB.
+  \end{block}
+  \vspace{8pt}
+  \begin{enumerate}
+    \setlength{\itemsep}{7pt}
+    \item Implementar a arquitetura GPIO com CPU no mesmo firmware, preservando protocolo,
+          pilha USB e codificação
+    \item Definir e instrumentar quatro métricas: taxa sustentada, \en{jitter}, perda em
+          captura contínua e ocupação de CPU
+    \item Montar bancada com sinal conhecido, referência externa e execução
+          automatizada, com análise estatística definida a priori
+  \end{enumerate}
+\end{frame}
+
+% ===================================================================== %
+\section{Fundamentação teórica}
+% ===================================================================== %
+
+\begin{frame}{Teorema da amostragem de Nyquist--Shannon}
+  \begin{columns}[T]
+    \begin{column}{0.80\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{fig_2_1_aliasing.png}\\[2pt]
+      \src{adaptado de Krol, licença CC0.}
+    \end{column}
+  \end{columns}
+\end{frame}
+  
+\begin{frame}{Determinimso temporal em sistemas embarcados}
+  \begin{columns}[T]
+    \begin{column}{0.60\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{fig_2_2_latencia_jitter_vazao.png}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{7pt}
+        \item \textbf{Latência}: atraso entre o evento e a reação
+        \item \textbf{\en{Jitter}}: variação dessa latência --- na amostragem
+              periódica, variação do intervalo entre amostras
+        \item \textbf{Vazão}: dados sustentados por unidade de tempo
+              \emph{sem perda}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Rastreio de fontes de jitter}
+  \begin{columns}[T]
+    \begin{column}{0.60\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{arch_fw_jitter.png}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Trabalhos relacionados}
+  \begin{columns}[T]
+    \begin{column}{0.40\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{quadro_2_1_trabalhos_relacionados.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+  \end{columns}
+\end{frame}
+% ===================================================================== %
+\section{Metodologia}
+% ===================================================================== %
+
+\begin{frame}{A bancada experimental}
+  \centering
+  \includegraphics[width=0.80\linewidth]{fig_3_1a_bancada_diagrama.png}\\[2pt]
+  \src{Autoria própria.}
+  \vspace{2pt}
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{itemize}\small
+        \item gerador Agilent 33210A.
+        \item DAQ de referência (FX2LP, 8 canais, 24 MHz).
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{itemize}\small
+        \item 4 e 12 canais (1 e 2 \en{bytes} por amostra)
+        \item \textbf{30 repetições} por condição, \en{scripts} versionados
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{\en{Firmwares}}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \centering\textcolor{fwA}{\textbf{Firmware A: PIO com DMA}}\\[3pt]
+      \includegraphics[height=0.5\textheight,trim=115 120 110 85,clip]{fig_3_5_arquitetura_fw_a.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering\textcolor{fwB}{\textbf{Firmware B: GPIO com CPU}}\\[3pt]
+      \includegraphics[height=0.5\textheight,trim=115 120 110 85,clip]{fig_3_6_arquitetura_fw_b.png}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  \centering\src{Autoria própria.}
+\end{frame}
+
+
+\begin{frame}{Métricas analisadas}
+  \small
+  \begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}X@{}}
+    \toprule
+       & \textbf{Métrica}          & \textbf{Pergunta que responde} \\
+    \midrule
+    M1 & Taxa máxima sustentada    &
+    Até que taxa a contagem de bordas bate com a referência?        \\
+    M2 & \en{Jitter} de amostragem &
+    O intervalo entre amostras é constante, ou só parece?           \\
+    M3 & Perda em captura contínua &
+    Em \SI{60}{s} de fluxo, quantas amostras chegam de fato?        \\
+    M4 & Ocupação de CPU           &
+    Quanto do processador sobra para outra tarefa?                  \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{8pt}
+  \begin{block}{Procedimento estatístico fixado antes de medir}
+    Mann--Whitney U ($\alpha = 0{,}05$) \;·\; tamanho de efeito
+    \en{rank-biserial} $r$ \;·\; correção de Holm--Bonferroni por métrica
+    \;·\; IC 95\,\% da diferença de medianas por \en{bootstrap}
+    (\num{10000} reamostragens)
+  \end{block}
+\end{frame}
+
+\begin{frame}{Métricas e equações (Quadro 4.1)}
+  \centering
+  \includegraphics[width=0.94\linewidth,height=0.74\textheight,keepaspectratio]{quadro_4_1_resumo_metricas.pdf}
+\end{frame}
+
+\begin{frame}{Análise estatística}
+  \small
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}p{5.9cm}>{\raggedright\arraybackslash}X@{}}
+    \toprule
+    \textbf{Ferramenta} & \textbf{Como} & \textbf{Objetivo} \\
+    \midrule
+    Repetições            & $N = 30$ por condição           & Estabilizar a variância    \\
+    Teste de hipótese     & Mann--Whitney U, $\alpha = 0{,}05$ & Medir se A e B diferem          \\
+    Tamanho de efeito     & \en{Rank-biserial} $r$ ($r>0$: maior em B) & Relevância prática da diferência \\
+    Comparações múltiplas & Holm--Bonferroni por família    & Evitar falsos positivos    \\
+    Incerteza             & IC 95\,\% da dif. de medianas (\en{bootstrap}) & Intervalo da diferença \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{6pt}
+  \alertbox{\small Separação completa ($|r|=1$): o p-valor ($\sim 10^{-11}$) só
+    indica que não houve sobreposição, mas a leitura é pelo tamanho de efeito e
+    pela diferença de medianas.}
+\end{frame}
+
+% \begin{frame}{O critério de ``captura íntegra''}
+%   \begin{columns}[T]
+%     \begin{column}{0.54\textwidth}
+%       \begin{itemize}
+%         \setlength{\itemsep}{6pt}
+%         \item Janela de \SI{0.2}{s} a \SI{100}{kHz}: a referência registra exatamente
+%               \textbf{\num{20000} bordas de subida}
+%         \item Íntegra = contagem do DAQ bate com a da referência dentro de
+%               \textbf{0,1\,\%} (\num{20} bordas)
+%         \item Critério estrito de sensibilidade: \textbf{$\pm$2 bordas}, o suficiente para
+%               absorver o corte da janela
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.42\textwidth}
+%       \notebox{Contar bordas \emph{a mais} é impossível se o fluxo for
+%         contínuo: indica que a captura cobriu mais tempo do que diz cobrir.}
+%       \vspace{6pt}
+%       \alertbox{É esse detalhe que vai separar os dois \en{firmwares}.}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+% ===================================================================== %
+\section{Resultados}
+% ===================================================================== %
+
+\begin{frame}{M1: taxa máxima sustentada}
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_1_m1_integras.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item \A: íntegro em 30/30 até \SI{3.66}{MSa/s}; o teto não foi alcançado
+        \item \B: \SI{774.6}{kSa/s}
+      \end{itemize}
+      \vspace{6pt}
+      \bignumber{$\geq$ 4,7$\times$}{taxa de A em relação à de B}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{M1: B conta bordas a mais}
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_2_m1_excesso_bordas.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item O laço de B \emph{pausa} a cada \en{buffer} e retoma sem marcar
+        \item O excesso cresce com a taxa, até $\approx$ 29 bordas
+      \end{itemize}
+      \vspace{6pt}
+      \alertbox{\small Não é falta de ciclos: o laço permitiria
+        \SI{4.29}{MSa/s}.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{M2: dispersão do período}
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_3_m2_jitter_std.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item \A: próxima do limite de quantização
+        \item \B: \textbf{106 a \SI{400}{ns}} acima, sobretudo pelas pausas
+      \end{itemize}
+      \vspace{6pt}
+      \goodbox{\small $r = +1{,}00$ nas 14 condições.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{M2: períodos a mais em B}
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_4_m2_periodos_perdidos.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item Pico a pico: 0,25 a \SI{1.0}{\micro s} em \A{}; 6,3 a
+              \SI{13.3}{\micro s} em \B
+        \item Até \textbf{42 períodos a mais} em \SI{4.05}{MSa/s}
+      \end{itemize}
+      \vspace{6pt}
+      \notebox{\small Mesmo mecanismo: a pausa entre \en{buffers}.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{M3: amostras entregues}
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_5_m3_entregues.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item \A: \textbf{100\,\%} e zero lacunas até \SI{3.54}{MSa/s}
+        \item \B: \textbf{57 a 76\,\%}, sem marca no fluxo
+      \end{itemize}
+      \vspace{6pt}
+      \bignumber{14--26\,s}{sem amostrar, a cada \SI{60}{s}, em B}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{M3: a perda não vem do USB}
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_8_usb_vazao.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item Com o mesmo sinal, \A{} entrega 100\,\%
+        \item Sinal pouco compressível: \B{} satura em
+              $\approx$\SI{0.86}{MB/s}, 71\,\% do \en{Full-Speed}
+      \end{itemize}
+      \vspace{6pt}
+      \notebox{\small Ensaio indicativo, com três repetições.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{M4: ocupação de CPU}
+  \begin{columns}[T]
+    \begin{column}{0.62\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_9_m4_ocupacao.pdf}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item \B: \textbf{100\,\%} em qualquer taxa, por construção
+        \item \A: de \textbf{0,08\,\%} a \textbf{83\,\%}, pelo custo do RLE
+      \end{itemize}
+      \vspace{6pt}
+      \notebox{\small PIO+DMA tira a CPU da \textbf{amostragem}, não do
+        \textbf{processamento}.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Resumo dos resultados}
+  \small
+  \begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+    \toprule
+       & \fwA{} (PIO+DMA)                                   & \fwB{} (GPIO+CPU)        \\
+    \midrule
+    M1 & íntegro até \SI{3.66}{MSa/s}; teto não alcançado   & \SI{774.6}{kSa/s}        \\
+    M2 & próxima do limite de quantização                    & +106 a \SI{400}{ns}      \\
+    M3 & 100\,\% até \SI{3.54}{MSa/s}                        & 57 a 76\,\%, sem aviso   \\
+    M4 & 0,08 a 83\,\%                                       & 100\,\%                  \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{8pt}
+  \notebox{Efeito máximo ($|r| = 1$) na maioria das condições.}
+\end{frame}
+
+% ===================================================================== %
+\section{Discussão}
+% ===================================================================== %
+
+\begin{frame}{O modo de falhar}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Firmware A: falha explícita}
+        Dentro da faixa, fluxo exato.\\[3pt]
+        Fora dela, \textbf{aborta} com \texttt{!!!}.
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{alertblock}{Firmware B: falha silenciosa}
+        Pausa entre \en{buffers}, sem marca no fluxo.\\[3pt]
+        A captura \textbf{parece válida}.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \punch{Em um instrumento de medição, degradar em silêncio\\
+    é mais grave do que recusar a captura.}
+\end{frame}
+
+\begin{frame}{Quando cada arquitetura basta}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textcolor{fwB}{\textbf{Leitura por software basta}}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item captura curta, com disparo
+        \item até centenas de kSa/s
+        \item tolera centenas de ns de dispersão
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textcolor{fwA}{\textbf{PIO+DMA se faz necessário}}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item acima de $\approx$\SI{1.1}{MSa/s} com disparo
+        \item em captura contínua, desde \SI{1.09}{MSa/s}
+        \item quando a CPU precisa ficar livre
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{10pt}
+  \punch{\normalsize Vale para B de núcleo único; a variante de dois núcleos,
+    não medida, pode mudar isso.}
+\end{frame}
+
+\begin{frame}{O teto de A não é do PIO}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item O PIO amostra a dezenas de MSa/s; o limite está em \textbf{consumir}
+              as amostras
+        \item RLE na CPU ($\approx$23 ciclos/amostra) e fila de dois
+              \en{buffers}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.44\textwidth}
+      \notebox{O projeto \emph{gusmanb} anuncia \SI{100}{MSa/s} com o mesmo
+        PIO+DMA: grava em SRAM e só transmite \emph{depois} da captura.}
+    \end{column}
+  \end{columns}
+  \vspace{8pt}
+  \punch{\normalsize Tirar a CPU da amostragem foi metade do caminho;
+    a outra metade é tirá-la do fluxo.}
+\end{frame}
+
+% ===================================================================== %
+\section{Conclusão}
+% ===================================================================== %
+
+\begin{frame}{Conclusões}
+  \begin{columns}[T]
+    \begin{column}{0.56\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item Objetivos atendidos: duas arquiteturas, quatro métricas e bancada
+              automatizada com referência externa
+        \item \textbf{Contribuição}: a comparação controlada e o ponto em que a
+              leitura por software deixa de ser confiável
+        \item A causa da falha de B não é o custo do laço: é o núcleo que
+              \textbf{pausa} para codificar
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \begin{columns}[T]
+        \begin{column}{0.5\linewidth}
+          \bignumber{4,7$\times$}{taxa de A sobre\\a de B (mínimo)}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+          \bignumber{100\,\%}{amostras entregues\\por A em \SI{60}{s}}
+        \end{column}
+      \end{columns}
+      \vspace{14pt}
+      \begin{columns}[T]
+        \begin{column}{0.5\linewidth}
+          \bignumber{$\sigma_q$}{dispersão de A:\\quantização}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+          \bignumber{100\,\%}{CPU ocupada\\em B}
+        \end{column}
+      \end{columns}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Limitações e trabalhos futuros}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Limitações}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item um só sinal (\SI{100}{kHz}) em M1--M3
+        \item B de núcleo único, com \en{buffers} maiores
+        \item uma placa, um \en{host}, referência sem calibração
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{Trabalhos futuros}
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item \textbf{B com dois núcleos}: pode mudar a conclusão
+        \item grade fina de taxas em M1 e M3
+        \item RLE fora da CPU; mais sinais e canais
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Referências principais}
+  \footnotesize
+  \begin{itemize}
+    \setlength{\itemsep}{3pt}
+    \item RASPBERRY PI LTD. \textbf{RP2350 Datasheet}. Cambridge, UK, 2024.
+    \item PICO-CODER. \textbf{sigrok-pico}: logic analyzer and oscilloscope with sigrok.
+          Repositório GitHub, 2023.
+    \item GUSMANB. \textbf{LogicAnalyzer}: logic analyzer hardware and software.
+          Repositório GitHub, s.d.
+    \item MOGUL, J. C.; RAMAKRISHNAN, K. K. Eliminating receive livelock in an
+          interrupt-driven kernel. \textbf{ACM Transactions on Computer Systems}, v. 15,
+          n. 3, p. 217--252, ago. 1997.
+    \item REGEHR, J.; DUONGSAA, U. Preventing interrupt overload. In: \textbf{Proceedings
+            of the LCTES 2005}. [S.l.]: ACM, 2005. p. 50--58.
+    \item KALIBERA, T.; JONES, R. Rigorous benchmarking in reasonable time. In:
+          \textbf{Proceedings of the ISMM 2013}. [S.l.]: ACM, 2013. p. 63--74.
+    \item GEORGES, A.; BUYTAERT, D.; EECKHOUT, L. Statistically rigorous Java performance
+          evaluation. In: \textbf{Proceedings of the OOPSLA 2007}. [S.l.]: ACM, 2007. p.
+          57--76.
+  \end{itemize}
+  \vspace{2pt}
+  \notebox{\small Lista completa nas Referências da monografia.}
+\end{frame}
+
+% --------------------------------------------------- %
+%                    Encerramento                      %
+% --------------------------------------------------- %
+{\setbeamertemplate{headline}{}\setbeamertemplate{footline}{}%
+\begin{frame}[c,plain,noframenumbering]
+  \centering
+  \includegraphics[height=1.5cm]{IC.jpg}\par
+  \vspace{18pt}
+  {\fontsize{30}{32}\selectfont\bfseries\color{ufalNavy}Obrigado!\par}
+  \vspace{6pt}
+  {\large\color{ufalSlate}Perguntas?\par}
+  \vspace{4pt}
+  {\color{ufalBlue}\rule{3cm}{1.2pt}}\par
+  \vspace{10pt}
+  {\bfseries\color{ufalInk}João Matheus Nascimento Dias\par}
+  \vspace{2pt}
+  {\small\color{ufalSlate}\texttt{jmnd@ic.ufal.br}\par}
+\end{frame}}
+
+% ===================================================================== %
+%  Backup (para perguntas da banca)
+% ===================================================================== %
+\appendix
+
+\begin{frame}{Backup: por que as taxas são números quebrados}
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{5pt}
+        \item Varredura \textbf{logarítmica} com razão fixa, não decimal: $r_i =
+                r_{\min}\,(r_{\max}/r_{\min})^{i/(n-1)}$
+        \item M1 e M4: \SI{5}{kSa/s} a \SI{120}{MSa/s}, 6 pontos por década $\Rightarrow$
+              razão \textbf{1,474}
+        \item M3 parte de \SI{500}{kSa/s} (mínimo de 8 amostras/período); M2 usa passo fino
+              entre 2,0 e \SI{4.05}{MSa/s}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \notebox{Passo geométrico dá \textbf{erro relativo constante} em toda a
+        faixa --- mesma resolução em \SI{5}{kSa/s} e em \SI{5}{MSa/s}.}
+      \vspace{6pt}
+      \goodbox{\small Os dois \en{firmwares} aceitam divisor fracionário
+        (\en{clkdiv} do PIO; ciclos/amostra em Q8), então o erro de quantização
+        da taxa é desprezível frente ao passo.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% \begin{frame}{Backup: métricas e equações (Quadro 4.1)}
+%   \centering
+%   \includegraphics[width=0.94\linewidth,height=0.74\textheight,keepaspectratio]{quadro_4_1_resumo_metricas.pdf}
+% \end{frame}
+
+\begin{frame}{M1: Taxa máxima sustentada}
+  \vfill
+  \begin{block}{Repetição íntegra}
+    \large
+    \[ \left| n_{DAQ} - n_{ref} \right| \le 2 \]
+  \end{block}
+  \vspace{6pt}
+  \begin{block}{Taxa máxima sustentada}
+    \large
+    \[ f_{s,\mathrm{sust}} = \max \left\{ f_s \;:\; \text{as } N \text{ repetições em } f_s
+       \text{ são íntegras} \right\} \]
+  \end{block}
+  \vfill
+\end{frame}
+
+\begin{frame}{M2: Jitter}
+  \begin{block}{Período entre bordas}
+    \large
+    \[ \tau_k = (i_{k+1} - i_k)\, T_s \]
+  \end{block}
+  \vspace{2pt}
+  \begin{block}{Limite de quantização}
+    \large
+    \[ \sigma_q = T_s \sqrt{\varphi\,(1-\varphi)}, \qquad
+       \varphi = P - \lfloor P \rfloor, \qquad P = \frac{f_s}{f_{sig}} \]
+  \end{block}
+  \vspace{2pt}
+  \begin{block}{Excedente de \en{jitter}}
+    \large
+    \[ \sigma_{exc} = \sqrt{\sigma^2 - \sigma_q^2} \]
+  \end{block}
+\end{frame}
+
+\begin{frame}{M3: Perda em captura contínua}
+  \vfill
+  \begin{block}{Fração entregue}
+    \large
+    \[ \eta = \frac{N_{ent}}{f_s \, T} \]
+  \end{block}
+  \vspace{6pt}
+  \begin{block}{Lacuna detectada}
+    \large
+    \[ \left| (i_{k+1} - i_k) - P \right| > 1{,}5 \]
+  \end{block}
+  \vfill
+\end{frame}
+
+\begin{frame}{M4: Ocupação de CPU}
+  \vfill
+  \begin{block}{Ocupação}
+    \large
+    \[ O = \frac{C_{ocup}}{C_{total}} \]
+  \end{block}
+  \vfill
+\end{frame}
+
+\begin{frame}{Backup: M2, números completos (Tabela 4.3)}
+  \centering
+  \includegraphics[width=0.94\linewidth,height=0.74\textheight,keepaspectratio]{tabela_4_3_m2_jitter.pdf}
+\end{frame}
+
+\begin{frame}{Backup: M3, números completos (Tabela 4.5)}
+  \centering
+  \includegraphics[width=0.90\linewidth,height=0.74\textheight,keepaspectratio]{tabela_4_5_m3_perda.pdf}
+\end{frame}
+
+\begin{frame}{Backup: M3, lacunas e capturas abortadas}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_6_m3_lacunas.pdf}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \includegraphics[width=\linewidth]{fig_4_7_m3_abortadas.pdf}
+    \end{column}
+  \end{columns}
+  \centering\src{Autoria própria.}
+\end{frame}
+
+\begin{frame}{Backup: M3, posição das lacunas no bloco}
+  \centering
+  \includegraphics[height=0.58\textheight]{fig_extra_m3_posicao_lacunas.pdf}\\[2pt]
+  \src{Autoria própria.}
+  \vspace{2pt}
+  {\footnotesize\color{ufalSlate}0,3\,\% das lacunas de B nas primeiras 20
+    amostras: ligadas ao laço, não ao rearme de blocos.}
+\end{frame}
+
+\begin{frame}{Backup: síntese dos resultados (Quadro 4.2)}
+  \centering
+  \includegraphics[width=0.94\linewidth,height=0.74\textheight,keepaspectratio]{quadro_4_2_sintese_resultados.pdf}
+\end{frame}
+
+\begin{frame}{Backup: limitações do estudo (Quadro 5.1, 1/2)}
+  \centering
+  \includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{quadro_5_1_limitacoes_p1.pdf}
+\end{frame}
+
+\begin{frame}{Backup: limitações do estudo (Quadro 5.1, 2/2)}
+  \centering
+  \includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{quadro_5_1_limitacoes_p2.pdf}
+\end{frame}
+
+\begin{frame}{Backup: trabalhos relacionados (Quadro 2.1, 1/2)}
+  \centering
+  \includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{quadro_2_1_trabalhos_relacionados_p1.pdf}
+\end{frame}
+
+\begin{frame}{Backup: trabalhos relacionados (Quadro 2.1, 2/2)}
+  \centering
+  \includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{quadro_2_1_trabalhos_relacionados_p2.pdf}
+\end{frame}
+
+\begin{frame}{Backup: memória dos \en{firmwares} (Tabela 3.1)}
+  \centering
+  \includegraphics[width=0.80\linewidth,height=0.74\textheight,keepaspectratio]{tabela_3_1_memoria_firmwares.pdf}
+\end{frame}
+
+\begin{frame}{Backup: RP2350, \en{crossbar} e DMA}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{fig_2_4_crossbar_ahb5.png}\\[2pt]
+      \src{Raspberry Pi Ltd., 2024.}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \centering
+      \includegraphics[width=0.86\linewidth]{fig_2_6_dma_arquitetura.png}\\[2pt]
+      \src{Raspberry Pi Ltd., 2024.}
+    \end{column}
+  \end{columns}
+  \vspace{4pt}
+  {\footnotesize\color{ufalSlate}Núcleos, DMA e PIO disputam as portas de SRAM,
+    XIP e APB: origem da arbitragem de barramento citada na M2.}
+\end{frame}
+
+\begin{frame}{Backup: placa e bancada física}
+  \begin{columns}[T]
+    \begin{column}{0.30\textwidth}
+      \centering
+      \includegraphics[height=0.62\textheight]{fig_3_2a_placa_daq_top.jpg}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+    \begin{column}{0.66\textwidth}
+      \centering
+      \includegraphics[height=0.62\textheight]{fig_3_1b_bancada_fisica.png}\\[2pt]
+      \src{Autoria própria.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\end{document}

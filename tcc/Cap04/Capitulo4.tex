@@ -1,0 +1,860 @@
+\chapter{Resultados e Discussões}\label{cap:resultados}
+
+Este capítulo apresenta e discute os resultados obtidos para as quatro
+métricas definidas na Seção~\ref{sec:metricas}: taxa máxima de
+amostragem sustentada (M1, Seção~\ref{sec:res-m1}), \emph{jitter} de
+amostragem (M2, Seção~\ref{sec:res-m2}), perda de amostras em captura
+contínua (M3, Seção~\ref{sec:res-m3}) e ocupação de \ac{CPU} (M4,
+Seção~\ref{sec:res-m4}). O capítulo
+encerra com uma síntese (Seção~\ref{sec:res-sintese}) que confronta os
+resultados com o comportamento esperado de cada arquitetura
+(Capítulo~\ref{cap:fundamentacao}).
+
+\section{Visão geral}
+
+O Quadro~\ref{qua:metricas} resume as quatro métricas avaliadas, a unidade
+em que cada uma é reportada, o instrumento que a fornece e as equações que a
+definem na Seção~\ref{sec:metricas}.
+
+\begin{quadro}[H]
+  \centering
+  \caption{Resumo das métricas de comparação.}
+  \label{qua:metricas}
+  \begin{tabularx}{\linewidth}{|l|>{\raggedright\arraybackslash}p{2.9cm}|>{\raggedright\arraybackslash}p{2.4cm}|>{\raggedright\arraybackslash}X|l|}
+    \hline
+    \textbf{\#} & \textbf{Métrica}            & \textbf{Unidade}         & \textbf{Instrumento principal} & \textbf{Eq.} \\ \hline
+    M1          & Taxa máxima sustentada      & MSa/s                      & Onda de referência + contagem de bordas (analisador lógico) & \ref{eq:m1-integra}, \ref{eq:m1-fmax} \\ \hline
+    M2          & \emph{Jitter} de amostragem (dispersão do período) & ns ($\sigma$, p-p)       & Índices de amostra do próprio \acs{DAQ}; analisador lógico para $f_{sig}$ e contagem de períodos & \ref{eq:m2-periodo}--\ref{eq:jitter-exc} \\ \hline
+    M3          & Perda em captura contínua   & \% amostras; lacunas/min & Onda de referência + detecção de lacunas e abortos & \ref{eq:m3-fracao}, \ref{eq:m3-lacuna} \\ \hline
+    M4          & Ocupação de \acs{CPU}             & \% de ciclos ocupados    & Contador de ciclos \acs{DWT} & \ref{eq:m4-ocupacao} \\ \hline
+  \end{tabularx}
+  \fonte{Autoria própria.}
+\end{quadro}
+
+Em todas as figuras, cada ponto é a média das $N = 30$ repetições da
+condição, e a faixa sombreada e as barras vão do menor ao maior valor
+observado entre as repetições; o Firmware A é
+representado em azul com linha contínua e círculos, e o Firmware B em laranja
+com linha tracejada e quadrados. Nas tabelas, $p_{\mathrm{Holm}}$ é o p-valor
+do teste de Mann--Whitney U ajustado por Holm--Bonferroni dentro da família
+da medida, e $r$ é a correlação \emph{rank-biserial}, com $r > 0$ indicando
+valores maiores em B (Seção~\ref{sec:analise-estatistica}).
+
+As condições de cada ensaio (sinal de 100\,kHz no canal D3, 4 e 12 canais
+habilitados em M1--M3, janela de 0,2\,s em M1 e M2, captura de 60\,s em M3)
+estão descritas na Seção~\ref{sec:metricas}.
+
+\section{M1: Taxa máxima de amostragem sustentada}\label{sec:res-m1}
+
+\subsection{Resultado}
+
+O ensaio usou onda quadrada de 100\,kHz ($f_{sig} = 99{\,}999{,}83$\,Hz
+segundo o analisador de referência), de modo que a varredura respeita o piso
+de $4 f_{sig} \approx 400$\,kSa/s, começa no primeiro ponto da grade
+logarítmica acima dele, 525,5\,kSa/s, e prossegue em passos de razão
+$\approx 1{,}47$ até a primeira taxa em que alguma repetição falha pela
+tolerância vigente na coleta, de 0,1\,\% (Seção~\ref{sec:metricas}). A
+Tabela~\ref{tab:m1-resumo} e a
+Figura~\ref{fig:m1-integras} resumem o resultado.
+
+\begin{table}[H]
+  \centering
+  \caption{M1: repetições íntegras e bordas contadas por taxa.}
+  \label{tab:m1-resumo}
+  \small
+  \begin{tabular}{@{}llrrrr@{}}
+    \toprule
+    \textbf{Firmware} & \textbf{Canais} & \textbf{Taxa (kSa/s)} &
+    \textbf{Íntegras} & \textbf{Bordas \acs{DAQ} (mediana)} &
+    \textbf{Excesso} \\
+    \midrule
+    A & 4  & 525,5    & 30/30 & 19\,999 & $0$ \\
+    A & 4  & 774,6    & 30/30 & 19\,999 & $0$ \\
+    A & 4  & 1\,141,7 & 30/30 & 19\,999 & $0$ \\
+    A & 4  & 1\,682,7 & 30/30 & 19\,999 & $0$ \\
+    A & 4  & 2\,480,2 & 30/30 & 20\,000 & $+1$ \\
+    A & 4  & 3\,655,6 & 30/30 & 20\,000 & $+1$ \\
+    A & 4  & 5\,388,0 & 0/30  & ---     & ---  \\
+    A & 12 & 525,5    & 30/30 & 19\,999 & $0$ \\
+    A & 12 & 774,6    & 30/30 & 19\,999 & $0$ \\
+    A & 12 & 1\,141,7 & 30/30 & 20\,000 & $+1$ \\
+    A & 12 & 1\,682,7 & 30/30 & 19\,999 & $0$ \\
+    A & 12 & 2\,480,2 & 30/30 & 20\,000 & $+1$ \\
+    A & 12 & 3\,655,6 & 30/30 & 20\,000 & $+1$ \\
+    A & 12 & 5\,388,0 & 0/30  & ---     & ---  \\
+    \midrule
+    B & 4  & 525,5    & 30/30 & 19\,999    & $0$       \\
+    B & 4  & 774,6    & 30/30 & 19\,999,5  & $+0{,}5$  \\
+    B & 4  & 1\,141,7 & 0/30  & 20\,008    & $+9$      \\
+    B & 4  & 1\,682,7 & 0/30  & 20\,010    & $+11$     \\
+    B & 4  & 2\,480,2 & 0/30  & 20\,008    & $+9$      \\
+    B & 4  & 3\,655,6 & 0/30  & 20\,027,5  & $+28{,}5$ \\
+    B & 12 & 525,5    & 29/30 & 20\,000,5  & $+1{,}5$  \\
+    B & 12 & 774,6    & 30/30 & 20\,000    & $+1$      \\
+    B & 12 & 1\,141,7 & 5/30  & 20\,003    & $+4$      \\
+    B & 12 & 1\,682,7 & 9/30  & 20\,003    & $+4$      \\
+    B & 12 & 2\,480,2 & 0/30  & 20\,005    & $+6$      \\
+    B & 12 & 3\,655,6 & 0/30  & 20\,029    & $+30$     \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Autoria própria.}
+  \nota{medianas de 30 repetições; janela de 0,2\,s; íntegras pelo critério primário de $\pm 2$ bordas (Equação~\ref{eq:m1-integra}). Como a borda de disparo é a amostra zero da captura, a referência registra 19\,999 bordas de subida por janela, e excesso = bordas do DAQ $-$ 19\,999. Em A a 5\,388,0\,kSa/s, a captura é abortada pelo firmware.}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M1: repetições íntegras por taxa de amostragem (critério de $\pm 2$ bordas).}
+  \label{fig:m1-integras}
+  \includegraphics[width=\linewidth]{Cap04/img/m1_integras.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+Pelo critério primário (Equação~\ref{eq:m1-integra}, $\pm 2$ bordas), o
+Firmware A é íntegro nas 30 repetições de todas as taxas ensaiadas em captura
+de quantidade fixa, até 3\,655,6\,kSa/s, e a taxa máxima sustentada do
+Firmware B (Equação~\ref{eq:m1-fmax}) é 774,6\,kSa/s, tanto com 4 quanto com
+12 canais. Os dois firmwares, porém, falham de modos diferentes. Em A, a
+contagem de bordas coincide com a da referência, a menos do corte da janela
+($\pm 1$ borda), em todas as repetições até 3\,655,6\,kSa/s. Na taxa seguinte
+da grade, 5\,388,0\,kSa/s, a janela de 0,2\,s excede o limite de $10^6$
+amostras do protocolo e o ensaio passa ao modo contínuo
+(Seção~\ref{sec:metricas}); nele, o firmware detecta o transbordamento da
+fila de \emph{buffers} e aborta a captura com o marcador \texttt{!!!} do
+protocolo depois de entregar um único \emph{buffer} de 1\,024 amostras. Essa
+falha é a do modo contínuo, a mesma observada na M3
+(Seção~\ref{sec:res-m3}), e não delimita a captura de quantidade fixa: a
+grade apenas situa o teto de A com disparo acima de 3,66\,MSa/s, e a M2, que
+usa o mesmo modo de captura, mostra A íntegro também em 4,05\,MSa/s
+(Seção~\ref{sec:res-m2}). Em B, a captura nunca é abortada, mas o \ac{DAQ}
+registra mais bordas do que a referência, e o excesso cresce com a taxa
+(Figura~\ref{fig:m1-excesso}): a mediana do excesso é de no máximo 1,5 borda
+até 774,6\,kSa/s, passa a 4 a 11 bordas entre 1\,141,7 e 2\,480,2\,kSa/s e
+salta para cerca de 29 bordas em 3\,655,6\,kSa/s. Como a grade tem razão
+$\approx 1{,}47$, o limite de B pelo critério primário situa-se entre
+774,6 e 1\,141,7\,kSa/s, e não em um valor pontual.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M1: excesso de bordas do DAQ em relação à referência.}
+  \label{fig:m1-excesso}
+  \includegraphics[width=\linewidth]{Cap04/img/m1_excesso_bordas.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+Bordas \emph{a mais} não podem vir de amostras perdidas em sequência
+contínua; indicam que a amostragem foi interrompida e retomada sem que o
+fluxo sinalizasse a interrupção. Esse é o comportamento esperado de B: a cada
+\emph{buffer} de 8\,192 amostras, o núcleo de captura para de amostrar
+enquanto codifica e enfileira o \emph{buffer} anterior
+(Seção~\ref{sec:firmware-b}) e retoma em fase arbitrária da onda. As amostras
+de antes e de depois da pausa ficam adjacentes no fluxo, e cada emenda pode
+acrescentar ou suprimir uma borda. A contagem acusa, assim, a existência das
+emendas, mas não a duração das pausas: a janela de 0,2\,s contém de 12
+emendas, em 525,5\,kSa/s, a 89, em 3\,655,6\,kSa/s, e o excesso de bordas
+tende a crescer com esse número, e não com o tempo que deixou de ser
+amostrado. Este só é medido pela fração entregue da M3
+(Seção~\ref{sec:res-m3}) e é ordens de grandeza maior do que o excesso de
+bordas sugere.
+
+Decorre daí uma ressalva sobre a faixa em que B é íntegro. Como a pausa entre
+\emph{buffers} não depende da taxa, as capturas de B em 525,5 e 774,6\,kSa/s
+também contêm emendas, 12 e 18 por janela; nessas taxas, seu efeito sobre a
+contagem fica dentro da tolerância. A integridade de B até 774,6\,kSa/s
+significa, portanto, contagem de bordas coerente com a referência, e não
+base de tempo sem pausas.
+
+Como análise de sensibilidade (Seção~\ref{sec:metricas}), a mesma
+classificação com a tolerância original de 0,1\,\% ($\pm 20$ bordas) não
+altera o resultado de A e eleva a taxa sustentada de B para 2\,480,2\,kSa/s,
+pois o excesso de 4 a 11 bordas cabe nessa margem; em 3\,655,6\,kSa/s, B
+falha em todas as repetições pelas duas tolerâncias. A diferença qualitativa
+entre os firmwares, B conta bordas a mais sem sinalizar e A não, independe da
+tolerância; o valor da taxa sustentada de B depende dela, e o texto adota a
+mais estrita por ser a que se justifica pelo corte da janela.
+
+A comparação estatística usa a contagem de bordas de cada repetição nas
+doze condições medidas pelos dois firmwares, de 525,5 a 3\,655,6\,kSa/s
+(Tabela~\ref{tab:m1-estat}). A partir de 1\,141,7\,kSa/s, B conta mais
+bordas que A em todas as condições, com separação completa ou quase
+completa entre as repetições ($r \ge +0{,}90$): a diferença de medianas
+vai de 3 a 11 bordas até 2\,480,2\,kSa/s e chega a 27,5 e 29 bordas em
+3\,655,6\,kSa/s. Em 525,5 e 774,6\,kSa/s a diferença é de no máximo duas
+bordas e só é significativa em 525,5\,kSa/s com 12 canais, ainda assim
+dentro do corte da janela e sem relevância prática.
+
+\begin{table}[H]
+  \centering
+  \caption{M1: comparação estatística da contagem de bordas (B $-$ A).}
+  \label{tab:m1-estat}
+  \begin{tabular}{@{}rrrrr@{}}
+    \toprule
+    \textbf{Canais} & \textbf{Taxa (kSa/s)} & $\boldsymbol{r}$ &
+    $\boldsymbol{p_{\mathrm{Holm}}}$ & \textbf{IC 95\,\% (bordas)} \\
+    \midrule
+    4 & 525{,}5 & $-0{,}14$ & $3{,}1 \times 10^{-1}$ & $[-1; 1]$ \\
+    4 & 774{,}6 & $+0{,}20$ & $2{,}6 \times 10^{-1}$ & $[0; 1]$ \\
+    4 & 1\,141{,}7 & $+1{,}00$ & $8{,}5 \times 10^{-11}$ & $[8; 10]$ \\
+    4 & 1\,682{,}7 & $+1{,}00$ & $8{,}2 \times 10^{-12}$ & $[11; 12]$ \\
+    4 & 2\,480{,}2 & $+1{,}00$ & $8{,}2 \times 10^{-12}$ & $[8; 9]$ \\
+    4 & 3\,655{,}6 & $+1{,}00$ & $8{,}2 \times 10^{-12}$ & $[27; 28]$ \\
+    \midrule
+    12 & 525{,}5 & $+0{,}63$ & $2{,}9 \times 10^{-5}$ & $[0; 2]$ \\
+    12 & 774{,}6 & $+0{,}27$ & $1{,}3 \times 10^{-1}$ & $[0; 1]$ \\
+    12 & 1\,141{,}7 & $+0{,}93$ & $1{,}2 \times 10^{-9}$ & $[2; 4]$ \\
+    12 & 1\,682{,}7 & $+0{,}90$ & $3{,}2 \times 10^{-10}$ & $[3; 6]$ \\
+    12 & 2\,480{,}2 & $+1{,}00$ & $8{,}2 \times 10^{-12}$ & $[5; 6]$ \\
+    12 & 3\,655{,}6 & $+1{,}00$ & $9{,}3 \times 10^{-12}$ & $[28; 30{,}5]$ \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Autoria própria.}
+  \nota{$n = 30$ repetições por firmware; Mann--Whitney U com correção de Holm--Bonferroni dentro da família da medida; $r$: correlação \emph{rank-biserial} ($r > 0$: mais bordas em B); IC 95\,\% da diferença de medianas (B $-$ A) por \emph{bootstrap}.}
+\end{table}
+
+\subsection{Discussão}
+
+O resultado confirma a vantagem esperada do hardware dedicado
+(Seção~\ref{sec:polling}): pelo critério primário, A sustenta com disparo uma
+taxa pelo menos 4,7 vezes maior que a de B (3\,655,6 contra 774,6\,kSa/s).
+A razão é um limite inferior, porque o teto de A nesse modo não foi alcançado
+pela grade; pela tolerância de 0,1\,\%, ela cai para pelo menos 1,5. A
+diferença qualitativa pesa tanto quanto a quantitativa: A entrega a contagem
+da referência em toda a faixa ensaiada com disparo e, no modo contínuo acima
+da sua faixa, recusa a captura explicitamente; B degrada em silêncio,
+entregando uma janela completa cuja escala de tempo não corresponde à real.
+
+Nenhum dos dois limites vem do amostrador. O de B não é dado pelo custo do
+laço, medido pelo próprio firmware em $C_{iter} = 35$ ciclos por amostra
+com o contador \ac{DWT}, o que permitiria $\approx 4{,}29$\,MSa/s pela
+Equação~\ref{eq:fsmax} (4,05\,MSa/s com a margem de 5\,\% que o firmware
+aplica); B deixa de satisfazer o critério já em 1\,141,7\,kSa/s, cerca de um
+quarto desse teto, por causa das pausas entre \emph{buffers}. O de A também
+não vem do \ac{PIO}, capaz de amostrar a dezenas de MSa/s, e sim,
+ao que os dados indicam, do caminho que consome as amostras: a \ac{CPU} ainda
+codifica cada amostra em \ac{RLE} (Seção~\ref{sec:res-m4}) e, quando não
+acompanha a taxa, o par de \emph{buffers} do \ac{DMA}, de 1\,024 amostras
+cada, se esgota. Como o par cobre apenas $\approx 0{,}4$\,ms a 5\,MSa/s,
+basta um atraso transitório: na captura contínua (Seção~\ref{sec:res-m3}), a
+5\,236,7\,kSa/s a maioria das capturas aborta logo após os dois primeiros
+\emph{buffers}, no início da transferência \ac{USB}. Essa explicação é a que
+os dados sugerem, e não uma causa isolada experimentalmente: em capturas
+curtas e sem disparo, A completou 5,39\,MSa/s com um canal e 83\,\% de
+ocupação (Seção~\ref{sec:res-m4}), o que indica que o transbordo depende
+também do regime de transmissão, e não apenas do custo médio da codificação.
+A vantagem arquitetural de A só se converte em taxa maior se o processamento
+do fluxo também sair da \ac{CPU}, ou se a fila entre o \ac{DMA} e a \ac{CPU}
+for mais profunda.
+
+Que o limite de A esteja no consumo das amostras, e não na arquitetura
+\ac{PIO}+\ac{DMA}, é coerente com o que anunciam projetos de código aberto: o
+analisador de \citeonline{gusmanb_logicanalyzer}, com o mesmo encadeamento
+\ac{PIO}--\ac{DMA}, anuncia 100\,MSa/s no RP2040 porque não transmite durante
+a captura, modo em que o \ac{DMA} grava em um \emph{buffer} circular na
+\ac{SRAM} e o envio ao \emph{host} só começa depois da janela, em troca de
+capturas limitadas à memória. Trata-se de especificação anunciada pelo
+projeto, não medida neste trabalho; ela ilustra, ainda assim, que as duas
+abordagens são pontos distintos de uma mesma troca entre taxa de amostragem e
+duração da captura, e não arquiteturas com capacidades diferentes de
+amostragem.
+
+\section{M2: \emph{Jitter} de amostragem}\label{sec:res-m2}
+
+\subsection{Resultado}
+
+O ensaio usou a mesma onda quadrada de 100\,kHz da M1 (a referência
+registra 19\,999 períodos por janela), janela de 0,2\,s após o disparo e
+taxas de 2,0 a 4,05\,MSa/s, o teto aceito pelo Firmware B
+(Seção~\ref{sec:firmware-b}). O período é medido
+em amostras entre bordas de subida consecutivas e convertido para tempo pela
+taxa solicitada. Um primeiro ensaio com onda de 1\,MHz foi descartado: nessa
+frequência a codificação \ac{RLE} quase não compacta o fluxo, a demanda supera a
+vazão do \ac{USB} Full-Speed (Seção~\ref{sec:res-m3}), e o Firmware A aborta a
+captura enquanto o Firmware B entrega a janela com amostras faltando, de
+modo que a medida passaria a refletir o barramento e não o amostrador.
+
+O desvio-padrão medido $\sigma$ é confrontado com o limite de quantização
+$\sigma_q$ de um amostrador ideal (Equação~\ref{eq:jitter-quant}), e apenas
+o excedente $\sigma_{exc}$ (Equação~\ref{eq:jitter-exc}) vai além do que esse
+amostrador produziria. Em toda a faixa do ensaio, o Firmware B já não
+satisfaz o critério da M1; seu excedente reúne, por isso, duas parcelas que o
+ensaio não separa: a variação do instante de amostragem dentro de cada
+\emph{buffer} e os intervalos deformados pelas emendas entre \emph{buffers}.
+A Tabela~\ref{tab:m2-jitter} e a
+Figura~\ref{fig:m2-std} trazem os valores medidos.
+
+\begin{table}[H]
+  \centering
+  \caption{M2: desvio-padrão do período e diferença na contagem de períodos.}
+  \label{tab:m2-jitter}
+  \begin{tabular}{@{}rrrrrrrr@{}}
+    \toprule
+    & & & \multicolumn{2}{c}{$\boldsymbol{\sigma_B}$ \textbf{(ns)}} &
+    & \multicolumn{2}{c}{$\boldsymbol{\Delta n_B}$} \\
+    \cmidrule(lr){4-5}\cmidrule(l){7-8}
+    \textbf{Taxa (MSa/s)} & $\boldsymbol{\sigma_q}$ \textbf{(ns)} &
+    $\boldsymbol{\sigma_A}$ \textbf{(ns)} & \textbf{4 can.} & \textbf{12 can.} &
+    $\boldsymbol{\Delta n_A}$ & \textbf{4 can.} & \textbf{12 can.} \\
+    \midrule
+    2,00 &   2,9 &  12,2 & 183,9 & 216,8 & $-1$ & $+5$    & $+17$   \\
+    2,25 & 222,3 & 222,3 & 247,3 & 295,8 & $-1$ & $-1$    & $+17{,}5$ \\
+    2,53 & 181,6 & 181,7 & 263,3 & 271,1 & $-1$ & $-4{,}5$ & $+3$    \\
+    2,85 & 175,1 & 175,2 & 263,0 & 205,0 & $-1$ & $+17$   & $+8$    \\
+    3,20 &  34,1 &  36,7 & 252,6 & 293,1 & $-2$ & $+9$    & $+27{,}5$ \\
+    3,60 &  22,9 &  22,5 & 330,2 & 309,0 & $0$  & $+18$   & $+20$   \\
+    4,05 & 123,5 & 123,5 & 418,4 & 333,3 & $-2$ & $+42$   & $+8$    \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Autoria própria.}
+  \nota{medianas de 30 repetições; $\sigma_q$: limite de quantização (Equação~\ref{eq:jitter-quant}), calculado com a taxa nominal e $f_{sig} = 99{\,}999{,}83$\,Hz; $\Delta n$: períodos do DAQ $-$ períodos da referência. Valores de A iguais com 4 e 12 canais.}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M2: desvio-padrão do período por taxa de amostragem.}
+  \label{fig:m2-std}
+  \includegraphics[width=\linewidth]{Cap04/img/m2_jitter_std.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+O desvio-padrão do Firmware A acompanha o limite de quantização, inclusive
+nas oscilações de $\sigma_q$ com a taxa: em cinco das sete taxas, a diferença
+é de no máximo 0,4\,ns. Nas duas taxas em que a razão $P$ entre a taxa de
+amostragem e a frequência do sinal fica próxima de um inteiro, 2,00\,MSa/s
+($P = 20{,}000$) e 3,20\,MSa/s ($P = 32{,}012$), $\sigma_q$ é muito sensível à
+frequência do sinal e à taxa efetivamente realizada, e a diferença é de
+9,3 e 2,6\,ns. A de 2,00\,MSa/s é a maior e, como a taxa realizada medida
+pela referência difere da nominal em até 0,006\,\% (Seção~\ref{sec:res-m2}),
+$\sigma_q$ pode variar nessa taxa de 2,9 a cerca de 9\,ns conforme a taxa
+adotada no cálculo; em qualquer dos casos, o excedente de A fica em torno de
+10\,ns ou menos, uma ordem de grandeza abaixo do de B.
+As 30 repetições de A são praticamente idênticas, de modo que, nas figuras,
+o intervalo entre o mínimo e o máximo de A fica menor que o próprio
+marcador. O Firmware B fica acima de $\sigma_q$ em todas as condições, com
+excedente de 106 a 400\,ns (calculado com $\sigma_q$ pela taxa nominal) e variação visível entre repetições. O valor pico a pico do
+período separa ainda mais os dois: de 0,25 a 1,0\,\textmu s em A e de 6,3 a
+13,3\,\textmu s em B, isto é, B registra intervalos entre bordas que
+chegam a quase dois períodos do sinal.
+
+A contagem de períodos (Figura~\ref{fig:m2-perdidos}) repete o padrão da
+M1. Em A, a diferença para a referência fica entre $-2$ e 0, apenas o corte
+da janela. Em B, a captura contém em geral \emph{mais} períodos que a
+referência, até 42 a mais em 4,05\,MSa/s com 4 canais (0,21\,\% da janela).
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M2: períodos ausentes em relação à referência.}
+  \label{fig:m2-perdidos}
+  \includegraphics[width=\linewidth]{Cap04/img/m2_periodos_perdidos.pdf}
+  \fonte{Autoria própria.}
+  \nota{em percentual da janela; valores negativos indicam períodos a mais (sinal oposto ao de $\Delta n$ na Tabela~\ref{tab:m2-jitter}).}
+\end{figure}
+
+A comparação estatística cobre as 14 condições (sete taxas $\times$ duas
+contagens de canais) e três medidas: o desvio-padrão do período, seu
+valor pico a pico e a diferença na contagem de períodos
+(Tabela~\ref{tab:m2-estat}). Nas duas primeiras, a separação é completa
+em todas as condições ($r = +1{,}00$;
+$p_{\mathrm{Holm}} \le 1{,}6 \times 10^{-10}$), com B acima de A por 20
+a 311\,ns no desvio-padrão e por 5,3 a 13,1\,\textmu s no pico a pico.
+Na contagem de períodos, B conta mais que A em 12 das 14 condições; a
+diferença não é significativa em 2,25\,MSa/s com 4 canais e se inverte
+em 2,53\,MSa/s com 4 canais, em até 6,5 períodos.
+
+\begin{table}[H]
+  \centering
+  \caption{M2: comparação estatística das medidas de período (B $-$ A).}
+  \label{tab:m2-estat}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{@{}rrrrrrr@{}}
+    \toprule
+    & & \multicolumn{2}{c}{\textbf{IC 95\,\% da diferença}} &
+    \multicolumn{3}{c}{\textbf{Contagem de períodos} $\boldsymbol{\Delta n}$} \\
+    \cmidrule(lr){3-4}\cmidrule(l){5-7}
+    \textbf{Canais} & \textbf{Taxa (MSa/s)} & $\boldsymbol{\sigma}$ \textbf{(ns)} &
+    \textbf{pico a pico (\textmu s)} & $\boldsymbol{r}$ &
+    $\boldsymbol{p_{\mathrm{Holm}}}$ & \textbf{IC 95\,\%} \\
+    \midrule
+    4 & 2{,}00 & $[166{,}4; 177{,}0]$ & $[10{,}2; 11{,}5]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[5{,}5; 7{,}5]$ \\
+    4 & 2{,}25 & $[20{,}3; 34{,}3]$ & $[10{,}2; 10{,}7]$ & $+0{,}03$ & $8{,}1 \times 10^{-1}$ & $[-1{,}0; 1{,}0]$ \\
+    4 & 2{,}53 & $[74{,}0; 90{,}1]$ & $[11{,}1; 11{,}5]$ & $-0{,}50$ & $7{,}0 \times 10^{-4}$ & $[-6{,}5; -1{,}0]$ \\
+    4 & 2{,}85 & $[85{,}8; 89{,}8]$ & $[10{,}2; 10{,}9]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[18{,}0; 19{,}0]$ \\
+    4 & 3{,}20 & $[208{,}3; 219{,}0]$ & $[10{,}9; 11{,}9]$ & $+0{,}97$ & $2{,}2 \times 10^{-11}$ & $[9{,}0; 12{,}0]$ \\
+    4 & 3{,}60 & $[304{,}6; 310{,}8]$ & $[11{,}7; 11{,}9]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[17{,}0; 19{,}0]$ \\
+    4 & 4{,}05 & $[281{,}8; 308{,}7]$ & $[11{,}4; 12{,}0]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[42{,}0; 47{,}0]$ \\
+    \midrule
+    12 & 2{,}00 & $[200{,}6; 210{,}2]$ & $[10{,}0; 11{,}0]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[17{,}0; 18{,}0]$ \\
+    12 & 2{,}25 & $[70{,}9; 76{,}8]$ & $[10{,}2; 11{,}3]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[18{,}0; 19{,}0]$ \\
+    12 & 2{,}53 & $[82{,}8; 94{,}6]$ & $[11{,}1; 11{,}5]$ & $+0{,}87$ & $2{,}2 \times 10^{-9}$ & $[3{,}0; 5{,}5]$ \\
+    12 & 2{,}85 & $[28{,}1; 33{,}0]$ & $[5{,}3; 6{,}7]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[9{,}0; 10{,}0]$ \\
+    12 & 3{,}20 & $[252{,}3; 262{,}8]$ & $[11{,}2; 11{,}6]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[28{,}0; 31{,}5]$ \\
+    12 & 3{,}60 & $[281{,}8; 292{,}3]$ & $[12{,}5; 13{,}1]$ & $+1{,}00$ & $1{,}3 \times 10^{-11}$ & $[19{,}0; 22{,}0]$ \\
+    12 & 4{,}05 & $[200{,}9; 220{,}8]$ & $[12{,}3; 12{,}8]$ & $+0{,}93$ & $1{,}3 \times 10^{-10}$ & $[8{,}0; 12{,}5]$ \\
+    \bottomrule
+  \end{tabular}}
+  \fonte{Autoria própria.}
+  \nota{$n = 30$ repetições por firmware; IC 95\,\% da diferença de medianas (B $-$ A) por \emph{bootstrap}. Em $\sigma$ e no pico a pico, $r = +1{,}00$ e $p_{\mathrm{Holm}} \le 1{,}6 \times 10^{-10}$ em todas as condições.}
+\end{table}
+
+\subsection{Discussão}
+
+O resultado de A confirma o esperado (Seção~\ref{sec:determinismo}): o
+instante de cada amostra é fixado pelo divisor de clock da máquina de
+estados e não depende de software; a dispersão observada é a de
+quantização, e a medida é repetível entre capturas.
+
+O resultado de B, por sua vez, não isola o \emph{jitter} do laço de
+amostragem. Dentro de um \emph{buffer}, o laço usa prazos absolutos no
+contador \ac{DWT}, e as fontes de variação que o código permite apontar são o
+caminho tomado em cada iteração, a verificação de aborto e o serviço do canal
+analógico a cada 64 amostras, e a disputa de barramento e de memória com o
+núcleo 0, que executa a pilha \ac{USB}. O laço roda da \ac{SRAM}, e a
+interrupção do \ac{USB} é atendida pelo outro núcleo
+(Seção~\ref{sec:firmware-b}), de modo que nem o cache de \acs{XIP} nem essa
+interrupção entram na conta. O ensaio, porém, não separa essa parcela da que
+vem das emendas entre \emph{buffers}, e é esta que domina a medida. Uma
+estimativa de ordem de grandeza basta para mostrá-lo: cada janela tem cerca
+de 20\,000 períodos e de 48 a 98 emendas, e o intervalo entre bordas que
+atravessa uma emenda se afasta do nominal em uma fração de período, isto é,
+em até 10\,\textmu s; uma centena de intervalos com desvios de alguns
+microssegundos, diluída em 20\,000, contribui com centenas de nanossegundos
+para o desvio-padrão, a mesma ordem do excedente medido. O excedente de B
+deve ser lido, portanto, como dispersão do período reconstruído, causada
+sobretudo pelas pausas, e não como instabilidade de ciclo a ciclo do laço.
+
+Há um indício independente do caminho de dados do \ac{DAQ} de que a base de
+tempo de B se estende. A taxa de amostragem realizada, obtida comparando o
+período médio contado em amostras com o período medido pela referência,
+difere da nominal em no máximo 0,006\,\% em A, valor compatível com o erro do
+cristal e do divisor de clock. Em B, ela fica abaixo da nominal, com mediana
+de $-0{,}07$\,\% e extremos de $-0{,}25$\,\% a $+0{,}05$\,\%: as amostras
+entregues cobrem mais tempo do que o solicitado, como se esperaria de pausas
+que alongam a janela, e na mesma ordem de grandeza dos períodos a mais
+(até 0,21\,\% da janela).
+
+O pico a pico de B e os períodos a mais têm a mesma origem, o mecanismo já
+identificado na M1: o laço interrompido e retomado sem que o fluxo sinalize a
+pausa. Cada retomada ocorre em fase arbitrária da onda; o intervalo entre a
+última borda antes da pausa e a primeira depois dela pode chegar a quase dois
+períodos, daí o pico a pico, e o saldo das emendas ao longo da janela
+aparece como períodos a mais. A variação dessas emendas entre repetições é o
+que produz a dispersão de B nas figuras, ausente em A. Medir o \emph{jitter}
+do laço isolado exige repetir o ensaio em capturas que caibam em um único
+\emph{buffer}, o que fica como trabalho futuro
+(Seção~\ref{sec:trabalhos-futuros}).
+
+\section{M3: Captura contínua e perda de amostras}\label{sec:res-m3}
+
+\subsection{Resultado}
+
+O ensaio aplicou a onda de 100\,kHz ao canal D3 e manteve a captura
+contínua por 60\,s em cada uma das 30 repetições, com taxas a partir de
+1,09\,MSa/s (abaixo dela, o período tem menos de oito amostras e a detecção
+de lacunas perde sensibilidade). A perda é medida de duas formas: pela
+fração de amostras entregues em relação às solicitadas no tempo de captura
+($f_s \times 60$\,s) e pelo número de lacunas, detectadas quando o
+intervalo entre bordas se desvia do período nominal. A varredura de cada
+contagem de canais para na primeira taxa em que todas as repetições
+abortam ou que o firmware recusa.
+
+O Firmware A sustentou a captura contínua em todas as 30 repetições até
+3,54\,MSa/s, com 4 e com 12 canais, entregando 100\,\% das amostras e sem
+nenhuma lacuna nas 240 capturas de 60\,s (Tabela~\ref{tab:m3-resumo} e
+Figuras~\ref{fig:m3-entregues} e~\ref{fig:m3-lacunas}). Em 5,24\,MSa/s,
+todas as 60 repetições abortaram com a marca \texttt{!!!}
+(Figura~\ref{fig:m3-abortadas}): 58 logo na partida, depois de entregar um ou
+dois \emph{buffers} de 1\,024 amostras, e duas, com 4 canais, depois de
+cerca de $10^6$ amostras (0,19\,s). O Firmware B recusa essa taxa na
+configuração, por estar acima do teto do seu laço de amostragem, e não
+abortou nenhuma captura nas taxas aceitas; em todas elas, porém, entregou
+bem menos amostras do que o solicitado: de 75,7\,\% em 1,09\,MSa/s a
+57,3\,\% em 3,54\,MSa/s, perda que cresce com a taxa e praticamente não
+depende da contagem de canais.
+
+\begin{table}[H]
+  \centering
+  \caption{M3: amostras entregues e lacunas em captura contínua de 60\,s.}
+  \label{tab:m3-resumo}
+  \begin{tabular}{@{}rrrrrrr@{}}
+    \toprule
+    & & \multicolumn{2}{c}{\textbf{Firmware A}} &
+    \multicolumn{3}{c}{\textbf{Firmware B}} \\
+    \cmidrule(lr){3-4}\cmidrule(l){5-7}
+    \textbf{Canais} & \textbf{Taxa} & \textbf{Entregue} & \textbf{Lacunas} &
+    \textbf{Entregue} & \textbf{Lacunas} & \textbf{Taxa efetiva} \\
+    & (MSa/s) & (\%) & & (\%) & & (MSa/s) \\
+    \midrule
+    4  & 1,09 & 100,0 & 0 & 75,7 &  1\,774 & 0,83 \\
+    4  & 1,62 & 100,0 & 0 & 71,2 & 10\,470 & 1,15 \\
+    4  & 2,39 & 100,0 & 0 & 65,5 & 15\,398 & 1,57 \\
+    4  & 3,54 & 100,0 & 0 & 58,5 & 63\,564 & 2,07 \\
+    12 & 1,09 & 100,0 & 0 & 73,8 &  4\,789 & 0,81 \\
+    12 & 1,62 & 100,0 & 0 & 69,5 &  8\,540 & 1,13 \\
+    12 & 2,39 & 100,0 & 0 & 64,0 & 14\,882 & 1,53 \\
+    12 & 3,54 & 100,0 & 0 & 57,3 & 69\,933 & 2,03 \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Autoria própria.}
+  \nota{medianas de 30 repetições; taxa efetiva = amostras entregues / duração da captura.}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M3: amostras entregues por taxa de amostragem.}
+  \label{fig:m3-entregues}
+  \includegraphics[width=\linewidth]{Cap04/img/m3_entregues.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M3: lacunas por minuto por taxa de amostragem.}
+  \label{fig:m3-lacunas}
+  \includegraphics[width=\linewidth]{Cap04/img/m3_lacunas.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M3: capturas abortadas por taxa de amostragem.}
+  \label{fig:m3-abortadas}
+  \includegraphics[width=\linewidth]{Cap04/img/m3_abortadas.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+As duas medidas de perda de B devem ser lidas juntas. Como o sinal é
+periódico, uma pausa que dure um número inteiro de períodos não altera o
+intervalo entre bordas; a detecção enxerga apenas o resto da pausa em
+relação ao período, e a lacuna detectada tem sempre menos de um período
+(de 2 a 9 amostras, na mediana). O número de lacunas, de 1\,774 a 69\,933
+por captura, é portanto um limite inferior do número de pausas, e o tamanho
+das lacunas não mede a perda. A perda real é dada pela fração entregue: B
+deixa de amostrar o equivalente a 14 a 26\,s em cada captura de 60\,s (fração entregue medida contra o relógio do \emph{host}), sem nenhuma
+marca no fluxo que permita ao \emph{host} localizar esses trechos.
+
+A posição das lacunas identifica o mecanismo. Entre as lacunas cuja posição
+foi registrada (as 50 primeiras de cada repetição), praticamente todas caem,
+em 1,09\,MSa/s, em múltiplos de 8\,192 amostras, isto é, nas fronteiras entre
+\emph{buffers} do Firmware B (99,8\,\% com 4 canais e 100\,\% com 12). Essa
+proporção cai para 74 a 80\,\% em 1,62\,MSa/s, cerca de 65\,\% em
+2,39\,MSa/s e 7 a 11\,\% em 3,54\,MSa/s, taxa em que o número de lacunas
+supera em mais de quatro vezes o de fronteiras de \emph{buffer}
+($\approx 15\,000$ por captura): com o período de amostragem, de 42 ciclos,
+já próximo do custo do laço, de 35, a maior parte das lacunas passa a ocorrer
+dentro dos \emph{buffers}. As lacunas tampouco se concentram no início do
+bloco de $10^6$ amostras do modo contínuo (0,3\,\% delas nas primeiras 20
+amostras), o que as dissocia do rearme de blocos. A fração entregue é
+compatível com a mesma leitura: se toda a perda for atribuída às fronteiras,
+ela equivale a uma pausa de 1,6 a 2,7\,ms por \emph{buffer}, ou 30 a 49
+ciclos de \ac{CPU} por amostra do \emph{buffer} anterior, ordem de grandeza
+do custo de codificá-lo em \ac{RLE} e enfileirá-lo (Seção~\ref{sec:res-m4}).
+
+Como indício da posição do limite do barramento em relação ao do firmware,
+mediu-se também a vazão \ac{USB} em captura contínua com sinal pouco
+compressível (Figura~\ref{fig:usb-vazao}, que mostra apenas as condições sem
+aborto e com fluxo pouco compactado, acima de 0,5 \emph{byte} por amostra).
+O Firmware B satura em $\approx 0{,}86$\,MB/s, 71\,\% do teto teórico do
+\ac{USB} Full-Speed (1,216\,MB/s), e nesse regime entrega apenas 15 a 42\,\%
+das amostras solicitadas. O Firmware A sustenta a captura sem perda nas
+condições em que a demanda fica abaixo de $\approx 0{,}80$\,MB/s e aborta
+naquelas em que ela chega a cerca de 0,9\,MB/s, em vez de descartar amostras.
+Os dois firmwares só completaram a captura em uma condição comum,
+0,5\,MSa/s com 4 canais, em que o fluxo é muito compactado: nela, A entrega
+100\,\% das amostras e B, 91,9\,\%, o que mostra as pausas de B já nessa
+taxa. O ensaio indica, assim, que os dois firmwares esbarram em um patamar
+de vazão semelhante, abaixo do teto teórico do barramento, mas não separa de
+forma conclusiva o limite do barramento do limite de cada firmware.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{Vazão USB em captura contínua.}
+  \label{fig:usb-vazao}
+  \includegraphics[width=\linewidth]{Cap04/img/usb_vazao.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+A comparação estatística usa as oito condições em que os dois firmwares
+completaram a captura, quatro taxas $\times$ duas contagens de canais
+(Tabela~\ref{tab:m3-estat}). Nas duas medidas, a separação é completa
+em todas as repetições: B entrega uma fração menor das amostras
+($r = -1{,}00$; $p_{\mathrm{Holm}} = 2{,}2 \times 10^{-10}$), de 24,3 a
+42,7 pontos percentuais a menos, e apresenta mais lacunas
+($r = +1{,}00$; $p_{\mathrm{Holm}} = 9{,}7 \times 10^{-12}$), de cerca
+de 1\,800 a 70\,000 por captura. Os intervalos estreitos refletem a
+baixa variação entre repetições, já que em cada condição a fração entregue
+por B varia menos de 0,1 ponto percentual, isto é, a perda de B é
+sistemática, e não ocasional.
+
+\begin{table}[H]
+  \centering
+  \caption{M3: comparação estatística da perda de amostras (B $-$ A).}
+  \label{tab:m3-estat}
+  \begin{tabular}{@{}rrrr@{}}
+    \toprule
+    & & \multicolumn{2}{c}{\textbf{IC 95\,\% da diferença de medianas}} \\
+    \cmidrule(l){3-4}
+    \textbf{Canais} & \textbf{Taxa (MSa/s)} &
+    \textbf{Entregue (p.p.)} & \textbf{Lacunas} \\
+    \midrule
+    4 & 1{,}09 & $[-24{,}34; -24{,}34]$ & $[1\,748; 1\,818]$ \\
+    4 & 1{,}62 & $[-28{,}79; -28{,}79]$ & $[10\,460; 10\,492]$ \\
+    4 & 2{,}39 & $[-34{,}53; -34{,}53]$ & $[15\,388; 15\,410]$ \\
+    4 & 3{,}54 & $[-41{,}49; -41{,}49]$ & $[63\,410; 63\,626]$ \\
+    \midrule
+    12 & 1{,}09 & $[-26{,}19; -26{,}19]$ & $[4\,766; 4\,822]$ \\
+    12 & 1{,}62 & $[-30{,}46; -30{,}46]$ & $[8\,489; 8\,550]$ \\
+    12 & 2{,}39 & $[-35{,}99; -35{,}99]$ & $[14\,869; 14\,896]$ \\
+    12 & 3{,}54 & $[-42{,}68; -42{,}67]$ & $[69\,863; 70\,002]$ \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Autoria própria.}
+  \nota{$n = 30$ repetições por firmware; IC por \emph{bootstrap}. Em todas as condições, $r = -1{,}00$ na fração entregue ($p_{\mathrm{Holm}} = 2{,}2 \times 10^{-10}$) e $r = +1{,}00$ nas lacunas ($p_{\mathrm{Holm}} = 9{,}7 \times 10^{-12}$).}
+\end{table}
+
+\subsection{Discussão}
+
+O conflito entre amostrar e transmitir aparece apenas no Firmware B. Com
+a onda de 100\,kHz, o fluxo compactado fica bem abaixo do teto do
+\ac{USB} em toda a faixa, e A comprova isso ao entregar 100\,\% das
+amostras até 3,54\,MSa/s: a perda de B não vem do barramento, e sim da
+disputa interna ao firmware. Em B, o laço de amostragem para enquanto o
+\emph{buffer} anterior é codificado e enfileirado para transmissão, de modo
+que a taxa efetiva sobe de 0,83 para apenas 2,07\,MSa/s
+enquanto a solicitada vai de 1,09 a 3,54\,MSa/s. Em A, o \ac{DMA} continua amostrando
+enquanto a \ac{CPU} codifica e transmite, e a fila de dois \emph{buffers}
+absorve a variação do envio.
+
+A M3 mede o que a M1 e a M2 apenas acusam. Lá, as pausas aparecem como
+dezenas de bordas ou de períodos a mais em 20\,000, porque a contagem só é
+sensível às emendas; aqui, medidas contra o tempo de captura, as mesmas
+pausas somam de um quarto a quase metade do tempo. As ordens de grandeza
+diferem porque as grandezas medidas diferem, e não porque o modo contínuo se
+comporte de outra forma: o mecanismo de \emph{buffers} do Firmware B é o
+mesmo nos dois modos de captura.
+
+A diferença qualitativa repete a da M1: A entrega um
+fluxo sem perda dentro da faixa sustentada e aborta sinalizando fora
+dela, pela mesma razão discutida na Seção~\ref{sec:res-m1} (a partida da
+transferência \ac{USB} atrasa o consumo dos \emph{buffers}, e dois
+\emph{buffers} cobrem menos de meio milissegundo a 5,24\,MSa/s; na maioria
+das repetições o aborto ocorre já na partida); B nunca
+sinaliza e entrega, em toda a faixa, um fluxo que aparenta ser contínuo
+mas em que o equivalente a um quarto a quase metade do tempo não foi amostrado.
+
+\section{M4: Ocupação de CPU}\label{sec:res-m4}
+
+\subsection{Resultado}
+
+A Figura~\ref{fig:m4-ocupacao} mostra a fração de ciclos em que a \ac{CPU}
+esteve ocupada durante a captura, medida pelo contador \ac{DWT}, com a onda de
+1\,MHz aplicada aos canais. A Tabela~\ref{tab:m4-ocupacao} traz valores
+selecionados.
+
+\begin{figure}[htbp]
+  \centering
+  \caption{M4: ocupação da CPU por taxa de amostragem.}
+  \label{fig:m4-ocupacao}
+  \includegraphics[width=\linewidth]{Cap04/img/m4_ocupacao.pdf}
+  \fonte{Autoria própria.}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{M4: ocupação da CPU.}
+  \label{tab:m4-ocupacao}
+  \begin{tabular}{@{}rrrrr@{}}
+    \toprule
+    \textbf{Taxa (kSa/s)} & \textbf{A, 1 canal} & \textbf{A, 8 canais} &
+    \textbf{A, 12 canais} & \textbf{B (1, 8, 12 canais)} \\
+    \midrule
+    5,0      &  0,08 &  0,08 &  0,08 & 100,0 \\
+    111,4    &  1,75 &  2,10 &  2,11 & 100,0 \\
+    525,5    &  8,23 & 16,12 & 16,18 & 100,0 \\
+    774,6    & 12,12 & 46,52 & 46,57 & 100,0 \\
+    1\,141,7 & 17,84 & 40,16 & 40,26 & 100,0 \\
+    3\,655,6 & 56,60 & ---   & ---   & 100,0 \\
+    5\,388,0 & 82,95 & ---   & ---   & ---   \\
+    \bottomrule
+  \end{tabular}
+  \fonte{Autoria própria.}
+  \nota{em \%; medianas de 30 repetições.}
+\end{table}
+
+No Firmware A, a ocupação parte de 0,08\,\% e cresce com a taxa: 17,8\,\%
+em 1,14\,MSa/s com um canal e 83,0\,\% em 5,39\,MSa/s, a maior taxa que
+completou a captura. Com 8 e 12 canais, a ocupação é maior e não cresce de
+forma monotônica com a taxa: chega a 46,6\,\% em 774,6\,kSa/s, recua para
+40,3\,\% em 1,14\,MSa/s, e as capturas abortam a partir de 1,68\,MSa/s. No Firmware B, a ocupação é de
+100\,\% em todas as condições (mínimo de 99,995\,\%), e as taxas acima de
+$\approx 4{,}05$\,MSa/s são recusadas pelo próprio firmware.
+
+Esses limites não são comparáveis aos da M1, porque as condições diferem:
+a M4 usa capturas curtas de quantidade fixa, com 65\,536 amostras, e onda de
+1\,MHz, enquanto a M1 em 5,39\,MSa/s, por exceder o limite de $10^6$
+amostras, usou o modo contínuo (Seção~\ref{sec:metricas}). A causa exata
+dessa diferença não foi isolada nos ensaios. Além disso, a ocupação é medida
+de forma diferente nos dois firmwares: em A, conta-se como ocupado apenas o
+tempo de codificação e transmissão, e não a espera pelo \ac{DMA}; em B, a captura
+inteira. Os valores da M4 medem, portanto, o custo de processamento por
+amostra, e não a taxa sustentada, que é dada pela M1 e pela M3.
+
+Como $O_B$ vale 100\,\% por construção do instrumento
+(Seção~\ref{sec:metricas}), a M4 não é submetida a teste de hipótese entre
+os firmwares: a diferença entre eles é apenas o complemento da ocupação de
+A, de 99,9 pontos percentuais em 5\,kSa/s a 43,4 pontos em 3,66\,MSa/s com
+um canal.
+
+\subsection{Discussão}
+
+O núcleo de captura do Firmware B está, por construção, inteiramente
+dedicado ao laço de amostragem: mesmo em 5\,kSa/s, ele espera ativamente o
+prazo de cada amostra. No Firmware A, a ocupação a baixas taxas confirma que
+a \ac{CPU} fica fora do caminho de amostragem, mas ela ainda percorre cada
+amostra para a codificação \ac{RLE}. Com um canal, esse custo é constante,
+de 23,1 a 23,5 ciclos por amostra em toda a faixa, e a ocupação cresce
+proporcionalmente à taxa. Com 8 e 12 canais, o custo por amostra varia de 24
+a 120 ciclos e não é monotônico: a razão entre a taxa de amostragem e a
+frequência do sinal determina o comprimento das sequências que o \ac{RLE}
+encontra, e sequências curtas custam mais por amostra. Esse custo de
+processamento, e não a amostragem, é o candidato mais provável a limitar A em
+taxas altas e com mais canais, hipótese que os ensaios não isolaram
+(Seção~\ref{sec:res-m1}). A arquitetura \ac{PIO}+\ac{DMA} retira a \ac{CPU}
+da \emph{amostragem}, mas não do \emph{processamento} do fluxo; mover a
+compactação para o \ac{PIO} ou para o outro núcleo seria o passo seguinte
+para aproximar A do ideal.
+
+\section{Síntese e discussão}\label{sec:res-sintese}
+
+O Quadro~\ref{qua:sintese} reúne o resultado das quatro métricas. Em M1, M2
+e M3, a diferença entre os firmwares é estatisticamente significativa nas
+condições em que se espera diferença, e o tamanho de efeito é, na
+maioria das condições, o máximo possível ($|r| = 1$): todas as repetições
+de um firmware ficam de um mesmo lado de todas as repetições do outro.
+
+\begin{quadro}[H]
+  \centering
+  \caption{Síntese dos resultados.}
+  \label{qua:sintese}
+  \begin{tabularx}{\linewidth}{|l|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+    \hline
+    \textbf{Métrica} & \textbf{Firmware A (\acs{PIO}+\acs{DMA})} & \textbf{Firmware B (\acs{GPIO}+\acs{CPU})} \\ \hline
+    M1 & Íntegro em todas as taxas ensaiadas com disparo, até 3,66\,MSa/s
+         (4,05\,MSa/s na M2); teto desse modo não alcançado &
+         774,6\,kSa/s pelo critério de $\pm 2$ bordas (2,48\,MSa/s pela
+         tolerância de 0,1\,\%); bordas a mais sem sinalização \\ \hline
+    M2 & $\sigma$ igual ao limite de quantização ($\le 3{,}6$\,ns de
+         diferença), repetível entre capturas &
+         106 a 400\,ns acima da quantização, sobretudo pelas pausas entre
+         \emph{buffers}; pico a pico de até 13\,\textmu s; até 42 períodos
+         a mais \\ \hline
+    M3 & 100\,\% das amostras e nenhuma lacuna até 3,54\,MSa/s; aborto
+         sinalizado em 5,24\,MSa/s &
+         57 a 76\,\% das amostras, sem sinalização, já a partir de
+         1,09\,MSa/s \\ \hline
+    M4 & 0,08\,\% a 83\,\% com um canal, proporcional à taxa
+         ($\approx 23$ ciclos por amostra); até 46,6\,\% com 8 e 12 canais,
+         sem monotonia &
+         100\,\% em qualquer taxa, por construção da medida \\ \hline
+  \end{tabularx}
+  \fonte{Autoria própria.}
+  \nota{sinal de 100\,kHz em M1--M3 e de 1\,MHz em M4.}
+\end{quadro}
+
+\paragraph{Confronto com o esperado.} Dois comportamentos previstos na
+fundamentação (Capítulo~\ref{cap:fundamentacao}) foram confirmados, o
+primeiro por um mecanismo diferente do previsto (Seção~\ref{sec:res-m1}): a
+arquitetura \ac{PIO}+\ac{DMA} sustenta com disparo uma taxa pelo menos 4,7
+vezes maior (pelo menos 1,5 vez pela tolerância de 0,1\,\%) e amostra com
+período fixado pelo \emph{hardware}, sem dispersão além da quantização. O
+conflito entre amostrar e transmitir apareceu apenas na arquitetura
+\ac{GPIO}+\ac{CPU}: com o mesmo sinal e o mesmo protocolo, A entregou o
+fluxo completo enquanto B deixou de amostrar o equivalente a um quarto a quase
+metade do tempo, o que mostra que a perda não vem do barramento, e sim de o núcleo de
+captura de B dividir o tempo entre amostrar e codificar. Quanto à ocupação
+de \ac{CPU}, B ocupa o núcleo de captura por inteiro, como previsto, mas a
+ocupação de A só é próxima de zero em taxas baixas, porque a codificação
+\ac{RLE} ainda passa por cada amostra na \ac{CPU}.
+
+\paragraph{Diferença qualitativa.} Mais do que os números, os dois
+firmwares diferem no custo de detectar a própria falha. Em A, a condição de
+falha é observável fora do caminho de amostragem: o \ac{DMA} sinaliza ao fim
+de cada \emph{buffer}, o tratador dessa interrupção compara os contadores de
+\emph{buffers} produzidos e consumidos e, quando a fila transborda, o
+firmware converte a condição no aborto sinalizado pela marca \texttt{!!!} do
+protocolo. A detecção usa ciclos do núcleo de captura, mas não interfere na
+temporização da amostragem, que o \ac{PIO} e o \ac{DMA} mantêm. Em B, a condição de falha é a perda de um prazo dentro do próprio
+laço: a amostragem para enquanto os dados são codificados e enfileirados e,
+no firmware medido, o fluxo entregue ao \emph{host} não marca essas pausas. O resultado é
+uma captura que parece válida, mas cuja escala de tempo não corresponde à real,
+o que se manifesta como bordas e períodos a mais (M1 e M2) ou como amostras
+ausentes (M3). Para um analisador lógico, essa é a falha mais grave, porque o
+usuário não tem como distingui-la de um comportamento real do circuito medido.
+
+Cabe distinguir, porém, o que decorre da arquitetura do que decorre desta
+implementação. A arquitetura impõe a \emph{existência} das pausas em B, já que
+o mesmo núcleo amostra e codifica, e torna a falha de A observável sem custo
+sobre a temporização da amostragem. A \emph{sinalização} da falha, ao contrário, é
+decisão de projeto: o laço de B mantém prazos absolutos no contador \ac{DWT}
+(Seção~\ref{sec:firmware-b}) e dispõe, portanto, da informação necessária para
+contar os prazos perdidos e emitir um marcador de lacuna no fluxo, o que não
+foi implementado. Que a distinção não é acadêmica mostra-o o próprio
+Firmware A: no caminho com canais analógicos, não exercitado nos
+experimentos, ele rearma o \ac{PIO} e o \ac{DMA} a cada bloco e deixa uma
+lacuna que o fluxo não marca (Seção~\ref{sec:firmware-a}), isto é, falha em
+silêncio pelo mesmo mecanismo. O critério transferível a outras
+plataformas é, assim, o custo de detectar a falha, nulo sobre a temporização
+da amostragem quando o amostrador é um periférico independente e pago em
+ciclos do laço quando o amostrador é a própria \ac{CPU}, e não a presença ou a
+ausência de sinalização em um firmware específico.
+
+O custo do laço de B ($C_{iter} = 35$ ciclos, teto de 4,29\,MSa/s pela
+Equação~\ref{eq:fsmax}) não explica o resultado: B falha bem abaixo desse
+teto, por causa das pausas, e não por falta de ciclos.
+
+\paragraph{Quando a leitura por software basta e quando o par PIO+DMA se faz necessário.}
+O que se mediu é uma implementação de leitura por software, o Firmware B, em
+que um único núcleo amostra e codifica; as conclusões que seguem valem para
+ela, e não para toda leitura de \ac{GPIO} pela \ac{CPU}. Nas condições
+medidas, B entrega contagem de bordas coerente com a referência em capturas
+com disparo e janela fixa até uma taxa entre 774,6 e 1\,141,7\,kSa/s (a
+grade não distingue valores intermediários; 2,48\,MSa/s com a tolerância de
+0,1\,\%), e basta para aplicações que toleram, além de centenas de
+nanossegundos de dispersão no período medido, as emendas entre \emph{buffers}
+que a contagem não mede: pelo desenho do firmware, só capturas que cabem em um
+único \emph{buffer} (8\,192 amostras) ficam livres delas. Acima disso em
+captura com disparo, e já em 1,09\,MSa/s, a menor taxa medida, em captura
+contínua, B passa a entregar capturas com erro de contagem ou com o equivalente
+a um quarto ou mais do tempo sem amostrar, sem sinalizar. Frente a essa
+implementação, o par \ac{PIO}+\ac{DMA} se faz necessário sempre que a
+integridade do fluxo importa nessas taxas, e é a única opção quando o núcleo
+de captura precisa ficar livre para outras tarefas, já que B o ocupa por
+completo. Se a variante de B que dedica um núcleo à amostragem, implementada
+mas não medida, eliminaria as pausas, é uma questão em aberto
+(Seção~\ref{sec:trabalhos-futuros}); ela é a que poderia alterar essa
+conclusão.
+
+A arquitetura \ac{PIO}+\ac{DMA}, por sua vez, não elimina todos os limites,
+e os que restam dependem do sinal. Com a onda de 100\,kHz, A aborta a captura
+contínua entre 3,54 e 5,24\,MSa/s; com sinal pouco compressível, aborta já a
+partir de 1,68\,MSa/s com 8 ou 12 canais (Seção~\ref{sec:res-m4}) e quando a
+demanda no barramento chega a cerca de 0,9\,MB/s (Seção~\ref{sec:res-m3}).
+Esses limites estão no consumo das amostras (a codificação \ac{RLE} na
+\ac{CPU}, a fila de apenas dois \emph{buffers} do \ac{DMA} e a vazão do
+\ac{USB}) e podem ser melhorados sem abandonar a arquitetura. O que
+\ac{PIO}+\ac{DMA} garante em qualquer dessas condições não é uma taxa maior,
+e sim que a amostragem não pause e que a falha, quando ocorre, seja
+sinalizada.
+
+\paragraph{Ameaças à validade à luz dos dados.} Das ameaças previstas no
+planejamento (Capítulo~\ref{cap:metodologia}), as que os dados não
+descartam são tratadas como limitações do estudo
+(Seção~\ref{sec:limitacoes}): o sinal único de M1--M3, que torna os tetos
+dependentes da compressibilidade do fluxo; a variante de núcleo único do
+Firmware B, a única medida; os \emph{buffers} de tamanhos diferentes, que
+favorecem B e ainda assim o deixam atrás nas quatro métricas, mas tornam
+o teto de A específico de sua fila de dois \emph{buffers}; e a bancada e
+a plataforma únicas, cuja baixa dispersão entre repetições de A indica
+que não introduziram variação relevante, sem eliminar vieses comuns às
+duas arquiteturas. Somam-se a elas duas ressalvas que a análise tornou
+explícitas: a M2 foi medida em faixa na qual B já apresenta pausas, de modo
+que não isola o \emph{jitter} do seu laço, e o teto de A em captura com
+disparo ficou acima do alcance da grade, de modo que as razões entre os dois
+firmwares são limites inferiores.

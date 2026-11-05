@@ -1,0 +1,25 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.xdv
+
+# Compiled document
+main.pdf
+
+# Editor
+.vscode/
+*.swp
+.DS_Store
