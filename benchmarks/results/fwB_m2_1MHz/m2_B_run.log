@@ -1,0 +1,2068 @@
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+[connected] /dev/ttyACM0
+
+== M2: 4 channel(s), square wave on D3 ==
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2000000Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+    [daq_ref] DAQ_REF capture failed: Error interacting with device during capture: ReadTimeout. — restarting Logic 2 and redoing this repetition (1/3)
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+    [daq_ref] DAQ_REF capture failed: Error interacting with device during capture: ReadTimeout. — restarting Logic 2 and redoing this repetition (1/3)
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+    [daq_ref] DAQ_REF capture failed: Error interacting with device during capture: ReadTimeout. — restarting Logic 2 and redoing this repetition (1/3)
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2000000 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2249577Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2249577 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2530298Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2530298 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2846050Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2846050 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=3201204Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   3201204 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=3600677Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   3600677 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=4050000Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   4050000 Hz  done (30 reps)
+
+== M2: 12 channel(s), square wave on D3 ==
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2000000Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=400000] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2000000 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2249577Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=449915] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2249577 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2530298Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+    [daq_ref] DAQ_REF capture failed: Error interacting with device during capture: ReadTimeout. — restarting Logic 2 and redoing this repetition (1/3)
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=506060] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2530298 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=2846050Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=569210] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   2846050 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=3201204Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=640241] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   3201204 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=3600677Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+    [daq_ref] DAQ_REF capture failed: Error interacting with device during capture: ReadTimeout. — restarting Logic 2 and redoing this repetition (1/3)
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=720135] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   3600677 Hz  done (30 reps)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=8192] OK
+  [rate=4050000Hz] OK
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=810000] OK
+    DAQ_REF: waiting for trigger + window...
+  rate=   4050000 Hz  done (30 reps)
+
+Results written to /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/m2_B_trig.csv

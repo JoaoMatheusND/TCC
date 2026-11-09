@@ -1,0 +1,7 @@
+FW B C_iter (2026-11-04): binary search of the highest sample rate the firmware
+accepts (setup_channels ACK), FW B branch ana-gpio-cpu, clk_sys 150 MHz.
+Firmware: f_max = clk / (C + ceil(C*5/100)), C = ceil(DWT cycles / 512) from
+ana_module_calibrate() (src/module.c), 1 sampler module (digital only).
+  4 ch : max accepted 4054054 Hz -> 37 cycles with margin -> C_iter = 35
+  12 ch: max accepted 4054054 Hz -> 37 cycles with margin -> C_iter = 35
+f_s,max = 150e6 / 35 = 4.286 MS/s

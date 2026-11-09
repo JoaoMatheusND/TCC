@@ -1,0 +1,6062 @@
+### attempt 1 19:36:12
+[connected] /dev/ttyACM0
+
+== M3 (square): 4 channel(s) ==
+  rate=    500000 Hz  skipped (< 8 samples per signal period)
+  rate=    739580 Hz  skipped (< 8 samples per signal period)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 0  delivered=  49663552  frac=0.7566  gaps= 1733
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 1  delivered=  49663552  frac=0.7566  gaps= 1735
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 2  delivered=  49663552  frac=0.7566  gaps= 1757
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 3  delivered=  49663552  frac=0.7566  gaps= 1701
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 4  delivered=  49663552  frac=0.7566  gaps= 1694
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 5  delivered=  49663552  frac=0.7566  gaps= 1707
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 6  delivered=  49663552  frac=0.7566  gaps= 1719
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 7  delivered=  49663552  frac=0.7566  gaps= 1759
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 8  delivered=  49663552  frac=0.7566  gaps= 1740
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 9  delivered=  49663552  frac=0.7566  gaps= 1715
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=10  delivered=  49663552  frac=0.7566  gaps= 1820
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=11  delivered=  49663552  frac=0.7566  gaps= 1732
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=12  delivered=  49663552  frac=0.7566  gaps= 1737
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=13  delivered=  49663552  frac=0.7566  gaps= 1808
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=14  delivered=  49663552  frac=0.7566  gaps= 1773
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=15  delivered=  49663552  frac=0.7566  gaps= 1769
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=16  delivered=  49663552  frac=0.7566  gaps= 1776
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=17  delivered=  49663552  frac=0.7566  gaps= 1770
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=18  delivered=  49663552  frac=0.7566  gaps= 1811
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=19  delivered=  49663552  frac=0.7566  gaps= 1815
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=20  delivered=  49663552  frac=0.7566  gaps= 1816
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=21  delivered=  49663552  frac=0.7566  gaps= 1826
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=22  delivered=  49663552  frac=0.7566  gaps= 1893
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=23  delivered=  49663552  frac=0.7566  gaps= 1868
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=24  delivered=  49663552  frac=0.7566  gaps= 1866
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=25  delivered=  49663552  frac=0.7566  gaps= 1932
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=26  delivered=  49663552  frac=0.7566  gaps= 1905
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=27  delivered=  49663552  frac=0.7566  gaps= 1850
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=28  delivered=  49663552  frac=0.7566  gaps= 1871
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=29  delivered=  49663552  frac=0.7566  gaps= 1870
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 0  delivered=  69147456  frac=0.7122  gaps=10419
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 1  delivered=  69147456  frac=0.7122  gaps=10507
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 2  delivered=  69147456  frac=0.7122  gaps=10560
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 3  delivered=  69147456  frac=0.7122  gaps=10481
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 4  delivered=  69147456  frac=0.7122  gaps=10458
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 5  delivered=  69147456  frac=0.7122  gaps=10466
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 6  delivered=  69147456  frac=0.7122  gaps=10463
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 7  delivered=  69147456  frac=0.7122  gaps=10470
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 8  delivered=  69147456  frac=0.7122  gaps=10425
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 9  delivered=  69147456  frac=0.7122  gaps=10543
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=10  delivered=  69147456  frac=0.7122  gaps=10453
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=11  delivered=  69147456  frac=0.7122  gaps=10412
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=12  delivered=  69147456  frac=0.7122  gaps=10471
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=13  delivered=  69147456  frac=0.7122  gaps=10432
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=14  delivered=  69147456  frac=0.7122  gaps=10409
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=15  delivered=  69147456  frac=0.7122  gaps=10494
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=16  delivered=  69147456  frac=0.7122  gaps=10432
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=17  delivered=  69147456  frac=0.7122  gaps=10459
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=18  delivered=  69147456  frac=0.7122  gaps=10504
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=19  delivered=  69147456  frac=0.7122  gaps=10497
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=20  delivered=  69147456  frac=0.7122  gaps=10478
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=21  delivered=  69147456  frac=0.7122  gaps=10495
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=22  delivered=  69147456  frac=0.7122  gaps=10451
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=23  delivered=  69147456  frac=0.7122  gaps=10461
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=24  delivered=  69147456  frac=0.7122  gaps=10489
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=25  delivered=  69147456  frac=0.7122  gaps=10488
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=26  delivered=  69147456  frac=0.7122  gaps=10510
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=27  delivered=  69147456  frac=0.7122  gaps=10527
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=28  delivered=  69147456  frac=0.7122  gaps=10463
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=29  delivered=  69147456  frac=0.7122  gaps=10500
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 0  delivered=  94024576  frac=0.6547  gaps=15402
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 1  delivered=  94024576  frac=0.6547  gaps=15401
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 2  delivered=  94024576  frac=0.6547  gaps=15390
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 3  delivered=  94024576  frac=0.6547  gaps=15386
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 4  delivered=  94024576  frac=0.6547  gaps=15425
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 5  delivered=  94024576  frac=0.6547  gaps=15362
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 6  delivered=  94024576  frac=0.6547  gaps=15373
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 7  delivered=  94024576  frac=0.6547  gaps=15458
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 8  delivered=  94024576  frac=0.6547  gaps=15366
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 9  delivered=  94024576  frac=0.6547  gaps=15408
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=10  delivered=  94024576  frac=0.6547  gaps=15410
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=11  delivered=  94024576  frac=0.6547  gaps=15389
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=12  delivered=  94024576  frac=0.6547  gaps=15411
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=13  delivered=  94024576  frac=0.6547  gaps=15423
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=14  delivered=  94024576  frac=0.6547  gaps=15355
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=15  delivered=  94024576  frac=0.6547  gaps=15382
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=16  delivered=  94024576  frac=0.6547  gaps=15430
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=17  delivered=  94024576  frac=0.6547  gaps=15442
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=18  delivered=  94024576  frac=0.6547  gaps=15389
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=19  delivered=  94024576  frac=0.6547  gaps=15476
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=20  delivered=  94024576  frac=0.6547  gaps=15393
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=21  delivered=  94024576  frac=0.6547  gaps=15442
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=22  delivered=  94024576  frac=0.6547  gaps=15378
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=23  delivered=  94024576  frac=0.6547  gaps=15372
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=24  delivered=  94024576  frac=0.6547  gaps=15403
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=25  delivered=  94024576  frac=0.6547  gaps=15427
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=26  delivered=  94024576  frac=0.6547  gaps=15372
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=27  delivered=  94024576  frac=0.6547  gaps=15388
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=28  delivered=  94024576  frac=0.6547  gaps=15396
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=29  delivered=  94008192  frac=0.6546  gaps=15479
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 0  delivered= 124262144  frac=0.5850  gaps=63606
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 1  delivered= 124270336  frac=0.5850  gaps=63728
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 2  delivered= 124270336  frac=0.5850  gaps=63622
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 3  delivered= 124278528  frac=0.5850  gaps=63546
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 4  delivered= 124278528  frac=0.5851  gaps=63664
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 5  delivered= 124286720  frac=0.5851  gaps=63415
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 6  delivered= 124286720  frac=0.5851  gaps=63457
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 7  delivered= 124286720  frac=0.5851  gaps=63474
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 8  delivered= 124286720  frac=0.5851  gaps=63308
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 9  delivered= 124286720  frac=0.5851  gaps=63740
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=10  delivered= 124286720  frac=0.5851  gaps=63669
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=11  delivered= 124286720  frac=0.5851  gaps=63616
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=12  delivered= 124286720  frac=0.5851  gaps=63637
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=13  delivered= 124286720  frac=0.5851  gaps=63227
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=14  delivered= 124286720  frac=0.5851  gaps=63708
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=15  delivered= 124327680  frac=0.5853  gaps=63359
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=16  delivered= 124319488  frac=0.5852  gaps=63604
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=17  delivered= 124311296  frac=0.5852  gaps=63302
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=18  delivered= 124311296  frac=0.5852  gaps=63726
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=19  delivered= 124311296  frac=0.5852  gaps=63285
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=20  delivered= 124303104  frac=0.5852  gaps=63406
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=21  delivered= 124303104  frac=0.5852  gaps=63586
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=22  delivered= 124303104  frac=0.5852  gaps=63372
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=23  delivered= 124303104  frac=0.5851  gaps=63132
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=24  delivered= 124303104  frac=0.5851  gaps=63843
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=25  delivered= 124294912  frac=0.5851  gaps=63390
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=26  delivered= 124294912  frac=0.5851  gaps=63887
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=27  delivered= 124294912  frac=0.5851  gaps=63377
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=28  delivered= 124294912  frac=0.5851  gaps=63431
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=29  delivered= 124294912  frac=0.5851  gaps=63629
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=5236734Hz] NO ACK — got b''
+  rate=   5236734 Hz  refused by the device (above its sampler limit) — stopping sweep
+
+== M3 (square): 12 channel(s) ==
+  rate=    500000 Hz  skipped (< 8 samples per signal period)
+  rate=    739580 Hz  skipped (< 8 samples per signal period)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 0  delivered=  48450560  frac=0.7381  gaps= 4717
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 1  delivered=  48442368  frac=0.7380  gaps= 4728
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 2  delivered=  48450560  frac=0.7381  gaps= 4765
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 3  delivered=  48450560  frac=0.7381  gaps= 4787
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 4  delivered=  48450560  frac=0.7381  gaps= 4729
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 5  delivered=  48450560  frac=0.7381  gaps= 4785
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 6  delivered=  48450560  frac=0.7381  gaps= 4766
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 7  delivered=  48450560  frac=0.7381  gaps= 4736
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 8  delivered=  48450560  frac=0.7381  gaps= 4717
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 9  delivered=  48450560  frac=0.7381  gaps= 4861
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=10  delivered=  48450560  frac=0.7381  gaps= 4671
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=11  delivered=  48450560  frac=0.7381  gaps= 4790
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=12  delivered=  48450560  frac=0.7381  gaps= 4708
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=13  delivered=  48450560  frac=0.7381  gaps= 4805
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=14  delivered=  48450560  frac=0.7381  gaps= 4826
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=15  delivered=  48450560  frac=0.7381  gaps= 4788
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=16  delivered=  48450560  frac=0.7381  gaps= 4659
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=17  delivered=  48450560  frac=0.7381  gaps= 4868
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=18  delivered=  48450560  frac=0.7381  gaps= 4818
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=19  delivered=  48450560  frac=0.7381  gaps= 4767
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=20  delivered=  48450560  frac=0.7381  gaps= 4889
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=21  delivered=  48450560  frac=0.7381  gaps= 4754
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=22  delivered=  48450560  frac=0.7381  gaps= 4809
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=23  delivered=  48450560  frac=0.7381  gaps= 4815
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=24  delivered=  48450560  frac=0.7381  gaps= 4887
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=25  delivered=  48450560  frac=0.7381  gaps= 4849
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=26  delivered=  48450560  frac=0.7381  gaps= 4863
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=27  delivered=  48450560  frac=0.7381  gaps= 4855
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=28  delivered=  48450560  frac=0.7381  gaps= 4834
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep=29  delivered=  48450560  frac=0.7381  gaps= 4887
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 0  delivered=  67516096  frac=0.6954  gaps= 8539
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 1  delivered=  67524288  frac=0.6955  gaps= 8466
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 2  delivered=  67524288  frac=0.6955  gaps= 8553
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 3  delivered=  67524288  frac=0.6955  gaps= 8590
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 4  delivered=  67524288  frac=0.6955  gaps= 8646
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 5  delivered=  67524288  frac=0.6955  gaps= 8551
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 6  delivered=  67524288  frac=0.6955  gaps= 8699
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 7  delivered=  67524288  frac=0.6955  gaps= 8573
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 8  delivered=  67524288  frac=0.6955  gaps= 8548
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep= 9  delivered=  67524288  frac=0.6955  gaps= 8548
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=10  delivered=  67524288  frac=0.6954  gaps= 8482
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=11  delivered=  67524288  frac=0.6954  gaps= 8477
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=12  delivered=  67524288  frac=0.6954  gaps= 8612
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=13  delivered=  67516096  frac=0.6954  gaps= 8432
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=14  delivered=  67516096  frac=0.6954  gaps= 8540
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=15  delivered=  67516096  frac=0.6954  gaps= 8544
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=16  delivered=  67516096  frac=0.6954  gaps= 8552
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=17  delivered=  67516096  frac=0.6954  gaps= 8529
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=18  delivered=  67516096  frac=0.6954  gaps= 8515
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=19  delivered=  67516096  frac=0.6954  gaps= 8561
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=20  delivered=  67516096  frac=0.6954  gaps= 8469
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=21  delivered=  67516096  frac=0.6954  gaps= 8467
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=22  delivered=  67516096  frac=0.6954  gaps= 8454
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=23  delivered=  67516096  frac=0.6954  gaps= 8562
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=24  delivered=  67516096  frac=0.6954  gaps= 8435
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=25  delivered=  67516096  frac=0.6954  gaps= 8496
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=26  delivered=  67516096  frac=0.6954  gaps= 8550
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=27  delivered=  67516096  frac=0.6954  gaps= 8398
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=28  delivered=  67516096  frac=0.6954  gaps= 8522
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1618137Hz] OK
+  rate=   1618137 Hz rep=29  delivered=  67516096  frac=0.6954  gaps= 8463
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 0  delivered=  91917504  frac=0.6401  gaps=14865
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 1  delivered=  91917504  frac=0.6401  gaps=14869
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 2  delivered=  91917504  frac=0.6400  gaps=14887
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 3  delivered=  91909312  frac=0.6400  gaps=14845
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 4  delivered=  91917504  frac=0.6400  gaps=14875
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 5  delivered=  91917504  frac=0.6400  gaps=14901
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 6  delivered=  91917504  frac=0.6400  gaps=14821
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 7  delivered=  91917504  frac=0.6400  gaps=14876
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 8  delivered=  91917504  frac=0.6400  gaps=14849
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep= 9  delivered=  91917504  frac=0.6400  gaps=14884
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=10  delivered=  91917504  frac=0.6400  gaps=14927
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=11  delivered=  91917504  frac=0.6400  gaps=14837
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=12  delivered=  91917504  frac=0.6400  gaps=14879
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=13  delivered=  91917504  frac=0.6400  gaps=14858
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=14  delivered=  91917504  frac=0.6400  gaps=14902
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=15  delivered=  91917504  frac=0.6400  gaps=14897
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=16  delivered=  91917504  frac=0.6400  gaps=14880
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=17  delivered=  91917504  frac=0.6400  gaps=14895
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=18  delivered=  91917504  frac=0.6401  gaps=14860
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=19  delivered=  91917504  frac=0.6400  gaps=14904
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=20  delivered=  91917504  frac=0.6401  gaps=14905
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=21  delivered=  91917504  frac=0.6401  gaps=14869
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=22  delivered=  91917504  frac=0.6401  gaps=14896
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=23  delivered=  91917504  frac=0.6401  gaps=14945
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=24  delivered=  91917504  frac=0.6401  gaps=14982
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=25  delivered=  91917504  frac=0.6401  gaps=14856
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=26  delivered=  91917504  frac=0.6401  gaps=14830
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=27  delivered=  91917504  frac=0.6401  gaps=14887
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=28  delivered=  91917504  frac=0.6401  gaps=14891
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=2393483Hz] OK
+  rate=   2393483 Hz rep=29  delivered=  91917504  frac=0.6401  gaps=14950
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 0  delivered= 121778240  frac=0.5733  gaps=70189
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 1  delivered= 121778240  frac=0.5733  gaps=69809
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 2  delivered= 121778240  frac=0.5733  gaps=69830
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 3  delivered= 121786432  frac=0.5733  gaps=70056
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 4  delivered= 121786432  frac=0.5733  gaps=69979
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 5  delivered= 121786432  frac=0.5733  gaps=69949
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 6  delivered= 121786432  frac=0.5733  gaps=70025
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 7  delivered= 121786432  frac=0.5733  gaps=69876
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 8  delivered= 121786432  frac=0.5733  gaps=69762
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep= 9  delivered= 121786432  frac=0.5733  gaps=69914
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=10  delivered= 121786432  frac=0.5733  gaps=69953
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=11  delivered= 121786432  frac=0.5733  gaps=69937
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=12  delivered= 121786432  frac=0.5733  gaps=69723
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=13  delivered= 121786432  frac=0.5733  gaps=69950
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=14  delivered= 121786432  frac=0.5733  gaps=70163
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=15  delivered= 121786432  frac=0.5733  gaps=70187
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=16  delivered= 121786432  frac=0.5733  gaps=69724
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=17  delivered= 121786432  frac=0.5733  gaps=70024
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=18  delivered= 121778240  frac=0.5733  gaps=69852
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=19  delivered= 121786432  frac=0.5733  gaps=69856
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=20  delivered= 121778240  frac=0.5733  gaps=69877
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=21  delivered= 121786432  frac=0.5733  gaps=70068
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=22  delivered= 121786432  frac=0.5733  gaps=70054
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=23  delivered= 121786432  frac=0.5733  gaps=69933
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=24  delivered= 121778240  frac=0.5733  gaps=69870
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=25  delivered= 121778240  frac=0.5733  gaps=69748
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=26  delivered= 121786432  frac=0.5733  gaps=69823
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=27  delivered= 121778240  frac=0.5733  gaps=70054
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=28  delivered= 121786432  frac=0.5733  gaps=70064
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=3540344Hz] OK
+  rate=   3540344 Hz rep=29  delivered= 121778240  frac=0.5733  gaps=69652
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] OK
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=5236734Hz] NO ACK — got b''
+  rate=   5236734 Hz  refused by the device (above its sampler limit) — stopping sweep
+
+Results written to /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/m3_B.csv

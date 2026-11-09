@@ -1,0 +1,41 @@
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+DAQ_REF armed on Channel 0 (rising edge, 0.2 s after trigger) — fire the generator now
+    DAQ_REF: waiting for trigger + window...
+    [daq_ref] DAQ_REF capture failed: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Stream removed (Socket closed)"
+	debug_error_string = "UNAVAILABLE:Stream removed (Socket closed)"
+> — restarting (1/3)
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+    [daq_ref] device missing (USB re-enumeration?), waiting...
+DAQ_REF armed on Channel 0 (rising edge, 0.2 s after trigger) — fire the generator now
+    DAQ_REF: waiting for trigger + window...
+reference: 20000 DAQ_REF edges in 0.2 s after trigger (t=0.000000000 s), f_sig=99999.750 Hz -> expecting 19999 DAQ edges
+Traceback (most recent call last):
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/.venv/lib/python3.12/site-packages/serial/serialposix.py", line 398, in _reconfigure_port
+    orig_attr = termios.tcgetattr(self.fd)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+termios.error: (5, 'Input/output error')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/m1_max_rate.py", line 265, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/m1_max_rate.py", line 180, in main
+    dbg = connect(args.port)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/common.py", line 81, in connect
+    return FirmwareDebugger(port)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/tools/debug_firmware.py", line 188, in __init__
+    self.ser = serial.Serial(port, baudrate=115200, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/.venv/lib/python3.12/site-packages/serial/serialutil.py", line 244, in __init__
+    self.open()
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/.venv/lib/python3.12/site-packages/serial/serialposix.py", line 332, in open
+    self._reconfigure_port(force_update=True)
+  File "/home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/.venv/lib/python3.12/site-packages/serial/serialposix.py", line 401, in _reconfigure_port
+    raise SerialException("Could not configure port: {}".format(msg))
+serial.serialutil.SerialException: Could not configure port: (5, 'Input/output error')

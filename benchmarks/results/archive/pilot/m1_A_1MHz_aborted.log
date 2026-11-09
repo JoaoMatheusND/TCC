@@ -1,0 +1,80 @@
+    starting Logic 2 (/home/joaomatheusnd/Downloads/Logic-2.4.44-linux-x64.AppImage) — log: /home/joaomatheusnd/repo/my/Multi-Signal-Analyzer/benchmarks/results/daq_ref/logic2.log
+DAQ_REF armed on Channel 0 (rising edge, 0.2 s after trigger) — fire the generator now
+    DAQ_REF: waiting for trigger + window...
+reference: 199865 DAQ_REF edges in 0.2 s after trigger (t=0.000000000 s), f_sig=999322.498 Hz -> expecting 199864 DAQ edges
+[connected] /dev/ttyACM0
+
+== M1: 4 channel(s), signal on D3 ==
+  rate=      5000 Hz  skipped (< 4 samples per signal period)
+  rate=      7370 Hz  skipped (< 4 samples per signal period)
+  rate=     10862 Hz  skipped (< 4 samples per signal period)
+  rate=     16010 Hz  skipped (< 4 samples per signal period)
+  rate=     23597 Hz  skipped (< 4 samples per signal period)
+  rate=     34779 Hz  skipped (< 4 samples per signal period)
+  rate=     51261 Hz  skipped (< 4 samples per signal period)
+  rate=     75554 Hz  skipped (< 4 samples per signal period)
+  rate=    111360 Hz  skipped (< 4 samples per signal period)
+  rate=    164133 Hz  skipped (< 4 samples per signal period)
+  rate=    241917 Hz  skipped (< 4 samples per signal period)
+  rate=    356563 Hz  skipped (< 4 samples per signal period)
+  rate=    525540 Hz  skipped (< 4 samples per signal period)
+  rate=    774597 Hz  skipped (< 4 samples per signal period)
+  rate=   1141682 Hz  skipped (< 4 samples per signal period)
+  rate=   1682732 Hz  skipped (< 4 samples per signal period)
+  rate=   2480188 Hz  skipped (< 4 samples per signal period)
+  rate=   3655563 Hz  skipped (< 4 samples per signal period)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=off] OK
+  [D5=off] OK
+  [D6=off] OK
+  [D7=off] OK
+  [D8=off] OK
+  [D9=off] OK
+  [D10=off] OK
+  [D11=off] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=5387955Hz] OK
+    rep 0: DAQ + DAQ_REF armed, waiting for generator...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=1000000] OK
+    DAQ_REF: waiting for trigger + window...
+    rep 1: DAQ + DAQ_REF armed, waiting for generator...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=1000000] OK
+    DAQ_REF: waiting for trigger + window...
+    rep 2: DAQ + DAQ_REF armed, waiting for generator...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=1000000] OK
+    DAQ_REF: waiting for trigger + window...
+    rep 3: DAQ + DAQ_REF armed, waiting for generator...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=1000000] OK
+    DAQ_REF: waiting for trigger + window...
+    rep 4: DAQ + DAQ_REF armed, waiting for generator...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=1000000] OK
+    DAQ_REF: waiting for trigger + window...
+    rep 5: DAQ + DAQ_REF armed, waiting for generator...
+  [pretrigger=0] OK
+  [trigger ch=3 type=2] OK
+  [limit=1000000] OK
+    DAQ_REF: waiting for trigger + window...
+    rep 6: DAQ + DAQ_REF armed, waiting for generator...

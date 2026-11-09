@@ -1,0 +1,229 @@
+[connected] /dev/ttyACM0
+
+== M3 (square): 12 channel(s) ==
+  rate=    500000 Hz  skipped (< 8 samples per signal period)
+  rate=    739580 Hz  skipped (< 8 samples per signal period)
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 0  delivered=  10933888  frac=0.9995  gaps=    9
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 1  delivered=  10933888  frac=0.9995  gaps=    9
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 2  delivered=  10933888  frac=0.9995  gaps=    9
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 3  delivered=  10933888  frac=0.9995  gaps=    9
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 4  delivered=  10933888  frac=0.9995  gaps=   10
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 5  delivered=  10933888  frac=0.9995  gaps=    8
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 6  delivered=  10933888  frac=0.9995  gaps=    6
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
+  rate=   1093957 Hz rep= 7  delivered=  10933888  frac=0.9995  gaps=    8
+[reset]
+[identify] SRPICO,A031D15,02
+         analog=3  digital=15  dig_bps=3
+  [A0=off] OK
+  [A1=off] OK
+  [A2=off] OK
+  [trigger=off] NO ACK — got b''
+  [D0=on] OK
+  [D1=on] OK
+  [D2=on] OK
+  [D3=on] OK
+  [D4=on] OK
+  [D5=on] OK
+  [D6=on] OK
+  [D7=on] OK
+  [D8=on] OK
+  [D9=on] OK
+  [D10=on] OK
+  [D11=on] OK
+  [D12=off] OK
+  [D13=off] OK
+  [D14=off] OK
+  [limit=1000000] OK
+  [rate=1093957Hz] OK
