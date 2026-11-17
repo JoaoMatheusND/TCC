@@ -1,0 +1,270 @@
+== rep=1 ch=4 rate=500000
+rate=500000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.002 MB/s  (7950 bytes)
+samples/s       : 499,977  (requested 500,000)
+bytes/sample    : 0.003  (RLE ratio; 1 uncompressed)
+== rep=1 ch=4 rate=700000
+rate=700000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.700 MB/s  (3500060 bytes)
+samples/s       : 699,981  (requested 700,000)
+bytes/sample    : 1.000  (RLE ratio; 1 uncompressed)
+== rep=1 ch=4 rate=900000
+rate=900000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.401 MB/s  (2005053 bytes)
+samples/s       : 899,975  (requested 900,000)
+bytes/sample    : 0.446  (RLE ratio; 1 uncompressed)
+== rep=1 ch=4 rate=1200000
+rate=1200000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.801 MB/s  (4004368 bytes)
+samples/s       : 1,200,032  (requested 1,200,000)
+bytes/sample    : 0.667  (RLE ratio; 1 uncompressed)
+== rep=1 ch=4 rate=1500000
+rate=1500000 Hz  channels=4  elapsed=0.18 s
+wire throughput : 0.906 MB/s  (166918 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 906,224  (requested 1,500,000)
+bytes/sample    : 1.000  (RLE ratio; 1 uncompressed)
+== rep=1 ch=4 rate=1800000
+rate=1800000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.109 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,102,498  (requested 1,800,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=1 ch=4 rate=2000000
+rate=2000000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.147 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,140,599  (requested 2,000,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=1 ch=4 rate=4000000
+rate=4000000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.178 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,171,496  (requested 4,000,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=1 ch=12 rate=500000
+rate=500000 Hz  channels=12  elapsed=5.00 s
+wire throughput : 0.002 MB/s  (12418 bytes)
+samples/s       : 499,977  (requested 500,000)
+bytes/sample    : 0.005  (RLE ratio; 2 uncompressed)
+== rep=1 ch=12 rate=700000
+rate=700000 Hz  channels=12  elapsed=0.24 s
+wire throughput : 0.915 MB/s  (222588 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 492,555  (requested 700,000)
+bytes/sample    : 1.858  (RLE ratio; 2 uncompressed)
+== rep=1 ch=12 rate=900000
+rate=900000 Hz  channels=12  elapsed=5.00 s
+wire throughput : 0.603 MB/s  (3014206 bytes)
+samples/s       : 900,011  (requested 900,000)
+bytes/sample    : 0.670  (RLE ratio; 2 uncompressed)
+== rep=1 ch=12 rate=1200000
+rate=1200000 Hz  channels=12  elapsed=0.29 s
+wire throughput : 0.903 MB/s  (264904 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 900,410  (requested 1,200,000)
+bytes/sample    : 1.003  (RLE ratio; 2 uncompressed)
+== rep=1 ch=12 rate=1500000
+rate=1500000 Hz  channels=12  elapsed=0.11 s
+wire throughput : 0.911 MB/s  (104169 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 546,061  (requested 1,500,000)
+bytes/sample    : 1.668  (RLE ratio; 2 uncompressed)
+== rep=1 ch=12 rate=1800000
+rate=1800000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 0.921 MB/s  (1947 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 484,134  (requested 1,800,000)
+bytes/sample    : 1.901  (RLE ratio; 2 uncompressed)
+== rep=1 ch=12 rate=2000000
+rate=2000000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 0.882 MB/s  (2054 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 439,960  (requested 2,000,000)
+bytes/sample    : 2.006  (RLE ratio; 2 uncompressed)
+== rep=1 ch=12 rate=4000000
+rate=4000000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 0.951 MB/s  (1542 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 631,456  (requested 4,000,000)
+bytes/sample    : 1.506  (RLE ratio; 2 uncompressed)
+== rep=2 ch=4 rate=500000
+rate=500000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.002 MB/s  (7902 bytes)
+samples/s       : 499,951  (requested 500,000)
+bytes/sample    : 0.003  (RLE ratio; 1 uncompressed)
+== rep=2 ch=4 rate=700000
+rate=700000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.700 MB/s  (3500060 bytes)
+samples/s       : 699,988  (requested 700,000)
+bytes/sample    : 1.000  (RLE ratio; 1 uncompressed)
+== rep=2 ch=4 rate=900000
+rate=900000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.401 MB/s  (2004992 bytes)
+samples/s       : 899,978  (requested 900,000)
+bytes/sample    : 0.446  (RLE ratio; 1 uncompressed)
+== rep=2 ch=4 rate=1200000
+rate=1200000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.801 MB/s  (4004375 bytes)
+samples/s       : 1,200,032  (requested 1,200,000)
+bytes/sample    : 0.667  (RLE ratio; 1 uncompressed)
+== rep=2 ch=4 rate=1500000
+rate=1500000 Hz  channels=4  elapsed=0.18 s
+wire throughput : 0.901 MB/s  (162822 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 900,766  (requested 1,500,000)
+bytes/sample    : 1.000  (RLE ratio; 1 uncompressed)
+== rep=2 ch=4 rate=1800000
+rate=1800000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.118 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,111,426  (requested 1,800,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=2 ch=4 rate=2000000
+rate=2000000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.124 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,117,472  (requested 2,000,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=2 ch=4 rate=4000000
+rate=4000000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.055 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,048,483  (requested 4,000,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=2 ch=12 rate=500000
+rate=500000 Hz  channels=12  elapsed=5.00 s
+wire throughput : 0.002 MB/s  (12418 bytes)
+samples/s       : 499,968  (requested 500,000)
+bytes/sample    : 0.005  (RLE ratio; 2 uncompressed)
+== rep=2 ch=12 rate=700000
+rate=700000 Hz  channels=12  elapsed=0.24 s
+wire throughput : 0.905 MB/s  (214994 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 487,337  (requested 700,000)
+bytes/sample    : 1.858  (RLE ratio; 2 uncompressed)
+== rep=2 ch=12 rate=900000
+rate=900000 Hz  channels=12  elapsed=5.00 s
+wire throughput : 0.603 MB/s  (3014008 bytes)
+samples/s       : 899,999  (requested 900,000)
+bytes/sample    : 0.670  (RLE ratio; 2 uncompressed)
+== rep=2 ch=12 rate=1200000
+rate=1200000 Hz  channels=12  elapsed=0.29 s
+wire throughput : 0.904 MB/s  (264885 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 902,027  (requested 1,200,000)
+bytes/sample    : 1.003  (RLE ratio; 2 uncompressed)
+== rep=2 ch=12 rate=1500000
+rate=1500000 Hz  channels=12  elapsed=0.11 s
+wire throughput : 0.907 MB/s  (104180 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 543,619  (requested 1,500,000)
+bytes/sample    : 1.668  (RLE ratio; 2 uncompressed)
+== rep=2 ch=12 rate=1800000
+rate=1800000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 1.023 MB/s  (1940 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 539,929  (requested 1,800,000)
+bytes/sample    : 1.895  (RLE ratio; 2 uncompressed)
+== rep=2 ch=12 rate=2000000
+rate=2000000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 0.975 MB/s  (2054 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 486,173  (requested 2,000,000)
+bytes/sample    : 2.006  (RLE ratio; 2 uncompressed)
+== rep=2 ch=12 rate=4000000
+rate=4000000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 1.000 MB/s  (1542 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 664,033  (requested 4,000,000)
+bytes/sample    : 1.506  (RLE ratio; 2 uncompressed)
+== rep=3 ch=4 rate=500000
+rate=500000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.002 MB/s  (7912 bytes)
+samples/s       : 499,989  (requested 500,000)
+bytes/sample    : 0.003  (RLE ratio; 1 uncompressed)
+== rep=3 ch=4 rate=700000
+rate=700000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.700 MB/s  (3500188 bytes)
+samples/s       : 700,029  (requested 700,000)
+bytes/sample    : 1.000  (RLE ratio; 1 uncompressed)
+== rep=3 ch=4 rate=900000
+rate=900000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.401 MB/s  (2005054 bytes)
+samples/s       : 899,997  (requested 900,000)
+bytes/sample    : 0.446  (RLE ratio; 1 uncompressed)
+== rep=3 ch=4 rate=1200000
+rate=1200000 Hz  channels=4  elapsed=5.00 s
+wire throughput : 0.801 MB/s  (4004371 bytes)
+samples/s       : 1,200,034  (requested 1,200,000)
+bytes/sample    : 0.667  (RLE ratio; 1 uncompressed)
+== rep=3 ch=4 rate=1500000
+rate=1500000 Hz  channels=4  elapsed=0.18 s
+wire throughput : 0.905 MB/s  (166918 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 904,968  (requested 1,500,000)
+bytes/sample    : 1.000  (RLE ratio; 1 uncompressed)
+== rep=3 ch=4 rate=1800000
+rate=1800000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.267 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,259,740  (requested 1,800,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=3 ch=4 rate=2000000
+rate=2000000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.106 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,099,960  (requested 2,000,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=3 ch=4 rate=4000000
+rate=4000000 Hz  channels=4  elapsed=0.00 s
+wire throughput : 1.039 MB/s  (1030 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 1,032,858  (requested 4,000,000)
+bytes/sample    : 1.006  (RLE ratio; 1 uncompressed)
+== rep=3 ch=12 rate=500000
+rate=500000 Hz  channels=12  elapsed=5.00 s
+wire throughput : 0.003 MB/s  (13212 bytes)
+samples/s       : 499,964  (requested 500,000)
+bytes/sample    : 0.005  (RLE ratio; 2 uncompressed)
+== rep=3 ch=12 rate=700000
+rate=700000 Hz  channels=12  elapsed=0.24 s
+wire throughput : 0.904 MB/s  (215025 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 486,382  (requested 700,000)
+bytes/sample    : 1.858  (RLE ratio; 2 uncompressed)
+== rep=3 ch=12 rate=900000
+rate=900000 Hz  channels=12  elapsed=5.00 s
+wire throughput : 0.604 MB/s  (3018627 bytes)
+samples/s       : 900,006  (requested 900,000)
+bytes/sample    : 0.671  (RLE ratio; 2 uncompressed)
+== rep=3 ch=12 rate=1200000
+rate=1200000 Hz  channels=12  elapsed=0.29 s
+wire throughput : 0.905 MB/s  (265147 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 902,223  (requested 1,200,000)
+bytes/sample    : 1.004  (RLE ratio; 2 uncompressed)
+== rep=3 ch=12 rate=1500000
+rate=1500000 Hz  channels=12  elapsed=0.12 s
+wire throughput : 0.903 MB/s  (104216 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 541,432  (requested 1,500,000)
+bytes/sample    : 1.668  (RLE ratio; 2 uncompressed)
+== rep=3 ch=12 rate=1800000
+rate=1800000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 1.219 MB/s  (1940 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 643,560  (requested 1,800,000)
+bytes/sample    : 1.895  (RLE ratio; 2 uncompressed)
+== rep=3 ch=12 rate=2000000
+rate=2000000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 1.086 MB/s  (2054 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 541,346  (requested 2,000,000)
+bytes/sample    : 2.006  (RLE ratio; 2 uncompressed)
+== rep=3 ch=12 rate=4000000
+rate=4000000 Hz  channels=12  elapsed=0.00 s
+wire throughput : 0.912 MB/s  (1543 bytes)
+NOTE: device aborted the capture ('!!!')
+samples/s       : 605,491  (requested 4,000,000)
+bytes/sample    : 1.507  (RLE ratio; 2 uncompressed)
